@@ -1,3 +1,4 @@
+using Camping;
 using Common;
 using UnityEngine;
 using UnityEngine.AI;
@@ -13,9 +14,9 @@ public class PartyMovement : SingletonMonoBehavior<PartyMovement>
 
     void Update()
     {
-        if (PartyHealth.IsDead())
+        if (PartyHealth.IsDead() || PartyCamp.Instance.IsCampling)
         {
-            Agent.isStopped = true;
+            Agent.SetDestination(transform.position);
             return;
         }
         

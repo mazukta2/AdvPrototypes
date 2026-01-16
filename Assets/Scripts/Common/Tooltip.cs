@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace Common
@@ -14,6 +15,11 @@ namespace Common
         }
 
         public void OnPointerExit(PointerEventData eventData)
+        {
+            TooltipWindow.Remove(this);
+        }
+
+        protected void OnDisable()
         {
             TooltipWindow.Remove(this);
         }
