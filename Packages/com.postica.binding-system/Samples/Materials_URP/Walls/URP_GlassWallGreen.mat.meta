@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 9e8f717572a6b417d86b579de0134363
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Samples/Materials_URP/Walls/URP_GlassWallGreen.mat
+  uploadId: 833934

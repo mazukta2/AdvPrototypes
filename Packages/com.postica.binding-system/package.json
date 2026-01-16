@@ -1,0 +1,44 @@
+{
+  "name": "com.postica.binding-system",
+  "version": "2.5.2",
+  "displayName": "Binding System",
+  "description": "A powerful tool that simplifies linking objects together quickly and flexibly in a completely agnostic way.\n\nMain Features:\n \u25aa Optimized for Performance, delivering near-native speeds for efficient data handling. \n \u25aa Easily bind data using a simple and efficient drag-and-drop system. \n \u25aa Easily expandable by design to support new features and functionality.",
+  "unity": "2022.3",
+  "documentationUrl": "https://postica.gitbook.io/binding-system-2",
+  "category": "Utility",
+  "changelogUrl": "https://postica.gitbook.io/binding-system-2/change-log",
+  "licensesUrl": "https://postica.gitbook.io/binding-system-2/third-party-licenses",
+  "keywords": [
+    "binding",
+    "system",
+    "reflection",
+    "bind",
+    "data",
+    "ui",
+    "editor",
+    "tool",
+    "utility"
+  ],
+  "author": {
+    "name": "Gheorghii Postica",
+    "email": "ggpostica.publisher@gmail.com",
+    "url": "https://assetstore.unity.com/publishers/62937"
+  },
+  "samples": [
+    {
+      "displayName": "Bindings Demo",
+      "description": "A demo scene showcasing the Binding System and its features.",
+      "path": "Samples/Bindings Demo~"
+    },
+    {
+      "displayName": "Additional Converters",
+      "description": "A set of additional converters that can be used with the binding system.\nThese converters are provided as an example of how to create custom converters.",
+      "path": "Samples/Additional Converters~"
+    },
+    {
+      "displayName": "Additional Modifiers",
+      "description": "A set of custom bindings that can be used with the binding system.\nThese modifiers are provided as an example of how to create custom modifiers.",
+      "path": "Samples/Additional Modifiers~"
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+/* Light Theme Adjustments */
+
+.divider__handle {
+    background-color: rgba(100, 100, 100, 0.15);
+}
+
+.divider:hover .divider__handle {
+    background-color: rgba(100, 100, 100, 0.3);
+}
+
+.divider.dragging .divider__handle {
+    background-color: rgba(0, 150, 200, 0.9);
+}
+
+#target-progress .unity-progress-bar__progress {
+    background-color: rgba(0, 120, 215, 0.15);
+}
+
+#target-progress .unity-progress-bar__title {
+    color: rgba(0, 120, 215, 0.4);
+}
+
+.hint {
+    color: rgba(100, 100, 100, 0.4);
+}
+
+.h2 {
+    color: rgba(100, 100, 100, 0.8);
+}
+
+#view-toggle:checked {
+    background-color: rgba(0, 120, 215, 0.2);
+}
+
+#view-toggle #unity-checkmark {
+    -unity-background-image-tint-color: rgba(100, 100, 100, 0.6);
+}
+
+#view-toggle:hover #unity-checkmark {
+    -unity-background-image-tint-color: rgba(0, 120, 215, 0.8);
+}
+
+#view-toggle:checked #unity-checkmark {
+    -unity-background-image-tint-color: #0066cc;
+}
+
+#processing-label, #no-deps-label {
+    color: rgba(100, 100, 100, 0.8);
+}
+
+#deps-view {
+    color: rgba(100, 100, 100, 0.1);
+}
+
+.finders-header__label--path {
+    color: #0066cc;
+}
+
+.member-item.is-component {
+    border-top-color: rgba(150, 150, 150, 0.3);
+    border-bottom-color: rgba(150, 150, 150, 0.15);
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.member-item.has-dependencies {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.member-kind--field {
+    color: #228b22;
+    background-color: rgba(34, 139, 34, 0.15);
+}
+
+.member-kind--property {
+    color: #1e90ff;
+    background-color: rgba(30, 144, 255, 0.15);
+}
+
+.member-kind--component {
+    color: #d2691e;
+    background-color: rgba(210, 105, 30, 0.15);
+}
+
+.member-kind--item {
+    color: #a52a2a;
+    background-color: rgba(165, 42, 42, 0.15);
+}
+
+.member-item.has-dependencies .member-info__dependencies-count {
+    color: #008080;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.null-field {
+    color: #8b0000;
+    background-color: #f8f8f8;
+}
+
+.finder .enhanced-foldout__header {
+    background-color: rgba(240, 240, 240, 0.8);
+    border-bottom-color: rgba(220, 220, 220, 0.5);
+}
+
+.finder__header__progress .unity-progress-bar__title {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.finder__group {
+    background-color: #f5f5f5;
+}
+
+.finder__group .unity-foldout__content {
+    border-top-color: rgba(200, 200, 200, 0.5);
+}
+
+.finder__group__target__dependency {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.finder__group__target__dependency:hover {
+    background-color: rgba(230, 230, 230, 0.8);
+}
+
+.finder__group__target__dependency:active {
+    background-color: rgba(200, 200, 200, 0.9);
+}
+
+/* SEARCH RELATED */
+.is-search-hit {
+    background-color: rgba(255, 215, 0, 0.15);
+    border-left-color: #ffd700;
+}

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 79461ccb38fe3d645818ad767a9f63fd
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Runtime/Modifiers/InvertBoolModifier.cs
+  uploadId: 833934

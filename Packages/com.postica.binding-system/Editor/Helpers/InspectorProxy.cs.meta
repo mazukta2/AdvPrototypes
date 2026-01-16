@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 1af4c8b2252d403280fa8b13103f8485
+timeCreated: 1724160082
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Editor/Helpers/InspectorProxy.cs
+  uploadId: 833934

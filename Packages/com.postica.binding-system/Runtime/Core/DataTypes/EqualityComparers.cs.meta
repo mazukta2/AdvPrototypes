@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 6691b9958dd840c4896b43f27a11db6f
+timeCreated: 1764627663
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Runtime/Core/DataTypes/EqualityComparers.cs
+  uploadId: 833934

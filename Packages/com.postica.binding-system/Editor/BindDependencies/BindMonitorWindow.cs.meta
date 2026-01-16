@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 2e1b6a7ba9a54bba89fc76f72102045a
+timeCreated: 1755800515
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Editor/BindDependencies/BindMonitorWindow.cs
+  uploadId: 833934

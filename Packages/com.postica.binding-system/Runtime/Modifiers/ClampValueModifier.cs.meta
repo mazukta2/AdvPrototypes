@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 639472d29666970458d93176cf1cc407
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Runtime/Modifiers/ClampValueModifier.cs
+  uploadId: 833934

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b72c3fe7e8f4d4abcb292bf6906802c2
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Samples/Bindings Demo~/Prefabs/StandardBall.prefab
+  uploadId: 833934

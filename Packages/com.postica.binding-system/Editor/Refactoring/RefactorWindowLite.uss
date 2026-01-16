@@ -1,0 +1,42 @@
+:root {
+    /* Header */
+    --header-bg-color: rgba(238, 174, 0, 0.15);        /* Retain the subtle orange tint */
+    --title-font-color: #a65700;                         /* Darken the accent orange for legibility on white */
+    --info-icon-color: #b57d00;
+
+    /* Refactor panel (state–dependent backgrounds) */
+    --refactor-bg-color--not-ready: rgba(238, 0, 0, 0.15);   /* Slightly lighter red tint */
+    --refactor-bg-color--ready: rgba(0, 238, 0, 0.15);         /* Slightly lighter green tint */
+    --refactor-bg-color--editing: rgba(0, 0, 0, 0.1);          /* Use a subtle dark overlay (less opaque than 0.25) */
+    --refactor-border-color--editing: #b57d00;                 /* Use the darker accent */
+    --refactor-from-type-bg-color: rgba(255, 255, 255, 0.35);        /* Lighter “from” background for light mode */
+    --refactor-font-size: 13px;
+
+    /* Footer (panels, buttons) */
+    --footer-bg-color: #f0f0f0;                                  /* Replace a dark semi–transparent overlay with a light gray background */
+    --footer-button-bg-color: rgba(1, 43, 83, 0.15);             /* Retain the blue hue but boost opacity a bit */
+    --footer-button-hover-color: rgba(0, 0, 0, 0.1);             /* A gentle darkening on hover */
+    --footer-button-active-color: rgba(0, 0, 0, 0.4);            /* More pronounced when active */
+    --footer-button-border-color: rgba(0, 0, 0, 0.2);
+    --footer-button-cancel-bg-color: rgba(124, 0, 0, 0.15);      /* Slightly less “heavy” red overlay */
+    --footer-button-cancel-border-color: rgba(195, 0, 0, 0.5);
+    --footer-button-apply-bg-color: rgba(23, 152, 0, 0.15);      /* Likewise for the green apply button */
+    --footer-button-apply-border-color: rgba(32, 228, 0, 0.5);
+    --footer-button-font-color: #4a4a4a;                        /* Darker font for buttons on a light background */
+
+    /* Solver panel */
+    --solver-bg-color: rgba(227, 227, 227, 0.25);                                  /* A very light gray background */
+    --solver-bg-hover-color: rgba(240, 240, 240, 0.5);                             /* Slightly darker on hover */
+    --solver-bg-active-color: #e0e0e0;                            /* And even darker when active */
+    --solver-border-color: #eaeaea;                             /* A neutral gray border */
+
+    --solver-remove-bg-color: rgba(255, 0, 0, 0.1);             /* A gentle red tint for the remove state */
+    --solver-remove-color: rgb(244, 100, 100);                  /* Retain the red accent */
+
+    --solver-button-font-color: #4a4a4a;
+}
+
+.refactor__solver__button--remove .refactor__solver__button__icon {
+    --unity-image: resource('_bsicons/remove');
+    --unity-image-tint-color: white;
+}

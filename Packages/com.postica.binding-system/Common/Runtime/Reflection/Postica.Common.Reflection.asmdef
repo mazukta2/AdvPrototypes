@@ -1,0 +1,22 @@
+{
+    "name": "Postica.Common.Reflection",
+    "references": [],
+    "optionalUnityReferences": [],
+    "defineConstraints": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "PointerLibStandard.dll"
+    ],
+    "autoReferenced": false,
+    "versionDefines": [
+        {
+            "name": "Unity",
+            "expression": "2022",
+            "define": "POSTICA_FASTREFLECT_SUPPORTED"
+        }
+    ],
+    "noEngineReferences": false
+}

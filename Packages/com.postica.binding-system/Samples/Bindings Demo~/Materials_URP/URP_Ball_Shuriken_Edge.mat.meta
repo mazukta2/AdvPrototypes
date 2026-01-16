@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3d044cd07e4ea4d398d2d1f0584dacbb
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Samples/Bindings Demo~/Materials_URP/URP_Ball_Shuriken_Edge.mat
+  uploadId: 833934

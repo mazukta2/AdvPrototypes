@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6c1c48112c4c44d539d3e38eaf6c9b6d
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Samples/Materials/Walls/GlassWallGreen.mat
+  uploadId: 833934

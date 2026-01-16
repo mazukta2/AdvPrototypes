@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: dce89c88a3e44d0cbe88706b9a9ee039
+timeCreated: 1729034682
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Common/Editor/UnsafeLib/MethodSwap.cs
+  uploadId: 833934

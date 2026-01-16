@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 51b4124b1979d4ae58f29bdae680b231
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Samples/Bindings Demo~/Materials_URP/URP_Trigger.mat
+  uploadId: 833934

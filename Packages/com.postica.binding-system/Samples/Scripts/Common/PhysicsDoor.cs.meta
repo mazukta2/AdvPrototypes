@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: eef11f80030d24d92a0f489abcd1e67d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Samples/Scripts/Common/PhysicsDoor.cs
+  uploadId: 833934

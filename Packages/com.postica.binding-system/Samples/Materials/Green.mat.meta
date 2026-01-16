@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3912ffaccb75cf74cbea6ca52aefc659
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Samples/Materials/Green.mat
+  uploadId: 833934

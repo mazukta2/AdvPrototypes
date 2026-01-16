@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: c0ba7592f313431799b9f4128e0a91b2
+timeCreated: 1724224756
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Editor/Drawers/EnumConverterDrawer.cs
+  uploadId: 833934

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: eea881c2d79f84ed2a3a7d2a5fc12c39
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Samples/Bindings Demo~/Materials/Floor.mat
+  uploadId: 833934

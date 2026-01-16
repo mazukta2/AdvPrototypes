@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c750c2e59bea15f48b4d9075ab16112f
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Samples/Materials/Walls/WallCyan.mat
+  uploadId: 833934

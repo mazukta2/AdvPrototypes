@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 132e7a2ffa57470e8f605154ccab8808
+timeCreated: 1738929466
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Editor/ProxyBinding/ProxyBindingFixer.cs
+  uploadId: 833934

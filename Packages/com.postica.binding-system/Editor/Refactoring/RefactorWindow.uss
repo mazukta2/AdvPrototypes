@@ -1,0 +1,316 @@
+:root {
+    --header-bg-color: rgba(238, 174, 0, 0.15);
+    --title-font-color: #eeae00;
+    --info-icon-color: #eeae00;
+    --refactor-bg-color--not-ready: rgba(238, 0, 0, 0.25);
+    --refactor-bg-color--ready: rgba(0, 238, 0, 0.25);
+    --refactor-bg-color--editing: rgba(0, 0, 0, 0.25);
+    --refactor-border-color--editing: #eeae00;
+    --refactor-from-type-bg-color: rgba(0, 0, 0, 0.45);
+    --refactor-font-size: 13px;
+
+    --footer-bg-color: rgba(0, 0, 0, 0.15);
+    --footer-button-bg-color: rgba(1, 43, 83, 0.1);
+    --footer-button-hover-color: rgba(0, 0, 0, 0.2);
+    --footer-button-active-color: rgba(0, 0, 0, 0.6);
+    --footer-button-border-color: rgba(0, 0, 0, 0.3);
+    --footer-button-cancel-bg-color: rgba(124, 0, 0, 0.2);
+    --footer-button-cancel-border-color: rgba(195, 0, 0, 0.7);
+    --footer-button-apply-bg-color: rgba(23, 152, 0, 0.2);
+    --footer-button-apply-border-color: rgba(32, 228, 0, 0.7);
+    --footer-button-font-color: #bfbfbf;
+    
+    --solver-bg-color: rgba(0, 0, 0, 0.1);
+    --solver-bg-hover-color: rgba(0, 0, 0, 0.2);
+    --solver-bg-active-color: rgba(0, 0, 0, 0.6);
+    --solver-border-color: rgba(0, 0, 0, 0.3);
+    
+    --solver-remove-bg-color: rgba(0, 0, 0, 0.5);
+    --solver-remove-color: rgb(244, 100, 100);
+    
+    --solver-button-font-color: #bfbfbf;
+}
+
+.header {
+    background-color: var(--header-bg-color);
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(128, 128, 128, 0.2);
+    margin-bottom: 12px;
+}
+
+.header__title {
+    font-size: 20px;
+    -unity-text-align: middle-center;
+    color: var(--title-font-color);
+}
+
+.info {
+    align-self: center;
+    flex-direction: row;
+    margin: 4px 12px;
+}
+
+.info__icon {
+    width: 48px;
+    height: 48px;
+    --unity-image: resource('_bsicons/circle_error');
+    --unity-image-tint-color: var(--info-icon-color);
+    margin-right: 8px;
+}
+
+.info__text {
+    font-size: 14px;
+    max-width: 440px;
+    white-space: normal;
+}
+
+.refactors {
+    margin: 4px 8px;
+    flex-grow: 1;
+}
+
+.footer {
+    flex-direction: row;
+    flex-shrink: 0;
+    margin: 12px 0 0;
+    border-top-width: 1px;
+    padding: 4px 4px;
+    border-top-color: rgba(128, 128, 128, 1);
+    background-color: var(--footer-bg-color);
+    justify-content: flex-end;
+}
+
+.footer__logo {
+    align-self: flex-start;
+    flex-direction: row;
+    flex-grow: 1;
+    opacity: 0.5;
+}
+
+.footer__logo__icon {
+    width: 36px;
+    height: 36px;
+    --unity-image: resource('_bsicons/bind_on');
+}
+
+.footer__logo__label {
+    font-size: 20px;
+    margin-left: 4px;
+    align-self: center;
+}
+
+.footer__button {
+    padding: 6px 20px;
+    margin-left: 12px;
+    border-width: 0;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 120px;
+    flex-shrink: 1;
+    -unity-font-style: bold;
+    background-color: var(--footer-button-bg-color);
+    border-bottom-color: var(--footer-button-border-color);
+    border-bottom-width: 2px;
+    justify-content: center;
+    cursor: link;
+    color: var(--footer-button-font-color);
+}
+
+.footer__button--cancel {
+    background-color: var(--footer-button-cancel-bg-color);
+    border-color: var(--footer-button-cancel-border-color);
+}
+
+.footer__button--apply {
+    background-color: var(--footer-button-apply-bg-color);
+    border-color: var(--footer-button-apply-border-color);
+}
+
+.footer__button:hover {
+    background-color: var(--footer-button-hover-color);
+}
+
+.footer__button:active {
+    background-color: var(--footer-button-active-color);
+}
+
+.refactor {
+    margin: 2px 4px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border-width: 1px;
+    border-color: transparent;
+    flex-direction: row;
+    background-color: var(--refactor-bg-color--not-ready);
+    align-items: center;
+    transition: background-color 0.5s, border-color 0.5s;
+}
+
+.refactor--ready {
+    background-color: var(--refactor-bg-color--ready);
+}
+
+.refactor--editing {
+    background-color: var(--refactor-bg-color--editing);
+    border-color: var(--refactor-border-color--editing);
+}
+
+.refactor__actions {
+    font-size: 14px;
+    margin-right: 2px;
+    margin-left: -2px;
+    padding: 2px 6px;
+    border-radius: 12px;
+    -unity-font-style: bold;
+    background-color: var(--refactor-from-type-bg-color);
+}
+
+.refactor__from-type {
+    flex-direction: row;
+    padding: 2px;
+    min-width: 22%;
+    background-color: var(--refactor-from-type-bg-color);
+}
+
+.refactor__from-type__icon {
+    width: 16px;
+    height: 16px;
+    --unity-image: resource('_bsicons/field');
+    margin-right: 4px;
+    align-self: center;
+}
+
+.refactor__from-type__label {
+    font-size: var(--refactor-font-size);
+    align-self: center;
+}
+
+.refactor__from-member {
+    margin-left: 4px;
+    padding: 2px;
+    min-width: 18%;
+    font-size: var(--refactor-font-size);
+}
+
+.refactor__arrow {
+    font-size: 18px;
+    margin: 0 2px;
+}
+
+.refactor__solver {
+    flex-direction: row;
+    flex-grow: 1;
+}
+
+.refactor__solver__ready {
+    flex-direction: row;
+    flex-grow: 1;
+    width: 80%;
+    align-items: center;
+}
+
+.refactor__to-type {
+    flex-direction: row;
+    padding: 2px;
+    background-color: var(--refactor-from-type-bg-color);
+}
+
+.refactor__to-type__icon {
+    width: 16px;
+    height: 16px;
+    --unity-image: resource('_bsicons/field');
+    margin-right: 4px;
+    align-self: center;
+}
+
+.refactor__to-type__label {
+    font-size: var(--refactor-font-size);
+    align-self: center;
+}
+
+.refactor__to-member {
+    margin-left: 4px;
+    padding: 2px;
+    font-size: var(--refactor-font-size);
+}
+
+.refactor__solver__to-remove {
+    flex-direction: row;
+    align-items: center;
+    flex-grow: 1;
+    width: 80%;
+    background-color: var(--solver-remove-bg-color);
+    border-radius: 4px;
+    padding: 0 8px;
+}
+
+.refactor__solver__to-remove__icon {
+    width: 16px;
+    height: 16px;
+    --unity-image: resource('_bsicons/remove');
+    margin-right: 4px;
+    align-self: center;
+}
+
+.refactor__solver__to-remove__label {
+    font-size: var(--refactor-font-size);
+    align-self: center;
+    color: var(--solver-remove-color);
+}
+
+.refactor__solver__button {
+    flex-direction: row;
+    flex-grow: 1;
+    padding: 2px 4px;
+    border-width: 0;
+    border-radius: 4px;
+    font-size: 16px;
+    min-width: 20px;
+    flex-shrink: 1;
+    -unity-font-style: bold;
+    background-color: var(--solver-bg-color);
+    border-bottom-color: var(--solver-border-color);
+    border-bottom-width: 2px;
+    justify-content: center;
+    cursor: link;
+}
+
+.refactor__solver__button:hover {
+    background-color: var(--solver-bg-hover-color);
+}
+
+.refactor__solver__button:active {
+    background-color: var(--solver-bg-active-color);
+    color: #cacaca;
+}
+
+.refactor__solver__button__icon {
+    width: 16px;
+    height: 16px;
+    --unity-image-tint-color: var(--solver-button-font-color);
+    flex-shrink: 0;
+}
+
+.refactor__solver__button__label {
+    font-size: var(--refactor-font-size);
+    color: var(--solver-button-font-color);
+    flex-shrink: 1;
+    flex-grow: 0;
+    margin-left: 4px;
+}
+
+.refactor__solver__button--replace .refactor__solver__button__icon {
+    --unity-image: resource('_bsicons/update');
+}
+
+.refactor__solver__button--remove .refactor__solver__button__icon {
+    --unity-image: resource('_bsicons/remove');
+}
+
+.refactor--ready .refactor__solver__button__label {
+    display: none;
+}
+
+.refactor--to-remove .refactor__solver__button--remove {
+    display: none;
+}

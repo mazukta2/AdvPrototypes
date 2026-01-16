@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 21cb2f14a9264a738d31269fe3d70fcc
+timeCreated: 1738965982
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Common/Editor/UIToolkit/PanelDividerManipulator.cs
+  uploadId: 833934

@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 64942dbd460f49e88df5d1f47ccd2272
+timeCreated: 1733331981
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Editor/Core/BindingSystemValidator.cs
+  uploadId: 833934

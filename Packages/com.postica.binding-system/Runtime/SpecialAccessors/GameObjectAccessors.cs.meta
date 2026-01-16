@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 7967c2f6e4c04c68bfb5d8fd1a467c79
+timeCreated: 1730922109
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Runtime/SpecialAccessors/GameObjectAccessors.cs
+  uploadId: 833934

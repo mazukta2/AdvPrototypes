@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 7498f8cead96b124fb5f1a05e78c35e5
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Editor/Drawers/ProxyBindingsDrawOverrides.cs
+  uploadId: 833934

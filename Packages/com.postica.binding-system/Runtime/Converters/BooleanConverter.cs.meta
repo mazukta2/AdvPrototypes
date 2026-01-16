@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 175d2ce1a74348a985e371e21ed67698
+timeCreated: 1752388833
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Runtime/Converters/BooleanConverter.cs
+  uploadId: 833934

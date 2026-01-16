@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 8816b845dc1d4e5795923d32ab738ff2
+timeCreated: 1732880198
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Runtime/Converters/NumericToVector3Converter.cs
+  uploadId: 833934

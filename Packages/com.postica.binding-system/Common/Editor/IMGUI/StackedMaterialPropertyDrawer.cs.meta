@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 908bb7e2acd64fe6b0515238f9efb5a5
+timeCreated: 1728715630
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Common/Editor/IMGUI/StackedMaterialPropertyDrawer.cs
+  uploadId: 833934

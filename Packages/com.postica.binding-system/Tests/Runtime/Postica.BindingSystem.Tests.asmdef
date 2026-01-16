@@ -1,0 +1,33 @@
+{
+    "name": "Postica.BindingSystem.Tests",
+    "rootNamespace": "",
+    "references": [
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner",
+        "Postica.Common.Runtime",
+        "Unity.PerformanceTesting",
+        "Unity.PerformanceTesting.Editor",
+        "Postica.Common.Reflection",
+        "Postica.BindingSystem.Runtime",
+        "Postica.BindingSystem.Editor"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [
+        {
+            "name": "com.unity.test-framework.performance",
+            "expression": "1",
+            "define": "ENABLE_PERFORMANCE_TESTS"
+        }
+    ],
+    "noEngineReferences": false
+}

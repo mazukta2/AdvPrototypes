@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 09469b8d6d618fd438ce5a6b52475e9b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Common/Runtime/DataTypes/JsonData.cs
+  uploadId: 833934

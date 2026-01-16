@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 84f9db15e12644958bed13e4abb287e5
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Samples/Bindings Demo~/Prefabs_URP/URP_BallCharacter.prefab
+  uploadId: 833934

@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 3ed9e92226d5438e8f39109bcd5baab0
+timeCreated: 1747770993
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Runtime/Tweening/VectorTweenModifier.cs
+  uploadId: 833934

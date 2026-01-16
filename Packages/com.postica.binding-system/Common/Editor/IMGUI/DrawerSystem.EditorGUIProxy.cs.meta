@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 442e8792fdd841d5a3abd0fd1ba723d5
+timeCreated: 1724495097
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Common/Editor/IMGUI/DrawerSystem.EditorGUIProxy.cs
+  uploadId: 833934

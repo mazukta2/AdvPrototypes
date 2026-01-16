@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f52d64dcb5583114e99c2c8504c75ebd
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Samples/Prefabs/Environment/SmallWall.prefab
+  uploadId: 833934

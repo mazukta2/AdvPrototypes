@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: ed0791751137446985b1d95ba15c881f
+timeCreated: 1740785384
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Common/Runtime/DataTypes/SmartAwaiter.cs
+  uploadId: 833934

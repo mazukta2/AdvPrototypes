@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 17f3b7f51ec674f7a9e828f1f9e84b0f
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Samples/Bindings Demo~/Materials/Skybox.mat
+  uploadId: 833934

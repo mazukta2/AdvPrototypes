@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 0a73b9de3d574cf1b175a87e957a0ce8
+timeCreated: 1738796405
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Editor/Refactoring/RefactorWindowLite.uss
+  uploadId: 833934

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3d9aedf1861605f48ba8f841014e8a5e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 13400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Samples/PhysicsMaterials/Character.physicMaterial
+  uploadId: 833934

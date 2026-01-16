@@ -1,0 +1,105 @@
+:root {
+    --connecting-line: #757575;
+    --connecting-line-hover: #10c0e7;
+}
+
+.hidden {
+    display: none;
+}
+
+.enhanced-foldout {
+    flex-direction: column;
+}
+
+.enhanced-foldout__header {
+    flex-direction: row;
+    flex-grow: 1;
+}
+
+.enhanced-foldout__header-start > .unity-foldout__toggle {
+    margin-left: 0px;
+    margin-top: 0px;
+}
+
+.enhanced-foldout__header__label {
+    flex-grow: 1;
+}
+
+    .enhanced-foldout__header__label--fixed {
+        flex-grow: 1;
+        align-self: center;
+    }
+
+    .enhanced-foldout__header-start {
+        flex-direction: row;
+        padding-top: 1px;
+        padding-left: 0px;
+    }
+    
+    .enhanced-foldout__header__label .unity-foldout__input {
+        flex-grow: 0;
+    }
+
+.enhanced-foldout__header-rest {
+    flex-direction: row;
+    align-self: flex-end;
+}
+
+/* Connector - Line */
+.connecting-line {
+    margin-left: 0px;
+    border-left-width: 1px;
+    border-bottom-width: 1px;
+    border-bottom-left-radius: 2px;
+    border-color: var(--connecting-line);
+}
+
+.connecting-line__owner {
+    overflow: visible;
+}
+
+    .connecting-line__owner:hover > .connecting-line {
+        margin-top: 1px;
+        margin-left: -1px;
+        border-left-width: 2px;
+        border-bottom-width: 2px;
+        border-color: var(--connecting-line-hover);
+    }
+    
+/* COLOR SWIZZLE - Part */
+.swizzle-color__field {
+    width: 25%;
+}
+
+.swizzle-color .unity-base-popup-field__input {
+    min-width: 40px;
+}
+
+.swizzle-color__field .unity-base-popup-field__text {
+    color: #eaeaea;
+    -unity-font-style: bold;
+}
+
+.swizzle-color__field--r  .unity-base-popup-field__input {
+    background-color: #732828;
+}
+
+.swizzle-color__field--g  .unity-base-popup-field__input {
+    background-color: #2a7328;
+}
+
+.swizzle-color__field--b  .unity-base-popup-field__input {
+    background-color: #444498;
+}
+
+.swizzle-color__field--a  .unity-base-popup-field__input {
+    background-color: #b6b6b6;
+}
+
+.swizzle-color__field--a .unity-base-popup-field__text {
+    color: #2e2e2e;
+}
+
+.swizzle-color__field--a .unity-base-popup-field__arrow {
+    -unity-background-image-tint-color: #2e2e2e;
+}

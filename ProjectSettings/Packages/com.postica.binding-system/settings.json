@@ -1,0 +1,55 @@
+{
+    "autoRegisterConverters": true,
+    "autoRegisterModifiers": true,
+    "autoRegisterProviders": true,
+    "autoConvertObjects": false,
+    "maxBindPathDepth": 3,
+    "showTargetsReplacement": true,
+    "realtimeDebug": false,
+    "showProxyBindings": false,
+    "showLastUsedSources": true,
+    "showLastUsedPins": true,
+    "enableRefactoring": true,
+    "preferRenamingAutoFix": true,
+    "enableUnityClassesRefactoring": false,
+    "addChildrenToDependenciesSearch": true,
+    "performanceMode": false,
+    "defaultBindData": {
+        "Source": {
+            "instanceID": 0
+        },
+        "Path": "",
+        "_mode": 0,
+        "_parameters": [],
+        "_mainParamIndex": -1,
+        "_readConverter": {
+            "rid": -2
+        },
+        "_writeConverter": {
+            "rid": -2
+        },
+        "_modifiers": [],
+        "_preModifiers": [],
+        "_sourceType": "",
+        "_ppath": "",
+        "_context": {
+            "instanceID": 0
+        },
+        "_flags": 65664,
+        "_updateInterval": 1.0
+    },
+    "references": {
+        "version": 2,
+        "RefIds": [
+            {
+                "rid": -2,
+                "type": {
+                    "class": "",
+                    "ns": "",
+                    "asm": ""
+                },
+                "data": {}
+            }
+        ]
+    }
+}

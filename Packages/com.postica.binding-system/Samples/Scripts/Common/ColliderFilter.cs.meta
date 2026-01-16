@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: d0e33fd6ffbd43ba9759731fffde013f
+timeCreated: 1731165626
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Samples/Scripts/Common/ColliderFilter.cs
+  uploadId: 833934

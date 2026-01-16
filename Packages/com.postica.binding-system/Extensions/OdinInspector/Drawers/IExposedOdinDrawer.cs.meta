@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: b0929002195f4656a0490d2cab5f6fe3
+timeCreated: 1722545949
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Extensions/OdinInspector/Drawers/IExposedOdinDrawer.cs
+  uploadId: 833934

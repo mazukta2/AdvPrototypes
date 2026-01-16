@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 08b3361e570b546b59dab1405f449ea3
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Samples/Fonts/Teko-Regular SDF Shadow.asset
+  uploadId: 833934

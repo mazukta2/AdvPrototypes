@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d3e2ad73c3d8e4331aa446895a67dfe3
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Samples/Bindings Demo~/Prefabs_URP/URP_BallLabel.prefab
+  uploadId: 833934

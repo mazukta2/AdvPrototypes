@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: c5d2c1aeef784dd3a0ab1b8846a61c7f
+timeCreated: 1732890945
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Runtime/Modifiers/AddVectorModifier.cs
+  uploadId: 833934

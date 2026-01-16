@@ -1,0 +1,37 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <ui:VisualElement name="background" class="background" />
+    <ui:VisualElement name="banner" class="banner banner--hidden" >
+        <ui:Label text="2" class="banner__2" />
+    </ui:VisualElement>
+    <ui:VisualElement name="panel--auto-conversion" class="disclaimer disclaimer--hidden disclaimer--not-displayed">
+        <ui:VisualElement class="disclaimer__icon" />
+        <ui:VisualElement class="disclaimer__panel">
+            <ui:Label text="Important Notice" display-tooltip-when-elided="true" class="disclaimer__title" />
+            <ui:Label text="This tool includes an automatic detection and reserialization feature when converting fields to/from a bind type to maintain consistent values. Enabling this feature will greatly assist in transitioning to the bind system, practically eliminating the need for manual value input in nearly all serialized fields.&#10;&#10;While we&apos;ve taken great care to ensure its reliability, there is a slight possibility that it could affect your project files.&#10;&#10;For your peace of mind, please remember to &lt;b&gt;back up your project&lt;/b&gt; before using this functionality." display-tooltip-when-elided="true" class="disclaimer__text" />
+            <ui:VisualElement class="disclaimer__buttons">
+                <ui:Button name="enable-btn" text="Enable Feature" display-tooltip-when-elided="true" class="disclaimer__button disclaimer__button--accept" />
+                <ui:Button name="cancel-btn" text="Skip for Now" display-tooltip-when-elided="true" class="disclaimer__button--cancel disclaimer__button" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="panel--phased-bind" class="disclaimer disclaimer--hidden disclaimer--not-displayed">
+        <ui:VisualElement class="disclaimer__icon" />
+        <ui:VisualElement class="disclaimer__panel">
+            <ui:Label text="Activate Phased Bindings" display-tooltip-when-elided="true" class="disclaimer__title" />
+            <ui:Label text="Phased Bindings optimize your workflow by splitting the data pipeline into phases and executing them only when needed. Enabling this feature can result in speed improvements of up to 30% for complex pipelines.&#10;&#10;You can toggle this feature on or off via the Phased Binding option in settings. If you experience any issues, please revert to the standard model and send us your feedback.&#10;" display-tooltip-when-elided="true" class="disclaimer__text" enable-rich-text="true" />
+            <ui:VisualElement class="disclaimer__buttons">
+                <ui:Button name="enable-btn" text="Enable Phased Bindings" display-tooltip-when-elided="true" class="disclaimer__button disclaimer__button--accept" />
+                <ui:Button name="cancel-btn" text="Use Previous Fixed Bindings" display-tooltip-when-elided="true" class="disclaimer__button--cancel disclaimer__button" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="panel--final" class="disclaimer info disclaimer--hidden disclaimer--not-displayed">
+        <ui:Label name="completeTitle" text="Setup Completed" display-tooltip-when-elided="true" class="info__title" />
+        <ui:Label name="completeMessage" text="Thank you for installing Binding System 2" display-tooltip-when-elided="true" enable-rich-text="true"
+                  class="info__text centered" />
+        <ui:VisualElement class="info__buttons">
+            <ui:Button name="close-btn" text="Close" display-tooltip-when-elided="true"
+                       class="info__button info__button--accept" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

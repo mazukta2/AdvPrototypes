@@ -1,0 +1,1046 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Threading;
+using System.Threading.Tasks;
+using Postica.BindingSystem.Reflection;
+using Postica.Common;
+using UnityEditor;
+using UnityEditor.Experimental.GraphView;
+using UnityEditor.ShortcutManagement;
+using UnityEditor.UIElements;
+using UnityEngine;
+using UnityEngine.UIElements;
+using Object = UnityEngine.Object;
+
+namespace Postica.BindingSystem.Dependencies
+{
+    public class DependenciesWindow : EditorWindow
+    {
+        private const int MaxLevel = 3;
+        [SerializeField] private VisualTreeAsset m_VisualTreeAsset = default;
+
+        [MenuItem("Window/Analysis/Bindings Dependencies")]
+        public static void ShowDependenciesWindow()
+        {
+            GetWindowInternal();
+        }
+
+        private static DependenciesWindow GetWindowInternal()
+        {
+            var wnd = GetWindow<DependenciesWindow>();
+            if (wnd.titleContent?.image == null)
+            {
+                var lite =  EditorGUIUtility.isProSkin ? "" : "_lite";
+                var icon = Resources.Load<Texture2D>($"_bsicons/bind{lite}_on_window");
+                wnd.titleContent = new GUIContent("Bindings Dependencies", icon);
+                wnd.minSize = new Vector2(820, 480);
+            }
+
+            return wnd;
+        }
+        
+        [MenuItem("GameObject/Binding/Show Dependencies", true)]
+        [MenuItem("Assets/Binding/Show Dependencies", true)]
+        private static bool CanShowDependencies() => Selection.activeObject;
+
+        [MenuItem("CONTEXT/Component/Binding/Show Dependencies", false, 10001)]
+        [MenuItem("GameObject/Binding/Show Dependencies", false, 10001)]
+        [MenuItem("Assets/Binding/Show Dependencies", false, 10001)]
+        private static void ShowDependenciesCommand(MenuCommand command)
+        {
+            GetWindowInternal().ShowDependencies(Selection.activeObject);
+        }
+        
+        [ClutchShortcut("Binding System/Show Dependencies", KeyCode.D, ShortcutModifiers.Action | ShortcutModifiers.Shift)]
+        private static void ShowDependenciesShortcut(ShortcutArguments args)
+        {
+            GetWindowInternal().ShowDependencies(Selection.activeObject);
+        }
+
+        private void ShowDependencies(Object target)
+        {
+            _targetField.value = target;
+        }
+
+        [SerializeField]
+        private bool _isFiltered = true;
+
+        [SerializeField]
+        private bool _enableAssetsSearch = true;
+        [SerializeField]
+        private bool _enablePrefabsSearch = true;
+        [SerializeField]
+        private string _searchValue = string.Empty;
+        
+        private BindFindInLoadedScenes _findInLoadedScenes = new BindFindInLoadedScenes();
+        private BindFindInLoadedAssets _findInLoadedAssets = new BindFindInLoadedAssets();
+        private BindFindInLoadedPrefabs _findInLoadedPrefabs = new BindFindInLoadedPrefabs();
+
+        private List<IBindFinder> _activeFinders = new()
+        {
+            
+        };
+        
+        private CancellationTokenSource _findCancellationTokenSource;
+        private CancellationTokenSource _batchFindCancellationTokenSource;
+
+        private VisualElement _rootView;
+        private VisualElement _panelDivider;
+        
+        private VisualElement _leftPanel;
+        private ObjectField _targetField;
+        private ProgressBar _targetProgress;
+        private Button _refreshButton;
+        private MultiColumnTreeView _targetTreeView;
+        private Toggle _onlyDepsToggle;
+        
+        private VisualElement _rightPanel;
+        private ToolbarToggle _searchAssetsToggle;
+        private ToolbarToggle _searchPrefabsToggle;
+        private ToolbarToggle _searchAllScenesToggle;
+        private ToolbarSearchField _searchField;
+
+        private ScrollView _container;
+        
+        private Object _targetObject;
+        private List<TreeViewItemData<ReflectionTree.MemberData>> _members = new();
+        private readonly Dictionary<(Object source, string path), ReflectionTree.MemberData> _membersData = new();
+        private readonly List<(VisualElement view, string[] keywords)> _searchViews = new();
+
+        public void CreateGUI()
+        {
+            // Each editor window contains a root VisualElement object
+            VisualElement root = rootVisualElement;
+
+            // Get stylesheets
+            var ussPath = BindingSystemIO.BuildLocalPath("Editor", "BindDependencies", "DependenciesWindow.uss");
+            var styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>(ussPath);
+            root.styleSheets.Add(styleSheet);
+
+            if (!EditorGUIUtility.isProSkin)
+            {
+                ussPath = BindingSystemIO.BuildLocalPath("Editor", "BindDependencies", "DependenciesWindowLite.uss"); 
+                styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>(ussPath);
+                root.styleSheets.Add(styleSheet);
+            }
+            
+            // Instantiate UXML
+            _rootView = m_VisualTreeAsset.Instantiate().Q("root-view");
+            root.Add(_rootView);
+            root.StretchToParentSize();
+            
+            // Get references
+            RetrieveReferences();
+
+            // Setup
+            Setup();
+        }
+
+        private void StopBatchSearch()
+        {
+            _batchFindCancellationTokenSource?.Cancel();
+            _batchFindCancellationTokenSource?.Dispose();
+            _batchFindCancellationTokenSource = null;
+
+            foreach (var finder in _activeFinders)
+            {
+                if(finder is IBatchBindFinder batchFinder)
+                {
+                    batchFinder.ClearBatch();
+                }
+            }
+            
+            _refreshButton.SetEnabled(_targetField.value);
+        }
+        
+        private async void StartBatchSearch()
+        {
+            StopBatchSearch();
+            _refreshButton.SetEnabled(false);
+            _batchFindCancellationTokenSource = new CancellationTokenSource();
+            var token = _batchFindCancellationTokenSource.Token;
+            var tasks = new List<Task<IEnumerable<BindDependencyGroup>>>();
+            foreach (var finder in _activeFinders)
+            {
+                if (finder is not IBatchBindFinder batchFinder) continue;
+                
+                foreach (var member in _membersData.Values)
+                {
+                    batchFinder.AddToBatch(member.Root, member.FullPath, member.SetProgress);
+                }
+
+                tasks.Add(batchFinder.BatchFind(token));
+            }
+            
+            await Task.WhenAny(tasks);
+
+            if (token.IsCancellationRequested)
+            {
+                AdjustClasses(false, true);
+                return;
+            }
+            
+            tasks.Sort((t1, t2) => t1.IsCompleted ? 0 : 1);
+            
+            var idsToExpand = new HashSet<int>();
+
+            var rebuildTree = true;
+            var tasksProgress = 0f;
+
+            foreach (var task in tasks)
+            {
+                _targetProgress.value = tasksProgress++ / tasks.Count;
+                
+                var groups = await task;
+                if (groups == null) continue;
+                foreach (var group in groups)
+                {
+                    foreach (var dep in group.Dependencies)
+                    {
+                        if (!_membersData.TryGetValue((dep.Source, dep.SourcePath), out var member)) continue;
+                        
+                        idsToExpand.Add(member.TreeId);
+                        member.SetDependenciesCount(member.DependenciesCount + 1);
+                    }
+                }
+
+                rebuildTree = RefreshTree(true, rebuildTree);
+            }
+            
+            _batchFindCancellationTokenSource?.Dispose();
+            _batchFindCancellationTokenSource = null;
+
+            RefreshTree(false, rebuildTree);
+            
+            _refreshButton.SetEnabled(_targetField.value);
+
+#if UNITY_6000_0_OR_NEWER
+            await Resources.UnloadUnusedAssets();
+#else
+            Resources.UnloadUnusedAssets();
+#endif
+            return;
+            
+            bool RefreshTree(bool isProcessing, bool rebuild)
+            {
+                if(_onlyDepsToggle.value)
+                {
+                    RefreshTreeView(rebuild);
+                }
+            
+                foreach (var id in idsToExpand)
+                {
+                    ExpandItem(id);
+                }
+                
+                AdjustClasses(isProcessing, _isFiltered && idsToExpand.Count == 0);
+                return false;
+            }
+
+            void AdjustClasses(bool isProcessing, bool isEmpty)
+            {
+                _rootView.EnableInClassList("processing", isProcessing);
+                _rootView.EnableInClassList("no-deps", isEmpty);
+            }
+        }
+        
+        private void StopMainSearch()
+        {
+            _findCancellationTokenSource?.Cancel();
+            _findCancellationTokenSource?.Dispose();
+            _findCancellationTokenSource = null;
+        }
+
+        private void RetrieveReferences()
+        {
+            _panelDivider = _rootView.Q("panel-divider");
+            
+            _leftPanel = _rootView.Q("left-panel");
+            _targetField = _leftPanel.Q<ObjectField>("target-field");
+            _targetProgress = _leftPanel.Q<ProgressBar>("target-progress");
+            _refreshButton = _leftPanel.Q<Button>("refresh-button");
+            _refreshButton.clicked += Refresh;
+            _targetTreeView = _leftPanel.Q<MultiColumnTreeView>("target-members");
+            _onlyDepsToggle = _leftPanel.Q<Toggle>("view-toggle");
+            
+            _rightPanel = _rootView.Q("right-panel");
+            _searchAssetsToggle = _rightPanel.Q<ToolbarToggle>("search-assets");
+            _searchPrefabsToggle = _rightPanel.Q<ToolbarToggle>("search-prefabs");
+            _searchAllScenesToggle = _rightPanel.Q<ToolbarToggle>("search-scenes");
+            _searchField = _rightPanel.Q<ToolbarSearchField>("search-field");
+            _container = _rightPanel.Q<ScrollView>("deps-container");
+
+            _container.horizontalScrollerVisibility = ScrollerVisibility.Hidden;
+        }
+
+        private void Setup()
+        {
+            _activeFinders.Add(_findInLoadedScenes);
+            if (_enablePrefabsSearch) _activeFinders.Add(_findInLoadedPrefabs);
+            if (_enableAssetsSearch) _activeFinders.Add(_findInLoadedAssets);
+            
+            _panelDivider.AddManipulator(new PanelDividerManipulator(_leftPanel, _rootView)
+            {
+                minWidth = 200f,
+                maxWidth = 500f
+            });
+            
+            _targetField.objectType = typeof(Object);
+            _targetField.RegisterValueChangedCallback(RebuildData);
+            _onlyDepsToggle.value = _isFiltered;
+            _onlyDepsToggle.RegisterValueChangedCallback(evt =>
+            {
+                _isFiltered = evt.newValue;
+                if (_isFiltered)
+                {
+                    RefreshTreeView(false);
+                }
+                else
+                {
+                    Refresh();
+                }
+            });
+            
+            _searchPrefabsToggle.value = _enablePrefabsSearch;
+            _searchPrefabsToggle.RegisterValueChangedCallback(evt =>
+            {
+                _enablePrefabsSearch = evt.newValue;
+                _activeFinders.Remove(_findInLoadedPrefabs);
+                if(evt.newValue)
+                {
+                    _activeFinders.Add(_findInLoadedPrefabs);
+                }
+                Refresh();
+            });
+            
+            _searchAssetsToggle.value = _enableAssetsSearch;
+            _searchAssetsToggle.RegisterValueChangedCallback(evt =>
+            {
+                _enableAssetsSearch = evt.newValue;
+                _activeFinders.Remove(_findInLoadedAssets);
+                if(evt.newValue)
+                {
+                    _activeFinders.Add(_findInLoadedAssets);
+                }
+                Refresh();
+            });
+            
+            _searchField.value = _searchValue;
+            _searchField.RegisterValueChangedCallback(evt =>
+            {
+                var newSearchValue = evt.newValue;
+                SearchDependencies(newSearchValue);
+            });
+
+            // The delay is needed to give time to assets to load their icons
+            EditorApplication.delayCall += Refresh;
+        }
+
+        private void SearchDependencies(string newSearchValue)
+        {
+            var wasEmpty = string.IsNullOrEmpty(_searchValue);
+            _searchValue = newSearchValue;
+            if (string.IsNullOrEmpty(newSearchValue))
+            {
+                if (!wasEmpty)
+                {
+                    foreach (var (view, _) in _searchViews)
+                    {
+                        view?.RemoveFromClassList("hidden");
+                        view?.RemoveFromClassList("is-search-hit");
+                    }
+                }
+
+                return;
+            }
+                
+            var validViews = new List<VisualElement>();
+            var keywords = newSearchValue.Split(' ');
+            foreach (var (view, searchKeywords) in _searchViews)
+            {
+                if (view == null)
+                {
+                    continue;
+                }
+                    
+                if (searchKeywords.Any(sk => keywords.All(k => sk.Contains(k, StringComparison.OrdinalIgnoreCase))))
+                {
+                    validViews.Add(view);
+                }
+                else
+                {
+                    view.RemoveFromClassList("is-search-hit");
+                    view.AddToClassList("hidden");
+                }
+            }
+
+            foreach (var view in validViews)
+            {
+                view.AddToClassList("is-search-hit");
+                view.RemoveClassFromAncestors("hidden");
+                view.RemoveFromClassList("hidden");
+                view.RecurseRemoveClass("is-search-hit", false);
+            }
+        }
+
+        private void Refresh()
+        {
+            var currentTarget = _targetObject;
+            _targetObject = null;
+            _targetField.SetValueWithoutNotify(null);
+            _targetField.value = currentTarget;
+        }
+
+        private void RebuildData(ChangeEvent<Object> evt)
+        {
+            _rootView.EnableInClassList("target-set", evt.newValue);
+            _rootView.RemoveFromClassList("processing");
+            _rootView.RemoveFromClassList("no-deps");
+            
+            StopBatchSearch();
+            StopMainSearch();
+            
+            var newValue = evt.newValue;
+            if (_targetObject == newValue) return;
+            
+            _refreshButton.SetEnabled(newValue);
+            
+            // Clear everything before proceeding
+            _targetObject = newValue;
+            _targetTreeView.Clear();
+            _container.Clear();
+            
+            if (_targetObject == null) return;
+            
+            _rootView.AddToClassList("processing");
+            
+            // Build each panel
+            BuildPropertiesTree();
+            
+            // Start Searching
+            StartBatchSearch();
+        }
+
+        private void BuildPropertiesTree()
+        {
+            // Populate the tree view with the properties and fields of the target object
+            // If properties or fields are of complex type, they should be expandable and selectable
+            // If they are of simple type, they should be only selectable
+
+            var tree = new ReflectionTree(_targetObject);
+            var data = tree.Build();
+            
+            _membersData.Clear();
+            foreach (var item in data)
+            {
+                AddMembersData(item);
+            }
+            
+            _members = data;
+            
+            RefreshTreeView(true);
+        }
+
+        private void RefreshTreeView(bool rebuild)
+        {
+            var data = _onlyDepsToggle.value ? FilterOnlyWithDeps() : _members;
+            
+            _targetTreeView.SetRootItems(data);
+            if (rebuild)
+            {
+                _targetTreeView.columns["member"].makeCell = () => new VisualElement().WithClass("member-item");
+                _targetTreeView.columns["member"].bindCell = BindMemberItem;
+                _targetTreeView.columns["value"].makeCell = () => new VisualElement().WithClass("member-item");
+                _targetTreeView.columns["value"].bindCell = BindMemberItemValue;
+                _targetTreeView.columns["info"].makeCell = () => new VisualElement().WithClass("member-item");
+                _targetTreeView.columns["info"].bindCell = BindMemberItemInfo;
+                _targetTreeView.selectionChanged -= MemberSelected;
+                _targetTreeView.selectionChanged += MemberSelected;
+                _targetTreeView.selectionType = SelectionType.Single;
+                _targetTreeView.fixedItemHeight = 20;
+                _targetTreeView.reorderable = false;
+                _targetTreeView.showAlternatingRowBackgrounds = AlternatingRowBackground.All;
+                // _targetTreeView.autoExpand = true;
+                _targetTreeView.Rebuild();
+            }
+            else
+            {
+                _targetTreeView.RefreshItems();
+            }
+
+            _rootView.EnableInClassList("no-deps", data.Count == 0);
+        }
+
+        private List<TreeViewItemData<ReflectionTree.MemberData>> FilterOnlyWithDeps(IEnumerable<TreeViewItemData<ReflectionTree.MemberData>> items = null)
+        {
+            items ??= _members;
+            var filtered = new List<TreeViewItemData<ReflectionTree.MemberData>>();
+            foreach (var item in items)
+            {
+                var children = FilterOnlyWithDeps(item.children);
+                if (item.data.DependenciesCount > 0 || children.Count > 0)
+                {
+                    var newItem = new TreeViewItemData<ReflectionTree.MemberData>(item.id, item.data, children);
+                    filtered.Add(newItem);
+                }
+            }
+
+            return filtered;
+        }
+
+        private void AddMembersData(TreeViewItemData<ReflectionTree.MemberData> item)
+        {
+            _membersData[(item.data.Root, item.data.FullPath)] = item.data;
+            item.data.TreeId = item.id;
+            foreach (var child in item.children)
+            {
+                AddMembersData(child);
+            }
+        }
+
+        private async void MemberSelected(IEnumerable<object> selectedMembers)
+        {
+            StopMainSearch();
+            
+            var member = selectedMembers.FirstOrDefault() as ReflectionTree.MemberData;
+            
+            if (member == null) return;
+            
+            if(member.DependenciesCount == 0)
+            {
+                return;
+            }
+            
+            await RebuildDependenciesPanel(member);
+
+            if (!string.IsNullOrEmpty(_searchValue))
+            {
+                SearchDependencies(_searchValue);
+            }
+        }
+
+        private async Task RebuildDependenciesPanel(ReflectionTree.MemberData member)
+        {
+            _findCancellationTokenSource = new CancellationTokenSource();
+            
+            _searchViews.Clear();
+            _container.Clear();
+            _container.Add(new VisualElement().WithChildren(
+                    new Label("Dependencies for: ").WithClass("finders-header__label"),
+                    new Label(member.FullPath).WithClass("finders-header__label", "finders-header__label--path"))
+                .WithClass("finders-header")
+            );
+
+            var tasksList = new List<(Task<bool> task, VisualElement view)>();
+            foreach (var finder in _activeFinders)
+            {
+                var view = new EnhancedFoldout().WithClass("finder");
+                _container.Add(view);
+                var task = CreateFinderView(view, finder, member, _findCancellationTokenSource.Token);
+                tasksList.Add((task, view));
+            }
+
+            await Task.WhenAll(tasksList.Select(t => t.task));
+            
+            if(_findCancellationTokenSource?.IsCancellationRequested == true)
+            {
+                return;
+            }
+
+            foreach (var (task, view) in tasksList)
+            {
+                if (!await task)
+                {
+                    _container.Remove(view);
+                }
+            }
+        }
+
+        private async Task<bool> CreateFinderView(EnhancedFoldout view,
+            IBindFinder finder,
+            ReflectionTree.MemberData member,
+            CancellationToken token)
+        {
+            view.header.WithClass("finder__header");
+            var progress = new ProgressBar{lowValue = 0, highValue = 1, title = "SEARCHING" } .WithClass("finder__header__progress");
+            view.text = finder.Name;
+            view.label.WithClass("finder__header__title");
+            view.restOfHeader.WithChildren(progress, new Image(){image = finder.Icon}.WithClass("finder__header__icon"));
+            
+            view.AddToClassList("loading");
+            
+            var views = await GetGroupsViews(finder, member, progress, token);
+
+            if (views.Count == 0)
+            {
+                return false;
+            }
+            
+            view.RemoveFromClassList("loading");
+            
+            foreach (var groupView in views)
+            {
+                view.Add(groupView);
+            }
+            
+            _searchViews.Add((view, new []{ finder.Name }));
+            
+            return true;
+        }
+
+        private async Task<List<VisualElement>> GetGroupsViews(IBindFinder finder,
+            ReflectionTree.MemberData member,
+            ProgressBar progress,
+            CancellationToken token)
+        {
+            var groups = await finder.FindDependencies(member.Root, member.FullPath, p => progress.value = p, token);
+            var views = new List<VisualElement>();
+            foreach (var group in groups)
+            {
+                var groupFoldout = new Foldout(){text = group.Name}.WithClass("finder__group");
+                
+                groupFoldout.hierarchy[0][0].Insert(1, new Image(){image = group.Icon ?? ObjectIcon.GetFor(group.Dependencies.First().Target)}.WithClass("finder__group__icon"));
+                foreach (var depGroup in group.Dependencies.GroupBy(d => d.Target))
+                {
+                    var targetView = new VisualElement().WithClass("finder__group__target");
+                    
+                    groupFoldout.Add(targetView);
+                    var depTarget = new ObjectField() { allowSceneObjects = true, value = depGroup.Key }
+                        .MakeReadonly<ObjectField, Object>().WithClass("finder__group__target__field");
+                    targetView.Add(depTarget);
+                    var targetDepsView = new VisualElement().WithClass("finder__group__target__dependencies");
+                    targetView.Add(targetDepsView);
+                    foreach (var dep in depGroup)
+                    {
+                        var depView = new Button(() =>
+                        {
+                            BindDataDrawer.Focus(dep.Target, dep.TargetPath);
+                        })
+                        {
+                            focusable = false,
+                            text =$"{dep.TargetPath}"
+                        }.WithClass("finder__group__target__dependency");
+                        targetDepsView.Add(depView);
+                        
+                        _searchViews.Add((depView, new[] { finder.Name, group.Name, depGroup.Key.ToString(), dep.TargetPath }));
+                    }
+                    
+                    _searchViews.Add((targetView, new[]{ finder.Name, group.Name, depGroup.Key.ToString() }));
+                }
+                
+                views.Add(groupFoldout);
+                
+                _searchViews.Add((groupFoldout, new []{ finder.Name, group.Name }));
+            }
+            
+            return views;
+        }
+
+        private void BindMemberItem(VisualElement element, int index)
+        {
+            element.Clear();
+            element.EnableInClassList("is-component", false);
+            
+            var item = _targetTreeView.GetItemDataForIndex<ReflectionTree.MemberData>(index);
+            if (item == null) return;
+            
+            element.EnableInClassList("is-component", item.MemberKind == "Component");
+            
+            var memberName = new Label(item.Name).WithClass("member-name");
+            var memberTypeIcon = new Image()
+            {
+                image = ObjectIcon.GetFor(item.Type),
+                tooltip = item.Type.UserFriendlyName(),
+            }.WithClass("member-type");
+            var memberKind = new Label(item.MemberKind[0..1])
+            {
+                tooltip = item.MemberKind
+            }.WithClass("member-kind", "member-kind--" + item.MemberKind.ToLower());
+            
+            item.DependenciesCountChanged -= DependenciesChanged;
+            item.DependenciesCountChanged += DependenciesChanged;
+            element.EnableInClassList("has-dependencies", item.DependenciesCount > 0);
+            
+            element.Add(memberKind);
+            element.Add(memberTypeIcon);
+            element.Add(memberName);
+            return;
+
+            void DependenciesChanged(ReflectionTree.MemberData data, int depsCount)
+            {
+                element.EnableInClassList("has-dependencies", data.DependenciesCount > 0);
+            }
+        }
+        
+        private void BindMemberItemValue(VisualElement element, int index)
+        {
+            element.Clear();
+            
+            var item = _targetTreeView.GetItemDataForIndex<ReflectionTree.MemberData>(index);
+            if (item == null) return;
+            
+            element.EnableInClassList("is-component", item.MemberKind == "Component");
+
+            var inputValue = item.Value is IValueProvider provider ? provider.UnsafeValue : item.Value;
+            var memberValue = InputFields.GetReadOnlyField(inputValue, item.Type).WithClass("member-value");
+            
+            item.DependenciesCountChanged -= DependenciesChanged;
+            item.DependenciesCountChanged += DependenciesChanged;
+            element.EnableInClassList("has-dependencies", item.DependenciesCount > 0);
+
+            
+            element.Add(memberValue);
+            return;
+
+            void DependenciesChanged(ReflectionTree.MemberData data, int depsCount)
+            {
+                element.EnableInClassList("has-dependencies", data.DependenciesCount > 0);
+            }
+        }
+        
+        private void BindMemberItemInfo(VisualElement element, int index)
+        {
+            element.Clear();
+            
+            var item = _targetTreeView.GetItemDataForIndex<ReflectionTree.MemberData>(index);
+            if (item == null) return;
+
+            var itemId = _targetTreeView.GetIdForIndex(index);
+            
+            element.EnableInClassList("is-component", item.MemberKind == "Component");
+
+            var infoView = new VisualElement().WithClass("member-info");
+
+            var dependenciesCount = new Label()
+            {
+                tooltip = "Number of dependencies",
+            }.WithClass("member-info__dependencies-count");
+            
+            dependenciesCount.text = item.DependenciesCount.ToString();
+            
+            item.DependenciesCountChanged -= DependenciesChanged;
+            item.DependenciesCountChanged += DependenciesChanged;
+            element.EnableInClassList("has-dependencies", item.DependenciesCount > 0);
+            
+            infoView.Add(dependenciesCount);
+            
+            element.Add(infoView);
+            return;
+
+            void DependenciesChanged(ReflectionTree.MemberData data, int depsCount)
+            {
+                element.EnableInClassList("has-dependencies", data.DependenciesCount > 0);
+                dependenciesCount.text = data.DependenciesCount.ToString();
+            }
+        }
+
+
+        private void ExpandItem(int id)
+        {
+            var parentId = _targetTreeView.viewController.GetParentId(id);
+            var indicesToExpand = new List<int>();
+            while (parentId != -1)
+            {
+                indicesToExpand.Add(parentId);
+                parentId = _targetTreeView.viewController.GetParentId(parentId);
+            }
+
+            indicesToExpand.Reverse();
+            indicesToExpand.Add(-1);
+            foreach (var i in indicesToExpand)
+            {
+                _targetTreeView.ExpandItem(i);
+            }
+        }
+
+
+        private class ReflectionTree
+        {
+            private int _nextId = 0;
+            private readonly Object _target;
+            
+            public ReflectionTree(Object target)
+            {
+                _target = target;
+            }
+            
+            public List<TreeViewItemData<MemberData>> Build()
+            {
+                if (_target is GameObject go)
+                {
+                    var items = new List<TreeViewItemData<MemberData>>();
+                    var visited = new HashSet<object>();
+                    foreach (var component in go.GetComponents<Component>())
+                    {
+                        int id = _nextId++;
+                        var memberData = new MemberData(component, "", component.GetType().Name, component, component.GetType(), "Component");
+                        var children = GetChildren(component, "", component, visited, 0);
+                        items.Add(new TreeViewItemData<MemberData>(id, memberData, children));
+                    }
+                    return items;
+                }
+                return GetChildren(_target, "", _target, new HashSet<object>(), 0);
+            }
+            
+            private List<TreeViewItemData<MemberData>> GetChildren(Object root, string path, object obj, HashSet<object> visited, int level)
+            {
+                var items = new List<TreeViewItemData<MemberData>>();
+                if (obj == null || !visited.Add(obj)) return items;
+
+                if (obj is IBind)
+                {
+                    // Get only the Value property of the bind
+                    var valueProperty = obj.GetType().GetProperty("Value");
+                    if (valueProperty == null) return items;
+                    
+                    object value = null;
+                    try
+                    {
+                        value = valueProperty.GetValue(obj);
+                    }
+                    catch
+                    {
+                        // ignored
+                        value = Activator.CreateInstance(valueProperty.PropertyType);
+                    }
+
+                    var valueType = value?.GetType() ?? valueProperty.PropertyType;
+                    var memberPath = $"{path}.Value";
+                    var memberData = new MemberData(root, memberPath, "Value", value, valueType, "Property");
+                    int id = _nextId++;
+
+                    items.Add(new TreeViewItemData<MemberData>(id, memberData, new List<TreeViewItemData<MemberData>>()));
+
+                    return items;
+                }
+
+                foreach (var member in GetMembers(obj))
+                {
+                    if(IsInvalidMember(member)) continue;
+                    
+                    var (memberType, memberKind) = GetMemberType(member);
+                    
+                    if(IsInvalidType(memberType)) continue;
+                    
+                    object value = GetMemberValue(obj, member);
+
+                    var memberPath = BuildPath(path, member);
+                    var memberData = new MemberData(root, memberPath, member.Name, value, memberType, memberKind);
+                    int id = _nextId++;
+
+                    var children = new List<TreeViewItemData<MemberData>>();
+                    if (level < MaxLevel && IsComplexType(memberType))
+                    {
+                        children = GetChildren(root, memberPath, value, new HashSet<object>(visited), level + 1);
+                    }
+
+                    items.Add(new TreeViewItemData<MemberData>(id, memberData, children));
+                }
+                
+                if(obj is Array array)
+                {
+                    for (int i = 0; i < array.Length; i++)
+                    {
+                        var value = array.GetValue(i);
+                        var valueType = value?.GetType() ?? array.GetType().GetElementType();
+                        var memberPath = $"{path}[{i}]";
+                        var memberData = new MemberData(root, memberPath, $"[{i}]", value, valueType, "Item");
+                        int id = _nextId++;
+
+                        var children = new List<TreeViewItemData<MemberData>>();
+                        if (level < MaxLevel && IsComplexType(valueType))
+                        {
+                            children = GetChildren(root, memberPath, value, visited, level + 1);
+                        }
+
+                        items.Add(new TreeViewItemData<MemberData>(id, memberData, children));
+                    }
+
+                    return items;
+                }
+                
+                if(obj is IEnumerable enumerable)
+                {
+                    int i = 0;
+                    var fallbackType = typeof(object);
+                    if(obj is ICollection && obj.GetType().IsGenericType)
+                    {
+                        fallbackType = obj.GetType().GetGenericArguments()[0];
+                    }
+                    foreach (var value in enumerable)
+                    {
+                        var valueType = value?.GetType() ?? fallbackType;
+                        var memberPath = $"{path}[{i}]";
+                        var memberData = new MemberData(root, memberPath, $"[{i}]", value, valueType, "Item");
+                        int id = _nextId++;
+
+                        var children = new List<TreeViewItemData<MemberData>>();
+                        if (level < MaxLevel && IsComplexType(valueType))
+                        {
+                            children = GetChildren(root, memberPath, value, visited, level + 1);
+                        }
+
+                        items.Add(new TreeViewItemData<MemberData>(id, memberData, children));
+                        i++;
+                    }
+                }
+
+                return items;
+            }
+
+            private static string BuildPath(string path, MemberInfo member)
+            {
+                return string.IsNullOrEmpty(path) ? member.Name : path + '.' + member.Name;
+            }
+
+            private bool IsInvalidType(Type type)
+            {
+                return type == typeof(Type)
+                       || ReflectionFactory.IsHiddenType(type)
+                       || type.GetCustomAttribute<ObsoleteAttribute>() != null
+                       || type.IsInterface
+                       || type.Namespace?.StartsWith("System.Threading", StringComparison.Ordinal) == true;
+            }
+
+            private bool IsInvalidMember(MemberInfo member)
+            {
+                if (member.Name.Contains('.'))
+                {
+                    return true;
+                }
+
+                if (!ReflectionFactory.IsValid(member))
+                {
+                    return true;
+                }
+
+                if (ReflectionFactory.IsHiddenMember(member.DeclaringType, member))
+                {
+                    return true;
+                }
+                
+                if (member.IsDefined(typeof(ObsoleteAttribute), false))
+                {
+                    return true;
+                }
+
+                if (member.DeclaringType?.IsAssignableFrom(typeof(MonoBehaviour)) == true)
+                {
+                    return true;
+                }
+                
+                return member switch
+                {
+                    FieldInfo f => !f.IsPublic && !f.IsDefined(typeof(SerializeField), true),
+                    PropertyInfo p => IsProhibitedMember(p) || p.GetGetMethod()?.IsPublic == false,
+                    _ => true,
+                };
+
+                bool IsProhibitedMember(MemberInfo memberInfo)
+                {
+                    return (memberInfo.DeclaringType?.Name, memberInfo.Name) switch
+                    {
+                        (nameof(Renderer), "material") => true,
+                        (nameof(Renderer), "materials") => true,
+                        (nameof(MeshFilter), "mesh") => true,
+                        _ => false
+                    };
+                }
+            }
+
+            private object GetMemberValue(object obj, MemberInfo member)
+            {
+                try
+                {
+                    if (member is FieldInfo field) return field.GetValue(obj);
+                    if (member is PropertyInfo prop && prop.CanRead) return prop.GetValue(obj);
+                    return null;
+                }
+                catch
+                {
+                    return null;
+                }
+            }
+
+            private (Type type, string kind) GetMemberType(MemberInfo member)
+            {
+                return member switch
+                {
+                    FieldInfo field => (field.FieldType, "Field"),
+                    PropertyInfo prop => (prop.PropertyType, "Property"),
+                    _ => (null, null)
+                };
+            }
+
+            private bool IsComplexType(Type type)
+            {
+                return type != null &&
+                       !type.IsPrimitive &&
+                       type != typeof(string) &&
+                       type != typeof(Type) &&
+                       !typeof(Object).IsAssignableFrom(type) &&
+                       // !typeof(IBind).IsAssignableFrom(type) &&
+                       !ReflectionFactory.IsOpaqueType(type) &&
+                       !type.IsEnum;
+            }
+
+            private IEnumerable<MemberInfo> GetMembers(object obj)
+            {
+                if (obj == null) yield break;
+
+                const BindingFlags flags = BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance;
+                var type = obj.GetType();
+                foreach (var field in type.GetFields(flags))
+                {
+                    yield return field;
+                }
+
+                foreach (var prop in type.GetProperties(flags))
+                {
+                    if (prop.CanRead && prop.GetIndexParameters().Length == 0)
+                    {
+                        yield return prop;
+                    }
+                }
+            }
+
+            public class MemberData
+            {
+                public int TreeId { get; set; }
+                public Object Root { get; }
+                public string FullPath { get; }
+                public string Name { get; }
+                public object Value { get; }
+                public Type Type { get; }
+                public string MemberKind { get; }
+                
+                public int DependenciesCount { get; private set; }
+                
+                public float Progress { get; private set; } = 0;
+                
+                public event Action<MemberData, int> DependenciesCountChanged;
+
+                public MemberData(Object root, string path, string name, object value, Type type, string kind)
+                {
+                    FullPath = path;
+                    Name = name;
+                    Value = value;
+                    Type = type;
+                    MemberKind = kind;
+                    Root = root;
+                }
+                
+                public void SetProgress(float progress) => Progress = progress;
+                
+                public void SetDependenciesCount(int count)
+                {
+                    DependenciesCount = count;
+                    DependenciesCountChanged?.Invoke(this, count);
+                }
+            }
+        }
+    }
+}

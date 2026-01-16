@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 6b8fb66e035e14fa8b4ef9c62a556de5
+timeCreated: 1722576194
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Runtime/Legacy/Converters/UnityEventConverter.cs
+  uploadId: 833934

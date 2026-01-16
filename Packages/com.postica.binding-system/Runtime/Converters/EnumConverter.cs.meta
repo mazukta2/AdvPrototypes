@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 673f8f6d86f24cc7ab05af2bddc6b648
+timeCreated: 1751038537
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Runtime/Converters/EnumConverter.cs
+  uploadId: 833934

@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 5cb5c78ecf0c4b8fb0e07abab48abe8a
+timeCreated: 1724507039
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Common/Editor/Reflection/ClassProxy.ListProxy.cs
+  uploadId: 833934

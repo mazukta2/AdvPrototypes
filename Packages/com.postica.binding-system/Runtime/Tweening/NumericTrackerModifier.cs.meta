@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 47e9d28c8d13492d94d725a84095c3fc
+timeCreated: 1749245738
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Runtime/Tweening/NumericTrackerModifier.cs
+  uploadId: 833934

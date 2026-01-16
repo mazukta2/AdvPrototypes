@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 13702240546f440cbadd91d6a8f3f987
+timeCreated: 1723031958
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Samples/Scripts/Common/PhysicsBehaviour.cs
+  uploadId: 833934

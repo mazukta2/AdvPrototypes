@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 80b31f9d88f564b2797dec1dec30ec1f
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Editor/BindDependencies/DependenciesWindow.cs.txt
+  uploadId: 833934

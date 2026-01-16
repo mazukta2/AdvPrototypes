@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 3efd63fec7a548fcb4df53ef0fc1acdf
+timeCreated: 1724931581
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Common/Editor/SmartDropdown/Items/DropdownLazyItem.cs
+  uploadId: 833934

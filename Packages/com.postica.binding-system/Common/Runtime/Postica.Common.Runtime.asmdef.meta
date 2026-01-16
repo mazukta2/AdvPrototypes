@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 3515ec955d79c784095dc9ad934e30e3
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Common/Runtime/Postica.Common.Runtime.asmdef
+  uploadId: 833934

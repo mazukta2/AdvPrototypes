@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7459775347d0c408e958630d10f0959e
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Samples/Postica.BindingSystem.Samples.asmdef
+  uploadId: 833934

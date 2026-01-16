@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 96c4c109e1b5463ab74d8cc76af0298b
+timeCreated: 1726915861
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Editor/Drawers/BindDataDrawer/UIToolkit/UpdateFlagsView.cs
+  uploadId: 833934

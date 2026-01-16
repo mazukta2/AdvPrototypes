@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 5f9e18df75714449b2dbbb8bcd95acdf
+timeCreated: 1747434851
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Editor/Tweening/TweenMofifierDrawer.cs
+  uploadId: 833934

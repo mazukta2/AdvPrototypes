@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 051185eba678487ebd66f69c7031a9a4
+timeCreated: 1748013136
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Runtime/Tweening/ColorEaseModifier.cs
+  uploadId: 833934

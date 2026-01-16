@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 826f93ce1dcb4f8b9eb1c9952eb1e75a
+timeCreated: 1739142404
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Editor/BindDependencies/BindFindInLoadedScenes.cs
+  uploadId: 833934

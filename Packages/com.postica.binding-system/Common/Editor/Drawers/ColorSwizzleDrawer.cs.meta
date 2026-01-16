@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 2d4f0fca37d849ccace8daf87d56f34e
+timeCreated: 1764882317
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Common/Editor/Drawers/ColorSwizzleDrawer.cs
+  uploadId: 833934

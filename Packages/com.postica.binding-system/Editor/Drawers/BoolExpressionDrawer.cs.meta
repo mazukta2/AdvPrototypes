@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 3e6aa399b5c74280895c8994671fe12b
+timeCreated: 1741447780
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Editor/Drawers/BoolExpressionDrawer.cs
+  uploadId: 833934

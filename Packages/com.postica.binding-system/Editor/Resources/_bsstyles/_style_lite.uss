@@ -1,0 +1,101 @@
+:root {
+    --error-color-fg: #c62828;
+    --error-color-bg: #ffebee;
+    --error-weak-color-bg: #ffcdd2;
+    --error-weak-transparent-color-bg: rgba(198, 40, 40, 0.2);
+    --error-fade-color-bg: #ffebee;
+
+    --bind-primary-color: #0277bd;
+    --bind-primary-faint-color: #bbdefb;
+    --bind-primary-very-faint-color: #e3f2fd;
+
+    --bind-debug-color: #f57c00;
+    --bind-debug-color-bg: #fff3e0;
+    --bind-debug-invalid-color: #757575;
+
+    --bind-type-label-color: #ef6c00;
+    --bind-path-button-bg: #fafafa;
+    --bind-path-drag-show-toggle: #0277bd;
+    --bind-path-drag-valid-bg: #81d4fa;
+    --bind-path-drag-invalid-bg: #d32f2f;
+    --bind-path-drag-changed-bg: #388e3c;
+
+    --bind-mode-bg: #e0e0e0;
+    --bind-mode-active-bg: #0288d1;
+    --bind-dark-font: #212121;
+    --bind-mode-icon: black;
+    --bind-mode-disabled-icon: #9e9e9e;
+    --bind-mode-hover: #b3e5fc;
+    --bind-mode-debug-hover: #fdd835;
+
+    --connecting-line: #9e9e9e;
+    --connecting-line-hover: #03a9f4;
+
+    --converter-safe-color: #616161;
+    --converter-safe-bg: #eeeeee;
+    --converter-unsafe-color: #f57c00;
+    --converter-icon-tint: #424242;
+    --converter-icon-tint-unsafe: #ff8f00;
+
+    --modifier-remove-color-bg: #e57373;
+    --modifier-remove-color-hover-bg: #ef9a9a;
+    --modifier-bg: #e0e0e0;
+    --modifier-hover-bg: #d6d6d6;
+    --modifier-hover-border: #0288d1;
+    --modifier-incompatible-fg: rgba(130, 130, 130, 1);
+    --modifier-incompatible-icon-fg: #c62828;
+
+    --live-preview-image-tint: rgba(25, 25, 25, 0.75);
+    --live-preview-active-image-tint: rgb(155, 94, 0);
+
+    --common-target-description: #616161;
+    --common-target-smart: #0277bd;
+    --common-target-smart-bg: rgba(2, 119, 189, 0.15);
+    --common-target-smart-hover-bg: #4fc3f7;
+    --common-target-forced: #ef6c00;
+    --common-target-forced-bg: rgba(239, 108, 0, 0.2);
+    --common-target-forced-hover-bg: #ffb74d;
+    --common-target-success: #388e3c;
+    --common-target-fail: #e53935;
+    --common-target-hover-text-color: #212121;
+
+    --clear-color: rgba(255, 255, 255, 0);
+    --unity-button-bg: #eeeeee;
+    --unity-text-color: rgba(66, 66, 66, 0.7);
+    --unity-bg: #C8C8C8;
+
+    --bind-preview-background: rgba(0, 0, 0, 0.1);
+    --bind-preview-background-edit: rgba(255, 235, 59, 0.15);
+    --bind-preview-border: rgba(158, 158, 158, 0.4);
+    --bind-preview-border-edit: #805c27;
+    --bind-preview-label: #455a64;
+    --bind-preview-label-edit: rgba(108, 99, 14, 0.85);
+    --bind-preview-edit-label: #616161;
+    --bind-preview-edit-label-hover: rgba(131, 102, 17, 0.7);
+    --bind-preview-edit-label-checked: #815100;
+
+    --bind-flags-off: #9e9e9e;
+    --bind-flags-on: #ffa000;
+    --bind-flags-hover: rgba(255, 160, 0, 0.85);
+    --bind-flags-hover-bg: rgba(0, 0, 0, 0.05);
+    --bind-flags-on-bg: rgba(0, 0, 0, 0.1);
+    --bind-flags-separator: #bdbdbd;
+    --bind-flags-control-label: rgba(30, 30, 30, 0.7);
+    --bind-flags-label: rgba(107, 116, 119, 0.7);
+    --bind-flags-none-label: rgb(197, 132, 41);
+
+    --bind-reroute-color: rgba(25, 25, 25, 0.5);
+    --bind-reroute-color-hover: rgba(25, 25, 25, 0.7);
+}
+
+.bs-bind-toggle #unity-checkmark {
+    background-image: resource('_bsicons/bind_lite_off');
+}
+
+.bs-bind-toggle:hover #unity-checkmark {
+    background-image: resource('_bsicons/bind_off_hover');
+}
+
+.bs-bind-toggle.bs-bind-toggle--on #unity-checkmark {
+    background-image: resource('_bsicons/bind_lite_on');
+}

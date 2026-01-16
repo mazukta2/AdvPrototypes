@@ -1,0 +1,23 @@
+{
+    "name": "Postica.BindingSystem.Editor",
+    "rootNamespace": "Postica.BindingSystem",
+    "references": [
+        "GUID:3515ec955d79c784095dc9ad934e30e3",
+        "GUID:6731800092072424f9cdd0215e0ed52f",
+        "GUID:55f66b8f37adf3145a43b9e4420cfcfb",
+        "GUID:f32bae862a68142b4bacef29e1fbd04a"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "MethodHookWin.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

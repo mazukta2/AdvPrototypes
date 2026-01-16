@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 9ca6ad8e4ee841a4a1a238eaaa1f9497
+timeCreated: 1735044176
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Runtime/Utility/MathExpression.cs
+  uploadId: 833934

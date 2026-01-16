@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: d26d7c44c69869842aba4c3dfb1f0f7c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Editor/Images/IconsRegistrar.cs
+  uploadId: 833934

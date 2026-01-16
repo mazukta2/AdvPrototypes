@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 300a4037529843bbbc767fa7c5ad4446
+timeCreated: 1723232799
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Samples/Scripts/Common/BindComponent.cs
+  uploadId: 833934

@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: f7505289383549879531ae43c2bcc017
+timeCreated: 1764285328
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Runtime/Core/BindTypes/FastPhasedBind.cs
+  uploadId: 833934

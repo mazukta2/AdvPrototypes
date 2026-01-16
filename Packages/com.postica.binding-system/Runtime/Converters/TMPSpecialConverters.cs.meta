@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: d6b6482ba7cf46729ca77622cbda9ca5
+timeCreated: 1758123056
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Runtime/Converters/TMPSpecialConverters.cs
+  uploadId: 833934

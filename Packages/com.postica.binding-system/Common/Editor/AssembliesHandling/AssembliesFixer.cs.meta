@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 2c8f3d980b8c42bfa57667fea562d2ec
+timeCreated: 1765582013
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Common/Editor/AssembliesHandling/AssembliesFixer.cs
+  uploadId: 833934

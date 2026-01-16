@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 63f085d6ce5b0b7418a584c10a0baead
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Runtime/Core/Accessors/InheritanceAccessor.cs
+  uploadId: 833934

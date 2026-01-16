@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: a67dc58a9eca44f3a4474155bc2d7cc7
+timeCreated: 1723153394
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Runtime/Modifiers/SetValueModifier.cs
+  uploadId: 833934

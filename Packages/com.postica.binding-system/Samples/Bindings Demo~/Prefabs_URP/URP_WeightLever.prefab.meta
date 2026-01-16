@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 18afa2c49bc224b74a70d8ab9848c043
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Samples/Bindings Demo~/Prefabs_URP/URP_WeightLever.prefab
+  uploadId: 833934

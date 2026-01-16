@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 0ff23a796d5215d4f8b0c7bb4ce1d32f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Editor/Drawers/BindDrawer.cs
+  uploadId: 833934

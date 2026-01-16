@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 440e1b6aae4a42cfa014fd968dd5c26d
+timeCreated: 1730158551
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Editor/Drawers/Overrides/UIColorBlockDrawer.cs
+  uploadId: 833934

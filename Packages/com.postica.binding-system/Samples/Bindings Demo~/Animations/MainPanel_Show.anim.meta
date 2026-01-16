@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b87c3948c8306479ea55cc2b2f93d211
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Samples/Bindings Demo~/Animations/MainPanel_Show.anim
+  uploadId: 833934

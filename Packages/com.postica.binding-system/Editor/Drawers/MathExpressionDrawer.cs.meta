@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 801458d19ac74e17868ad3fd9d689ac8
+timeCreated: 1735254025
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Editor/Drawers/MathExpressionDrawer.cs
+  uploadId: 833934

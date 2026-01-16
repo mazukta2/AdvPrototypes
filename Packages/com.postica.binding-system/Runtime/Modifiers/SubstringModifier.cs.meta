@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 1981514215eb456daefa9f02c4fcb96b
+timeCreated: 1732804736
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Runtime/Modifiers/SubstringModifier.cs
+  uploadId: 833934

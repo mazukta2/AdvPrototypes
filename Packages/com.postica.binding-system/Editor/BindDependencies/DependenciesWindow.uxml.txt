@@ -1,0 +1,43 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Packages/com.postica.binding-system/Editor/BindDependencies/DependenciesWindow.uss?fileID=7433441132597879392&amp;guid=ea390a0dc6f254398a0b52ddf81d763a&amp;type=3#DependenciesWindow" />
+    <ui:VisualElement name="root-view" class="root-view">
+        <ui:VisualElement name="left-panel" class="target-panel">
+            <ui:Label text="Target to Inspect" class="target-header" />
+            <ui:VisualElement class="target-view">
+                <uie:ObjectField name="target-field" >
+                    <ui:ProgressBar name="target-progress" picking-mode="Ignore" title="Processing..." low-value="0" high-value="1" />
+                </uie:ObjectField>
+                <ui:Toggle name="view-toggle" class="target-toggle" tooltip="Toggle members view" />
+                <ui:Button name="refresh-button" text="\u21bb" class="target-button" tooltip="Refresh" />
+            </ui:VisualElement>
+            <ui:VisualElement  name="no-target-label">
+                <ui:Label text="Target is not set!" class="hint h2 wrapped-text" />
+                <ui:Label text="Please drag and drop a target object to inspect." class="hint wrapped-text" />
+            </ui:VisualElement>
+            <ui:Label text="Processing..." name="processing-label" class="wrapped-text" />
+            <ui:Label text="No dependencies found" name="no-deps-label" class="wrapped-text" />
+            <ui:MultiColumnTreeView name="target-members" >
+                <ui:Columns>
+                    <ui:Column name="member" min-width="180" title="Member"  />
+                    <ui:Column name="value" title="Value" stretchable="true"/>
+                    <ui:Column name="info" title="" />
+                </ui:Columns>
+            </ui:MultiColumnTreeView>
+        </ui:VisualElement>
+        <ui:VisualElement name="panel-divider" class="divider">
+            <ui:VisualElement class="divider__handle" picking-mode="Ignore"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="right-panel" class="deps-panel">
+            <ui:Label text="Dependencies" name="deps-view" />
+            <uie:Toolbar name="deps-toolbar">
+                <uie:ToolbarToggle label="Prefabs" name="search-prefabs" class="search-toggle" tooltip="Search in all prefabs" />
+                <uie:ToolbarToggle label="Assets" name="search-assets" class="search-toggle" tooltip="Search in all assets"/>
+                <uie:ToolbarSpacer style="width: auto; flex-grow: 1;" />
+                <uie:ToolbarToggle label="All Scenes" name="search-scenes" class="search-toggle" style="display: none;" />
+                <uie:ToolbarSpacer style="width: auto; flex-grow: 1;" />
+                <uie:ToolbarSearchField name="search-field"  />
+            </uie:Toolbar>
+            <ui:ScrollView name="deps-container" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

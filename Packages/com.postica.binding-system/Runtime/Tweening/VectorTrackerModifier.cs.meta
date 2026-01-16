@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 5b7eed52ace44f00a7c6ef4c5a9ff183
+timeCreated: 1749245802
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Runtime/Tweening/VectorTrackerModifier.cs
+  uploadId: 833934

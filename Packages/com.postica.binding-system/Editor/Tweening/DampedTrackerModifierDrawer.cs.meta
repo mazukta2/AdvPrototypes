@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: a475a5548fef4f09a18bc79507886b05
+timeCreated: 1749245590
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Editor/Tweening/DampedTrackerModifierDrawer.cs
+  uploadId: 833934

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ea737da14d0a248aa87e3808b6759a60
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Samples/Bindings Demo~/Materials/TriggerFloor.mat
+  uploadId: 833934

@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 0b5e1ff09c574aa6ac9066765d23a209
+timeCreated: 1751313269
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Runtime/Converters/StringToDecimalConverter.cs
+  uploadId: 833934

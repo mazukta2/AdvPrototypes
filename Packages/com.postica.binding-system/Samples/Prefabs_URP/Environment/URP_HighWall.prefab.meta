@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 6d021d77f862d46b280d998a86126815
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Samples/Prefabs_URP/Environment/URP_HighWall.prefab
+  uploadId: 833934

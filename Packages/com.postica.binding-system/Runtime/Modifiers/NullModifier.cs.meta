@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: e1ee7e4f4e454ae2a49a6a65e7e4f548
+timeCreated: 1723270623
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Runtime/Modifiers/NullModifier.cs
+  uploadId: 833934

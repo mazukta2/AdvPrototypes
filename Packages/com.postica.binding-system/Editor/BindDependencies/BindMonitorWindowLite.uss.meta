@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 9b263d3b1fbd4174b9289cf917055e21
+timeCreated: 1755800615
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Editor/BindDependencies/BindMonitorWindowLite.uss
+  uploadId: 833934

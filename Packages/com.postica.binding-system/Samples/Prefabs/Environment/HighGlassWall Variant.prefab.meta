@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3a5ae44a7c94a4112a2e28eea108e372
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Samples/Prefabs/Environment/HighGlassWall
+    Variant.prefab
+  uploadId: 833934

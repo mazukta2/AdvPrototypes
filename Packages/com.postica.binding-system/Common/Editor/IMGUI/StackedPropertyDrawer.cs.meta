@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: d69e88f6e25266c44ae8e67cbeac3db0
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Common/Editor/IMGUI/StackedPropertyDrawer.cs
+  uploadId: 833934

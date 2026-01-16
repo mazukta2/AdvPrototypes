@@ -1,0 +1,9 @@
+:root {
+    --tween-label-color: #4f4f4f;
+    --tween-label-hover-color: #1a1a1a;
+    --tween-cell-bg: #dcdcdc;
+    --tween-cell-hover-bg: #e8e8e8;
+    --tween-cell-active-bg: #d6d6d6;
+    --tween-start-color: #007acc;
+    --tween-end-color: #ff5722;
+}

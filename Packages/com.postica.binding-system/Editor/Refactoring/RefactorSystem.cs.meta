@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 4b0da9f752f145ec850fcffa4c6109df
+timeCreated: 1738107025
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Editor/Refactoring/RefactorSystem.cs
+  uploadId: 833934

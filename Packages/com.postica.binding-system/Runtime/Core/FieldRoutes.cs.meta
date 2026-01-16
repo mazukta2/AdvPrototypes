@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: f74c34b3c455467a88bfc3aa9582c6a8
+timeCreated: 1737755110
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Runtime/Core/FieldRoutes.cs
+  uploadId: 833934

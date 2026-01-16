@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 7f8cc070704f461894c8e7c8babdad9c
+timeCreated: 1724073716
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Editor/Drawers/BindProxyDrawer.cs
+  uploadId: 833934

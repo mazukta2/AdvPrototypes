@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 35187f4927e774a1796b75101a1993e1
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Samples/Bindings Demo~/Materials_URP/URP_TriggerFloor.mat
+  uploadId: 833934

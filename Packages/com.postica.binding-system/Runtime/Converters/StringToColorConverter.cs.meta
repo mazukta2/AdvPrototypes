@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 4ed41e0d7c01424b99d0a88b8c490b04
+timeCreated: 1732200448
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Runtime/Converters/StringToColorConverter.cs
+  uploadId: 833934

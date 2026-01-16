@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 28452102827f423996658fd0c7a0c6b8
+timeCreated: 1741447262
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Runtime/Utility/BoolExpression.cs
+  uploadId: 833934

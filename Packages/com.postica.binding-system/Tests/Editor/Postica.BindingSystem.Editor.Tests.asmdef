@@ -1,0 +1,28 @@
+{
+    "name": "Postica.BindingSystem.Editor.Tests",
+    "rootNamespace": "",
+    "references": [
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner",
+        "Postica.Common.Runtime",
+        "Postica.Common.Editor",
+        "Postica.BindingSystem.Runtime",
+        "Postica.BindingSystem.Editor",
+        "Postica.BindingSystem.Tests"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d68708fbe85584290b0d844e133edd62
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 4890085278179872738
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Samples/Bindings Demo~/BindingDemo.lighting
+  uploadId: 833934

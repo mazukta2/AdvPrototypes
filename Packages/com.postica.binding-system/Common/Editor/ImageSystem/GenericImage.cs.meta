@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: e5b1fbb40da8e8843b065866c63c9e85
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Common/Editor/ImageSystem/GenericImage.cs
+  uploadId: 833934

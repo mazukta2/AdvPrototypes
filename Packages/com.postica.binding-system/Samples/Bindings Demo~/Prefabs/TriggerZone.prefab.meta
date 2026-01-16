@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: aeaf1f9e2cfda455a967fdcd9ea4f125
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Samples/Bindings Demo~/Prefabs/TriggerZone.prefab
+  uploadId: 833934

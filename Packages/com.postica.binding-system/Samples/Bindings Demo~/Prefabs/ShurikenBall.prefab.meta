@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a94af6dd265fe4a20aa29a15856ed200
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Samples/Bindings Demo~/Prefabs/ShurikenBall.prefab
+  uploadId: 833934

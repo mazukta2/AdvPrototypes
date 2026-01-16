@@ -1,0 +1,16 @@
+:root {
+    --bind-primary-color: #007acc;
+    --bind-primary-very-faint-color: #e6f4f8;
+    --inactive-bg-color: #ffffff;
+    --monitor-message-color: rgba(0, 0, 0, 0.45);
+    --bind-cell-border-color: #cccccc;
+    --bind-cell-value-changed-color: rgba(239, 139, 0, 0.15);
+    --toolbar-bg-color: rgba(0, 120, 215, 0.08);
+    --toolbar-paused-bg-color: rgba(200, 150, 100, 0.3);
+    --toolbar-border-color: #d0d0d0;
+    --footer-separator-color: #e0e0e0;
+    --action-icon-color: #606060;
+    --action-icon-hover-color: #202020;
+    --status-label-color: #333333;
+    --status-label-bg-color: rgba(34, 0, 0, 0.85);
+}

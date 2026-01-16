@@ -1,0 +1,18 @@
+{
+    "name": "Postica.Common.Editor",
+    "rootNamespace": "Postica.Common",
+    "references": [
+        "GUID:3515ec955d79c784095dc9ad934e30e3"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

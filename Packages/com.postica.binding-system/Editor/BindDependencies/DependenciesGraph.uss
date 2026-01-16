@@ -1,0 +1,67 @@
+/* DependenciesGraph.uss - styles for Bindings Dependency Graph (dark) */
+
+.bs-deps-graph {
+    background-color: var(--unity-bg);
+}
+
+/* Nodes */
+.bs-deps-graph .node {
+    background-color: rgba(30, 30, 30, 0.95);
+    border-color: #4a4a4a;
+}
+
+.bs-deps-graph .node .title
+{
+    background-color: #2c2c2c;
+    color: var(--unity-text-color);
+}
+
+.bs-deps-graph .node .title-label {
+    -unity-font-style: bold;
+}
+
+.bs-deps-graph .node.node-highlight {
+    border-color: var(--bind-primary-color);
+    border-width: 2px;
+}
+
+/* Ports */
+.bs-deps-graph .port {
+    background-color: #1f1f1f;
+}
+
+/* Edges */
+.bs-deps-graph .edge-control {
+    
+}
+
+.bs-deps-graph .dep-read .edge-control {
+    
+}
+
+.bs-deps-graph .dep-write .edge-control {
+    
+}
+
+.bs-deps-graph .dep-both .edge-control {
+    
+}
+
+/* Edge badges (labels added to edges) */
+.bs-deps-graph .edge > Label {
+    background-color: rgba(0, 0, 0, 0.55);
+    color: var(--unity-text-color);
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    border-radius: 3px;
+    -unity-font-style: bold;
+}
+
+/* Toolbar helpers (in case we want spacing) */
+.bs-deps-graph__toolbar {
+    padding-left: 6px;
+    padding-right: 6px;
+}
+

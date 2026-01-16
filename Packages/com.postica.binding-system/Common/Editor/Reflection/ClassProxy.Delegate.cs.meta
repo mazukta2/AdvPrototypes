@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 97d19ade064b42e9b112f46ba364d7b6
+timeCreated: 1728335676
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Common/Editor/Reflection/ClassProxy.Delegate.cs
+  uploadId: 833934

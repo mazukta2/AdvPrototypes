@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 5d63f5d344209824e89fc78ed9155431
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {fileID: 2800000, guid: 87f4c7a862cb8bf42a5cf5b845b48666, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Runtime/Core/ProxyBindings.cs
+  uploadId: 833934

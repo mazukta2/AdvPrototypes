@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c990ae3ada4f84113a9de26eb6e3718a
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Samples/Bindings Demo~/Prefabs/GreenCrate
+    Variant.prefab
+  uploadId: 833934

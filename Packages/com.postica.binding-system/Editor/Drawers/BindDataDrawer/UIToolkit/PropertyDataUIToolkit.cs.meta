@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: d49cb750eecd43c5ab5b01d552df70f0
+timeCreated: 1726725149
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Editor/Drawers/BindDataDrawer/UIToolkit/PropertyDataUIToolkit.cs
+  uploadId: 833934

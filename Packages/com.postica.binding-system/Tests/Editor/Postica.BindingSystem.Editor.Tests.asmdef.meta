@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: ababd5d30aa8a6245899a5d15f09f336
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Tests/Editor/Postica.BindingSystem.Editor.Tests.asmdef
+  uploadId: 833934

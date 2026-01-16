@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 971ae64cb2924c52829cd4a8a53b5b6f
+timeCreated: 1725458662
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304762
+  packageName: Binding System 2
+  packageVersion: 2.5.2
+  assetPath: Packages/com.postica.binding-system/Tests/Runtime/ReflectTests.cs
+  uploadId: 833934
