@@ -9,7 +9,8 @@ namespace Camping
         public bool IsCampling;
         public GameObject Character;
         public GameObject Camp;
-        
+        public float Range = 10;
+
         public static void SetCamp(bool camping)
         {
             Instance.IsCampling = camping;
