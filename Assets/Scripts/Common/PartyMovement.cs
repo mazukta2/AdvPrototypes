@@ -2,7 +2,7 @@ using Common;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class MainCharacterMove : MonoBehaviour
+public class PartyMovement : SingletonMonoBehavior<PartyMovement>
 {
     public NavMeshAgent Agent;
 
@@ -29,5 +29,12 @@ public class MainCharacterMove : MonoBehaviour
                 Agent.SetDestination(hit.point);
             }
         }
+    }
+
+    public static bool IsMoving()
+    {
+        if (Instance == null)
+            return false;
+        return Instance.Agent.velocity.sqrMagnitude > 0;
     }
 }
