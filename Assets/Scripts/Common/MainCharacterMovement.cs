@@ -1,3 +1,4 @@
+using Common;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -12,6 +13,12 @@ public class MainCharacterMove : MonoBehaviour
 
     void Update()
     {
+        if (PartyHealth.IsDead())
+        {
+            Agent.isStopped = true;
+            return;
+        }
+        
         if (Input.GetMouseButton(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);

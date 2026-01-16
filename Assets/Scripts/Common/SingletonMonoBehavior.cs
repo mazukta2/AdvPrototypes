@@ -1,16 +1,15 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Common.Utilities
+namespace Common
 {
-    public class MonoBehaviourSingleton<T> : MonoBehaviour where T : MonoBehaviourSingleton<T>
+    public class SingletonMonoBehavior<T>: MonoBehaviour where T : SingletonMonoBehavior<T>
     {
         public static T Instance { get; protected set; }
         
         protected void Awake()
         {
             Instance = this as T;
-        }
+        } 
 
         protected void OnDestroy()
         {
