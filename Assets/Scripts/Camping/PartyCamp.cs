@@ -26,5 +26,11 @@ namespace Camping
             Character.SetActive(!IsCampling);
             Camp.SetActive(IsCampling);
         }
+
+        public static bool IsPartyCampling()
+        {
+            if (Instance == null) return false;
+            return Instance.IsCampling;
+        }
     }
 }

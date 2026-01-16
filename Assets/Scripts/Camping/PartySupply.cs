@@ -10,19 +10,17 @@ namespace Camping
         public float ProgressValue;
         public float ProgressMax = 100;
         
+        public float CampingDecayRate = 0.2f;
         public float DecayRate = 0.5f;
         public float DecayMovingRate = 6;
         public float HeatlhDecay = 0.5f;
         public float HeatlhMovingDecay = 4;
-
+        public float CampingHeatlhDecay = 0.2f;
 
         public void Update()
         {
-            var decay = DecayRate;
-            if (PartyMovement.IsMoving())
-                decay = DecayMovingRate;
             
-            ProgressValue = Mathf.MoveTowards(ProgressValue, 0, decay * Time.deltaTime);
+            ProgressValue = Mathf.MoveTowards(ProgressValue, 0, GetDecayRate() * Time.deltaTime);
             if (ProgressValue == 0 && Value != 0)
             {
                 Value--;
@@ -31,13 +29,28 @@ namespace Camping
 
             if (ProgressValue == 0 && Value == 0)
             {
-                var healthDecay = HeatlhDecay;
-                if (PartyMovement.IsMoving())
-                    healthDecay = HeatlhMovingDecay;
-                
                 var health = PartyHealth.Instance;
-                health.Value = Mathf.MoveTowards(health.Value, 0, healthDecay * Time.deltaTime);
+                health.Value = Mathf.MoveTowards(health.Value, 0, GetHealthDecayRate() * Time.deltaTime);
             }
+        }
+
+        protected float GetDecayRate()
+        {
+            if (PartyMovement.IsMoving())
+                return DecayMovingRate;
+            if (PartyCamp.IsPartyCampling())
+                return CampingDecayRate;
+            
+            return DecayRate;
+        }
+        protected float GetHealthDecayRate()
+        {
+            if (PartyMovement.IsMoving())
+                return HeatlhMovingDecay;
+            if (PartyCamp.IsPartyCampling())
+                return CampingHeatlhDecay;
+            
+            return HeatlhDecay;
         }
     }
 }

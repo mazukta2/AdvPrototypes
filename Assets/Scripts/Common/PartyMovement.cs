@@ -17,8 +17,12 @@ public class PartyMovement : SingletonMonoBehavior<PartyMovement>
         if (PartyHealth.IsDead() || PartyCamp.Instance.IsCampling)
         {
             Agent.SetDestination(transform.position);
+            Agent.isStopped = false;
+            Agent.velocity = Vector3.zero;
             return;
         }
+
+        Agent.isStopped = false;
         
         if (Input.GetMouseButton(0))
         {
