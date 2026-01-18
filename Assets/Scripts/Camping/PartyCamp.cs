@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Common;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ namespace Camping
         public GameObject Character;
         public GameObject Camp;
         public float Range = 10;
+        public List<BuildingsEnum> Buildings = new List<BuildingsEnum>();
 
         public static void SetCamp(bool camping)
         {
@@ -32,6 +34,16 @@ namespace Camping
         {
             if (Instance == null) return false;
             return Instance.IsCampling;
+        }
+
+        public void Build(BuildingsEnum buildingType)
+        {
+            Buildings.Add(buildingType);
+        }
+
+        public bool WasBuild(BuildingsEnum buildingType)
+        {
+            return Buildings.Contains(buildingType);
         }
     }
 }

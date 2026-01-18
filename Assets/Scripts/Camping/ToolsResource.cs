@@ -4,23 +4,20 @@ using UnityEngine;
 
 namespace Camping
 {
-    public class FuelResource : CampingResourceBase
+    public class ToolsResource : CampingResourceBase
     {
-        public float BuildingModificator = 2f;
         public override string GetName()
         {
-            return "Топливо:";
+            return "Инструменты:";
         }
 
         public override void TakeResource()
         {
-            PartyFuel.Instance.Value++;
+            PartyTools.Instance.Value++;
         }
         
         public override float GetProgressModificator()
         {
-            if (PartyCamp.Instance.WasBuild(BuildingsEnum.Woodwork))
-                return BuildingModificator;
             return 1f;
         }
     }

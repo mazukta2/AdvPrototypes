@@ -15,14 +15,17 @@ public class PartyMovement : SingletonMonoBehavior<PartyMovement>
     void Update()
     {
         if (PartyHealth.IsDead() || PartyCamp.Instance.IsCampling)
-        {
+        { 
+            if (!Agent.enabled)
+                return;
+            
             Agent.SetDestination(transform.position);
-            Agent.isStopped = false;
             Agent.velocity = Vector3.zero;
+            Agent.enabled = false;
             return;
         }
 
-        Agent.isStopped = false;
+        Agent.enabled = true;
         
         if (Input.GetMouseButton(0))
         {

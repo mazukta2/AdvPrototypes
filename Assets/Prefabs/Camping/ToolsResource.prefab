@@ -67,7 +67,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0956493aa6f4dcc48ad537d9d99f41c3, type: 2}
+  - {fileID: 2100000, guid: 15a085add6deea64ea7d4f6c1563be6a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -121,12 +121,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8899514477790731949}
-  - component: {fileID: 2529848918398761179}
   - component: {fileID: 4788434539441461717}
+  - component: {fileID: 1477109572582276382}
   m_Layer: 0
-  m_Name: FuelResource
+  m_Name: ToolsResource
   m_TagString: Untagged
-  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -151,28 +151,6 @@ Transform:
   - {fileID: 2171729548585271464}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2529848918398761179
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1674236277002044957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49b62806f037488489d05c997efa6554, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Game::Camping.FuelResource
-  MinRandomize: 4
-  MaxRandomize: 6
-  Count: 0
-  Progress: 0
-  ProgressSpeed: 0.1
-  Text: {fileID: 8885766819844012316}
-  OutOfRange: {r: 1, g: 1, b: 1, a: 1}
-  InRange: {r: 1, g: 0.44705883, b: 0, a: 1}
-  ProgressImage: {fileID: 8733528677983747754}
-  BuildingModificator: 2
 --- !u!114 &4788434539441461717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,15 +163,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 100baad136ed4a6490ef1827226c8201, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Game::Camping.CommonResource
-  MinRandomize: 3
-  MaxRandomize: 8
+  MinRandomize: 1
+  MaxRandomize: 1
   Count: 1
   Progress: 0
-  ProgressSpeed: 0.1
+  ProgressSpeed: 0.05
   Text: {fileID: 8885766819844012316}
   OutOfRange: {r: 1, g: 1, b: 1, a: 1}
   InRange: {r: 1, g: 0.44705883, b: 0, a: 1}
   ProgressImage: {fileID: 8733528677983747754}
+--- !u!114 &1477109572582276382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674236277002044957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b29fb05ddeb40a9a77d02ce305e9b81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game::Camping.ToolsResource
 --- !u!1 &2961702970646342224
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,7 +251,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0956493aa6f4dcc48ad537d9d99f41c3, type: 2}
+  - {fileID: 2100000, guid: 15a085add6deea64ea7d4f6c1563be6a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -373,7 +363,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0956493aa6f4dcc48ad537d9d99f41c3, type: 2}
+  - {fileID: 2100000, guid: 15a085add6deea64ea7d4f6c1563be6a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -601,7 +591,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0956493aa6f4dcc48ad537d9d99f41c3, type: 2}
+  - {fileID: 2100000, guid: 15a085add6deea64ea7d4f6c1563be6a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -850,7 +840,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0956493aa6f4dcc48ad537d9d99f41c3, type: 2}
+  - {fileID: 2100000, guid: 15a085add6deea64ea7d4f6c1563be6a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -995,7 +985,7 @@ MonoBehaviour:
     _isBound: 0
     _options: 0
     _bindData:
-      Source: {fileID: 2529848918398761179}
+      Source: {fileID: 0}
       Path: Progress
       _mode: 0
       _parameters: []

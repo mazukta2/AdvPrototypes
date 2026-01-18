@@ -122,6 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8899514477790731949}
   - component: {fileID: 7298696499658074129}
+  - component: {fileID: 8311409681058313657}
   m_Layer: 0
   m_Name: FoodResource
   m_TagString: Untagged
@@ -170,6 +171,28 @@ MonoBehaviour:
   Text: {fileID: 8885766819844012316}
   OutOfRange: {r: 1, g: 1, b: 1, a: 1}
   InRange: {r: 1, g: 0.4481534, b: 0, a: 1}
+  ProgressImage: {fileID: 8733528677983747754}
+  BuildingModificator: 2
+--- !u!114 &8311409681058313657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674236277002044957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 100baad136ed4a6490ef1827226c8201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game::Camping.CommonResource
+  MinRandomize: 3
+  MaxRandomize: 8
+  Count: 1
+  Progress: 0
+  ProgressSpeed: 0.1
+  Text: {fileID: 8885766819844012316}
+  OutOfRange: {r: 1, g: 1, b: 1, a: 1}
+  InRange: {r: 1, g: 0.44705883, b: 0, a: 1}
   ProgressImage: {fileID: 8733528677983747754}
 --- !u!1 &2961702970646342224
 GameObject:
@@ -972,7 +995,7 @@ MonoBehaviour:
     _isBound: 0
     _options: 0
     _bindData:
-      Source: {fileID: 7298696499658074129}
+      Source: {fileID: 8311409681058313657}
       Path: Progress
       _mode: 0
       _parameters: []
@@ -983,7 +1006,7 @@ MonoBehaviour:
         rid: -2
       _modifiers: []
       _preModifiers: []
-      _sourceType: Camping.FoodResource, Game, Version=0.0.0.0, Culture=neutral,
+      _sourceType: Camping.CommonResource, Game, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
       _ppath: bindings.Array.data[0]._bindData
       _context: {fileID: 5017933379223457435}
