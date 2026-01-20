@@ -4,5 +4,6 @@
     {
         Woodwork,
         Kitchen,
+        Tent,
     }
 }

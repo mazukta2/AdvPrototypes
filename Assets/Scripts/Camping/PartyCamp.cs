@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Common;
+using QFSW.QC;
 using UnityEngine;
 
 namespace Camping
@@ -44,6 +45,12 @@ namespace Camping
         public bool WasBuild(BuildingsEnum buildingType)
         {
             return Buildings.Contains(buildingType);
+        }
+        
+        [Command("build")]
+        public static void BuildDebug(BuildingsEnum buildingType)
+        {
+            PartyCamp.Instance.Build(buildingType);
         }
     }
 }
