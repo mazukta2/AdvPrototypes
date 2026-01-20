@@ -22,6 +22,10 @@ namespace Common
         {
             PartyHealth.Instance.Value -= Instance.Max / 3f;
         }
-        
+
+        public void Hit(float damage)
+        {
+            PartyHealth.Instance.Value -= damage;
+        }
     }
 }
