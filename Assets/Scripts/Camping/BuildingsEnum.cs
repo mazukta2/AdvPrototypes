@@ -5,5 +5,6 @@
         Woodwork,
         Kitchen,
         Tent,
+        Forge
     }
 }

@@ -13,6 +13,7 @@ namespace Camping
         public GameObject Camp;
         public float Range = 10;
         public List<BuildingsEnum> Buildings = new List<BuildingsEnum>();
+        public List<BuildingsEnum> AvailableBuildings = new List<BuildingsEnum>();
 
         public static void SetCamp(bool camping)
         {
@@ -22,6 +23,10 @@ namespace Camping
 
         protected void OnEnable()
         {
+            AvailableBuildings.Clear();
+            AvailableBuildings.Add(BuildingsEnum.Kitchen);
+            AvailableBuildings.Add(BuildingsEnum.Tent);
+            AvailableBuildings.Add(BuildingsEnum.Woodwork);
             UpdateChar();
         }
 
@@ -51,6 +56,16 @@ namespace Camping
         public static void BuildDebug(BuildingsEnum buildingType)
         {
             PartyCamp.Instance.Build(buildingType);
+        }
+
+        public bool IsAvailable(BuildingsEnum buildingType)
+        {
+            return AvailableBuildings.Contains(buildingType);
+        }
+
+        public void SetAvailable(BuildingsEnum buildingType)
+        {
+            AvailableBuildings.Add(buildingType);
         }
     }
 }

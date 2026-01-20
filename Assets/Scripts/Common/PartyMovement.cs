@@ -2,6 +2,7 @@ using Camping;
 using Common;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.EventSystems;
 
 public class PartyMovement : SingletonMonoBehavior<PartyMovement>
 {
@@ -27,7 +28,7 @@ public class PartyMovement : SingletonMonoBehavior<PartyMovement>
 
         Agent.enabled = true;
         
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject())
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;

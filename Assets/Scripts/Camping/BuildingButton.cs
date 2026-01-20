@@ -12,10 +12,12 @@ namespace Camping
         public Tooltip Tooltip;
         public Color BuilddedColor;
         public string BuildingBuildedName;
+        private LayoutElement _layoutElement;
 
         protected void OnEnable()
         {
             Button.onClick.AddListener(Click);
+            _layoutElement = GetComponent<LayoutElement>();
         }
 
 
@@ -27,6 +29,17 @@ namespace Camping
         protected void Update()
         {
             Button.interactable = PartyTools.Instance.Value > 0 && !PartyCamp.Instance.WasBuild(BuildingType);
+
+            if (PartyCamp.Instance.IsAvailable(BuildingType))
+            {
+                _layoutElement.ignoreLayout = false;
+                Button.gameObject.SetActive(true);
+            }
+            else
+            {
+                _layoutElement.ignoreLayout = true;
+                Button.gameObject.SetActive(false);
+            }
             
 
             if (PartyCamp.Instance.WasBuild(BuildingType))
