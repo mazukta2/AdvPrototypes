@@ -37,7 +37,7 @@ namespace Camping
             {
                 Text.color = InRange;
 
-                if (PartyCamp.IsPartyCampling() && Count > 0)
+                if (PartyCamp.IsPartyCampling() && Count > 0 && _commonResource.CanTakeResource())
                 {
                     Progress = Mathf.MoveTowards(Progress, 1, ProgressSpeed * GetProgressModificator() * Time.deltaTime);
                     if (Progress >= 1)

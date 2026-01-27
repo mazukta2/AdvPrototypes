@@ -9,5 +9,6 @@ namespace Camping
         public abstract string GetName();
         public abstract void TakeResource();
         public abstract float GetProgressModificator();
+        public virtual bool CanTakeResource() => true;
     }
 }

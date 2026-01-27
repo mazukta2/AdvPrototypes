@@ -20,5 +20,10 @@ namespace Camping
         {
             return 1f;
         }
+
+        public override bool CanTakeResource()
+        {
+            return PartyGold.Instance.Value < PartyGold.Instance.MaximiumValue;
+        }
     }
 }
