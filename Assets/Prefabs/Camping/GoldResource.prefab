@@ -163,11 +163,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 100baad136ed4a6490ef1827226c8201, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Game::Camping.CommonResource
-  MinRandomize: 1
-  MaxRandomize: 1
+  MinRandomize: 8
+  MaxRandomize: 20
   Count: 1
   Progress: 0
-  ProgressSpeed: 0.05
+  ProgressSpeed: 2
   Text: {fileID: 8885766819844012316}
   OutOfRange: {r: 1, g: 1, b: 1, a: 1}
   InRange: {r: 1, g: 0.44705883, b: 0, a: 1}

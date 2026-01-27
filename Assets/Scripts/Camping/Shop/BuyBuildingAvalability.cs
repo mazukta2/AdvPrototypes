@@ -1,4 +1,5 @@
 ﻿using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,12 +7,16 @@ namespace Camping
 {
     public class BuyBuildingAvalability : MonoBehaviour
     {
+        public string Name;
+        public TextMeshProUGUI Text;
         public Button Button;
         public BuildingsEnum BuildingType;
+        public int Cost = 10;
 
         public void OnEnable()
         {
             Button.onClick.AddListener(Buy);
+            Text.text = Name + $" ({Cost} монет)";
         }
 
         public void OnDisable()
@@ -21,13 +26,13 @@ namespace Camping
 
         public void Update()
         {
-            Button.interactable = PartyGold.Instance.Value > 0;
+            Button.interactable = PartyGold.Instance.Value >= Cost;
             Button.gameObject.SetActive(!PartyCamp.Instance.IsAvailable(BuildingType));
         }
 
         public void Buy()
         {
-            PartyGold.Instance.Value--;
+            PartyGold.Instance.Value -= Cost;
             PartyCamp.Instance.SetAvailable(BuildingType);
         }
     }
