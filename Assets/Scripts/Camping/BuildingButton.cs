@@ -53,6 +53,7 @@ namespace Camping
         private void Click()
         {
             PartyTools.Instance.Value--;
+            PartyGold.Instance.MaximiumValue -= 1;
             PartyCamp.Instance.Build(BuildingType);
         }
     }

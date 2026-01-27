@@ -14,6 +14,8 @@ namespace Camping
         public float Range = 10;
         public List<BuildingsEnum> Buildings = new List<BuildingsEnum>();
         public List<BuildingsEnum> AvailableBuildings = new List<BuildingsEnum>();
+        
+        public List<UpgradeEnum> Upgrades = new List<UpgradeEnum>();
 
         public static void SetCamp(bool camping)
         {
@@ -42,6 +44,16 @@ namespace Camping
             return Instance.IsCampling;
         }
 
+        public void Build(UpgradeEnum buildingType)
+        {
+            Upgrades.Add(buildingType);
+        }
+
+        public bool WasBuild(UpgradeEnum buildingType)
+        {
+            return Upgrades.Contains(buildingType);
+        }
+        
         public void Build(BuildingsEnum buildingType)
         {
             Buildings.Add(buildingType);
@@ -51,6 +63,7 @@ namespace Camping
         {
             return Buildings.Contains(buildingType);
         }
+
         
         [Command("build")]
         public static void BuildDebug(BuildingsEnum buildingType)

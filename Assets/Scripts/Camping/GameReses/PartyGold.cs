@@ -14,5 +14,11 @@ namespace Camping
         {
             PartyGold.Instance.Value = Mathf.MoveTowards(Instance.Value, Instance.MaximiumValue, 10);
         }
+        
+        
+        public static void Add(int value)
+        {
+            PartyGold.Instance.Value = Mathf.MoveTowards(Instance.Value, Instance.MaximiumValue, value);
+        }
     }
 }

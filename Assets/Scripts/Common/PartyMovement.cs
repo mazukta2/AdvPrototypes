@@ -11,6 +11,8 @@ public class PartyMovement : SingletonMonoBehavior<PartyMovement>
     void Start()
     {
         Agent = GetComponent<NavMeshAgent>();
+        Agent.updatePosition = true;
+        Agent.updateRotation = true;
     }
 
     void Update()

@@ -1,4 +1,5 @@
 ﻿using System;
+using Camping;
 using UnityEngine;
 using UnityEngine.UI;
 using Input = UnityEngine.Windows.Input;
@@ -15,6 +16,7 @@ namespace Common
         public float CurrentCooldown = 0f;
         public float Damage = 10;
         public Image HealthBar;
+        public int Gold = 2;
 
         public void Update()
         {
@@ -46,6 +48,7 @@ namespace Common
             HealthBar.fillAmount = Health / MaxHealth;
             if (Health <= 0)
             {
+                PartyGold.Add(Gold);
                 Destroy(this.gameObject);
             }
         }
