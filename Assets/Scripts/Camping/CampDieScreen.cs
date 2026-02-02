@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Camping;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
@@ -13,6 +14,9 @@ namespace Common
         public void Update()
         {
             if (PartyHealth.Instance == null)
+                return;
+            
+            if (WinScreen.Instance.IsWin())
                 return;
 
             DeathScreen.SetActive(PartyHealth.Instance.Value <= 0);
