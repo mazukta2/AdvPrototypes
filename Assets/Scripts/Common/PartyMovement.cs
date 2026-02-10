@@ -17,7 +17,7 @@ public class PartyMovement : SingletonMonoBehavior<PartyMovement>
 
     void Update()
     {
-        if (PartyHealth.IsDead() || PartyCamp.Instance.IsCampling)
+        if (PartyHealth.IsDead())
         { 
             if (!Agent.enabled)
                 return;

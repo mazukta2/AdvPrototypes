@@ -48,7 +48,6 @@ namespace Common
             HealthBar.fillAmount = Health / MaxHealth;
             if (Health <= 0)
             {
-                PartyGold.Add(Gold);
                 Destroy(this.gameObject);
             }
         }

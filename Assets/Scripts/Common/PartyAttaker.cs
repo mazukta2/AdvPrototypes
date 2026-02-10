@@ -10,7 +10,6 @@ namespace Common
         public GameObject BulletPrefab;
         public float CurrentCooldown = 0f;
         public float Damage = 10;
-        public float DamageWithUpgrade = 20f;
 
         public void Update()
         {
@@ -22,7 +21,7 @@ namespace Common
                     {
                         CurrentCooldown = Cooldown;
                         var bulletGo = GameObject.Instantiate(BulletPrefab, transform.position, Quaternion.identity);
-                        bulletGo.GetComponent<Bullet>().SetTarget(enemy.gameObject, PartyCamp.Instance.WasBuild(BuildingsEnum.Forge) ? DamageWithUpgrade : Damage);
+                        bulletGo.GetComponent<Bullet>().SetTarget(enemy.gameObject, Damage);
                     }
                     else
                     {
