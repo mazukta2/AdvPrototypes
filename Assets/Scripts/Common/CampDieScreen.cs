@@ -19,7 +19,7 @@ namespace Common
             if (WinScreen.Instance.IsWin())
                 return;
 
-            DeathScreen.SetActive(PartyHealth.Instance.Value <= 0);
+             // DeathScreen.SetActive(PartyHealth.Instance.Value <= 0);
         }
 
         public void RestartLevel()
