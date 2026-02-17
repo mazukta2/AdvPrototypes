@@ -29,6 +29,7 @@ namespace Deckbuilding
             if (PartyHealth.IsDead())
             {
                 Screen.SetActive(true);
+                PartyMembers.Instance.Clear();
                 ResetMembers();
             }
 

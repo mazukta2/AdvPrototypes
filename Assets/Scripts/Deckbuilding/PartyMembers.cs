@@ -26,5 +26,13 @@ namespace Deckbuilding
             PartyMembersHud.Instance.Remove(member);
         }
 
+        public void Clear()
+        {
+            foreach (var member in Members)
+            {
+                PartyMembersHud.Instance.Remove(member);
+            }
+            Members.Clear();
+        }
     }
 }

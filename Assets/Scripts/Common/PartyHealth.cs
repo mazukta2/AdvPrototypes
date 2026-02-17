@@ -1,4 +1,5 @@
-﻿using Common;
+﻿using System.Linq;
+using Common;
 using Deckbuilding;
 using QFSW.QC;
 using UnityEngine;
@@ -23,7 +24,10 @@ namespace Common
 
         public void Hit(float damage)
         {
-            var randomMember = PartyMembers.Instance.Members[Random.Range(0, PartyMembers.Instance.Members.Count)];
+            var nonDead = PartyMembers.Instance.Members.Where(x => !x.IsDead).ToArray();
+            if (nonDead.Length == 0)
+                return;
+            var randomMember = nonDead[Random.Range(0, PartyMembers.Instance.Members.Count)];
             randomMember.CurrentHealth -= damage;
         }
     }
