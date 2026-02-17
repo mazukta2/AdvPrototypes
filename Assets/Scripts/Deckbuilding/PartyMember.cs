@@ -2,6 +2,8 @@
 {
     public class PartyMember
     {
-        public PartyMemberClass Class;
+        public PartyMemberClass Class{ get; set; }
+        public float CurrentHealth { get; set; }
+        public float MaxHealth { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Common;
+using Deckbuilding;
 using QFSW.QC;
 using UnityEngine;
 
@@ -6,26 +7,24 @@ namespace Common
 {
     public class PartyHealth : SingletonMonoBehavior<PartyHealth>
     {
-        public float Value = 100;
-        public float Max = 100;
-
-
-
         public static bool IsDead()
         {
-            return Instance.Value <= 0;
+            return PartyMembers.Instance.Members.Count > 0 && PartyMembers.Instance.Members.TrueForAll(m => m.CurrentHealth <= 0);
         }
         
-
         [Command("damage-self")]
         public static void DebugDamage()
         {
-            PartyHealth.Instance.Value -= Instance.Max / 3f;
+            foreach (var member in PartyMembers.Instance.Members)
+            {
+                member.CurrentHealth -= member.MaxHealth / 3f;
+            }
         }
 
         public void Hit(float damage)
         {
-            PartyHealth.Instance.Value -= damage;
+            var randomMember = PartyMembers.Instance.Members[Random.Range(0, PartyMembers.Instance.Members.Count)];
+            randomMember.CurrentHealth -= damage;
         }
     }
 }

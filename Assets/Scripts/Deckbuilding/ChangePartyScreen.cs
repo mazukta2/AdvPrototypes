@@ -26,10 +26,9 @@ namespace Deckbuilding
 
         public void Update()
         {
-            if (PartyHealth.Instance.Value <= 0)
+            if (PartyHealth.IsDead())
             {
                 Screen.SetActive(true);
-                PartyHealth.Instance.Value = PartyHealth.Instance.Max;
                 ResetMembers();
             }
 

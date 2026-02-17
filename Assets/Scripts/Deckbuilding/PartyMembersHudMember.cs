@@ -9,6 +9,7 @@ namespace Deckbuilding
     {
         public Image Image;
         public PartyMember Member;
+        public Image Health;
         public Tooltip Tooltip;
 
         public void Init(PartyMember member)
@@ -20,5 +21,9 @@ namespace Deckbuilding
             
         }
 
+        public void Update()
+        {
+            Health.fillAmount = (float)Member.CurrentHealth / Member.MaxHealth;
+        }
     }
 }

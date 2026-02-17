@@ -11,7 +11,9 @@ namespace Deckbuilding
         {
             var member = new PartyMember()
             {
-                Class = memberClass
+                Class = memberClass,
+                CurrentHealth = memberClass.MaxHealth,
+                MaxHealth = memberClass.MaxHealth
             };
             Members.Add(member);
             PartyMembersHud.Instance.Add(member);
