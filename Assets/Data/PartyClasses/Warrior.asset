@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Warrior
   m_EditorClassIdentifier: Game::Deckbuilding.PartyMemberClass
   Name: "\u0412\u043E\u0438\u043D"
+  Icon: {fileID: 21300000, guid: c1537644d08f8e94b84d597b87272f2c, type: 3}
+  Color: {r: 0.63522005, g: 0.2307587, b: 0.22172767, a: 1}

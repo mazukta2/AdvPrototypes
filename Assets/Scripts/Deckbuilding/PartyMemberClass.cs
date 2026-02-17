@@ -6,5 +6,7 @@ namespace Deckbuilding
     public class PartyMemberClass : ScriptableObject
     {
         public string Name;
+        public Sprite Icon;
+        public Color Color = Color.white;
     }
 }
