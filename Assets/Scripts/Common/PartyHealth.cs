@@ -10,7 +10,7 @@ namespace Common
     {
         public static bool IsDead()
         {
-            return PartyMembers.Instance.Members.Count > 0 && PartyMembers.Instance.Members.TrueForAll(m => m.CurrentHealth <= 0);
+            return PartyMembers.Instance.Members.Count == 0 || PartyMembers.Instance.Members.TrueForAll(m => m.CurrentHealth <= 0);
         }
         
         [Command("damage-self")]
@@ -27,7 +27,7 @@ namespace Common
             var nonDead = PartyMembers.Instance.Members.Where(x => !x.IsDead).ToArray();
             if (nonDead.Length == 0)
                 return;
-            var randomMember = nonDead[Random.Range(0, PartyMembers.Instance.Members.Count)];
+            var randomMember = nonDead[Random.Range(0, nonDead.Length)];
             randomMember.CurrentHealth -= damage;
         }
     }

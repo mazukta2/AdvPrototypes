@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Common
 {
-    public class Bullet : MonoBehaviour
+    public class Bullet : ListMonoBehavior<Bullet>
     {
 
         public float Damage = 1;
@@ -39,6 +39,14 @@ namespace Common
                         return;
                     }
                 }
+            }
+        }
+
+        public static void DestroyAll()
+        {
+            foreach (var bullet in List)
+            {
+                Destroy(bullet);
             }
         }
     }

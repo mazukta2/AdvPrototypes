@@ -19,17 +19,18 @@ namespace Deckbuilding
 
         public void OnEnable()
         {
-            Screen.SetActive(true);
             ContinueButton.onClick.AddListener(OnContinue);
-            ResetMembers();
         }
-
+        
         public void Update()
         {
-            if (PartyHealth.IsDead())
+            if (PartyHealth.IsDead() && !Screen.activeSelf)
             {
                 Screen.SetActive(true);
                 PartyMembers.Instance.Clear();
+                PartyMovement.Instance.transform.position = TavernPoint.Instance.transform.position;
+                Enemy.ResetEnemies();
+                Bullet.DestroyAll();
                 ResetMembers();
             }
 

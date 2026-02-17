@@ -17,9 +17,13 @@ namespace Common
         public float Damage = 10;
         public Image HealthBar;
         public int Gold = 2;
+        public GameObject View;
 
         public void Update()
         {
+            if (IsDead())
+                return;
+            
             if (Vector3.Distance(PartyHealth.Instance.transform.position, transform.position) < Radius)
             {
                 if (CurrentCooldown <= 0f)
@@ -38,17 +42,36 @@ namespace Common
         
         public void OnDrawGizmos()
         {
+            if (IsDead())
+                return;
+            
             Gizmos.color = Color.red;
             Gizmos.DrawSphere(this.transform.position, Radius);
         }
 
         public void Hit(float damage)
         {
+            if (IsDead())
+                return;
+            
             Health -= damage;
             HealthBar.fillAmount = Health / MaxHealth;
-            if (Health <= 0)
+            if (IsDead())
             {
-                Destroy(this.gameObject);
+                View.SetActive(false);
+            } 
+        }
+
+        public bool IsDead()
+        {
+            return Health <= 0f;
+        }
+
+        public static void ResetEnemies()
+        {
+            foreach (var enemy in List)
+            {
+                enemy.Health = enemy.MaxHealth;
             }
         }
     }

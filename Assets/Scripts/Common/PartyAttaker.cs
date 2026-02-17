@@ -15,6 +15,9 @@ namespace Common
         {
             foreach (var enemy in Enemy.List)
             {
+                if (enemy.IsDead())
+                    continue;
+                
                 if (Vector3.Distance(enemy.transform.position, transform.position) < Radius)
                 {
                     if (CurrentCooldown <= 0f)
