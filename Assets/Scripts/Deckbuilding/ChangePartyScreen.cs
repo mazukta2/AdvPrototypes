@@ -16,6 +16,8 @@ namespace Deckbuilding
         public int MaxSelected = 4;
         public GameSettings Settings;
         public TextMeshProUGUI CountText;
+        public TextMeshProUGUI CostText;
+        public int ExtraCost = 2;
 
         public void OnEnable()
         {
@@ -35,6 +37,16 @@ namespace Deckbuilding
                 ResetMembers();
             }
 
+            var selectedCount = GetSelectedCount();
+            var cost = GetCost();
+
+            CostText.text = $"Стоимость: {cost} золота";
+            ContinueButton.interactable = selectedCount > 0 && cost <= PartyResources.Instance.Get(PartyResources.ResourceType.Gold);
+            CountText.text = $"{selectedCount}/{MaxSelected}";
+        }
+
+        private static int GetSelectedCount()
+        {
             var selectedCount = 0;
             foreach (var changePartyScreenMember in ChangePartyScreenMember.List)
             {
@@ -43,8 +55,20 @@ namespace Deckbuilding
                     selectedCount++;
                 }
             }
-            ContinueButton.interactable = selectedCount > 0 && selectedCount <= MaxSelected;
-            CountText.text = $"{selectedCount}/{MaxSelected}";
+
+            return selectedCount;
+        }
+
+        private int GetCost()
+        {
+            var selectedCount = GetSelectedCount();
+            var cost = 0;
+            if (selectedCount > MaxSelected)
+            {
+                cost = (selectedCount - MaxSelected) * ExtraCost;
+            }
+
+            return cost;
         }
 
 
@@ -76,6 +100,7 @@ namespace Deckbuilding
         private void OnContinue()
         {
             Screen.SetActive(false);
+            PartyResources.Instance.Change(PartyResources.ResourceType.Gold, -GetCost());
         }
     }
 }
