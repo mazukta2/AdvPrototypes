@@ -354,6 +354,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 56824046}
   m_CullTransparentMesh: 1
+--- !u!224 &65524052 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5515439264733581769, guid: 869791555531885449b0a0e93b0e44c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1256169985014498799}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &67069454
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -502,6 +508,52 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 70305991}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &72426707
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 72426708}
+  - component: {fileID: 72426709}
+  m_Layer: 0
+  m_Name: Zone (8)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &72426708
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72426707}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 714.7, y: 12.43489, z: 68.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 762585074}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &72426709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72426707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6d1391045549dbaedc66eaf4944e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game::Deckbuilding.Zone
+  Radius: 71.65
+  Explored: 0
 --- !u!4 &82811963 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8899514477790731949, guid: 9310712e4983f244fadc550568403aa1,
@@ -677,6 +729,52 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1771989827}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &113263166
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 113263167}
+  - component: {fileID: 113263168}
+  m_Layer: 0
+  m_Name: Zone (9)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &113263167
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 113263166}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 708.1, y: 12.43489, z: 181.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 762585074}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &113263168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 113263166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6d1391045549dbaedc66eaf4944e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game::Deckbuilding.Zone
+  Radius: 71.65
+  Explored: 0
 --- !u!4 &120621272 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8899514477790731949, guid: 34bced9ac0863db4ea185668ffe6a472,
@@ -1658,6 +1756,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 283872907}
+  - component: {fileID: 283872909}
+  - component: {fileID: 283872908}
   m_Layer: 5
   m_Name: Resources
   m_TagString: Untagged
@@ -1676,14 +1776,56 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 65524052}
+  - {fileID: 1331126942}
   m_Father: {fileID: 982066462}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0}
+--- !u!114 &283872908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283872906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
+  m_HorizontalFit: 2
+  m_VerticalFit: 2
+--- !u!114 &283872909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283872906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.VerticalLayoutGroup
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 1
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 1
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1 &285768263
 GameObject:
   m_ObjectHideFlags: 0
@@ -1953,6 +2095,52 @@ MonoBehaviour:
   MaxSelected: 4
   Settings: {fileID: 11400000, guid: 38f135a07b0a8464ea61b7e1dbdfdfbb, type: 2}
   CountText: {fileID: 1284953640}
+--- !u!1 &305868787
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 305868788}
+  - component: {fileID: 305868789}
+  m_Layer: 0
+  m_Name: Zone (14)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &305868788
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 305868787}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 560, y: 12.43489, z: 569}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 762585074}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &305868789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 305868787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6d1391045549dbaedc66eaf4944e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game::Deckbuilding.Zone
+  Radius: 71.65
+  Explored: 0
 --- !u!1 &319719823
 GameObject:
   m_ObjectHideFlags: 0
@@ -2383,6 +2571,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e0a7b4fa11649c3bac12d19a163c17c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Game::Camping.Winds
+--- !u!1 &369998460
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 369998461}
+  - component: {fileID: 369998462}
+  m_Layer: 0
+  m_Name: Zone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &369998461
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369998460}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 288.6, y: 12.43489, z: 308.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 762585074}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &369998462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369998460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6d1391045549dbaedc66eaf4944e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game::Deckbuilding.Zone
+  Radius: 71.65
+  Explored: 0
 --- !u!1 &378601958
 GameObject:
   m_ObjectHideFlags: 0
@@ -2500,6 +2734,52 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 385447111}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &387306167
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 387306168}
+  - component: {fileID: 387306169}
+  m_Layer: 0
+  m_Name: Zone (11)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &387306168
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387306167}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 880, y: 12.43489, z: 309}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 762585074}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &387306169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387306167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6d1391045549dbaedc66eaf4944e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game::Deckbuilding.Zone
+  Radius: 71.65
+  Explored: 0
 --- !u!1 &391953509
 GameObject:
   m_ObjectHideFlags: 0
@@ -10259,6 +10539,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 754188045}
   m_CullTransparentMesh: 1
+--- !u!1 &762585073
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 762585074}
+  m_Layer: 0
+  m_Name: Zones
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &762585074
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762585073}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 369998461}
+  - {fileID: 1845043234}
+  - {fileID: 1304641048}
+  - {fileID: 1118780858}
+  - {fileID: 961042667}
+  - {fileID: 875730180}
+  - {fileID: 820506772}
+  - {fileID: 1030282885}
+  - {fileID: 72426708}
+  - {fileID: 113263167}
+  - {fileID: 1553605394}
+  - {fileID: 387306168}
+  - {fileID: 1236890945}
+  - {fileID: 1288882759}
+  - {fileID: 305868788}
+  - {fileID: 1796652189}
+  - {fileID: 1655502917}
+  - {fileID: 1286750371}
+  - {fileID: 1321656920}
+  - {fileID: 1869401079}
+  m_Father: {fileID: 1370247625}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &767849191
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10338,6 +10669,52 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 767849191}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &820506771
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 820506772}
+  - component: {fileID: 820506773}
+  m_Layer: 0
+  m_Name: Zone (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &820506772
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820506771}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 424.4, y: 12.43489, z: 90.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 762585074}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &820506773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820506771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6d1391045549dbaedc66eaf4944e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game::Deckbuilding.Zone
+  Radius: 71.65
+  Explored: 0
 --- !u!1001 &824256337
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10617,6 +10994,52 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 840264720}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &875730179
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 875730180}
+  - component: {fileID: 875730181}
+  m_Layer: 0
+  m_Name: Zone (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &875730180
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875730179}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 425.3, y: 12.43489, z: 200.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 762585074}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &875730181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875730179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6d1391045549dbaedc66eaf4944e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game::Deckbuilding.Zone
+  Radius: 71.65
+  Explored: 0
 --- !u!1001 &891027756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11470,6 +11893,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &961042666
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 961042667}
+  - component: {fileID: 961042668}
+  m_Layer: 0
+  m_Name: Zone (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &961042667
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961042666}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 556, y: 12.43489, z: 310}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 762585074}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &961042668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961042666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6d1391045549dbaedc66eaf4944e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game::Deckbuilding.Zone
+  Radius: 71.65
+  Explored: 0
 --- !u!1 &965799030
 GameObject:
   m_ObjectHideFlags: 0
@@ -12404,6 +12873,52 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1025413565}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1030282884
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1030282885}
+  - component: {fileID: 1030282886}
+  m_Layer: 0
+  m_Name: Zone (7)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1030282885
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030282884}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 556.8, y: 12.43489, z: 74.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 762585074}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1030282886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030282884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6d1391045549dbaedc66eaf4944e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game::Deckbuilding.Zone
+  Radius: 71.65
+  Explored: 0
 --- !u!1001 &1042569679
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12943,6 +13458,52 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1105177609}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1118780857
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1118780858}
+  - component: {fileID: 1118780859}
+  m_Layer: 0
+  m_Name: Zone (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1118780858
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1118780857}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 51.9, y: 12.43489, z: 307.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 762585074}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1118780859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1118780857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6d1391045549dbaedc66eaf4944e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game::Deckbuilding.Zone
+  Radius: 71.65
+  Explored: 0
 --- !u!1001 &1123794115
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15056,6 +15617,52 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1231586072}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1236890944
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1236890945}
+  - component: {fileID: 1236890946}
+  m_Layer: 0
+  m_Name: Zone (12)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1236890945
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1236890944}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 693, y: 12.43489, z: 445}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 762585074}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1236890946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1236890944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6d1391045549dbaedc66eaf4944e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game::Deckbuilding.Zone
+  Radius: 71.65
+  Explored: 0
 --- !u!1001 &1263988808
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15373,6 +15980,98 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1284953638}
   m_CullTransparentMesh: 1
+--- !u!1 &1286750370
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1286750371}
+  - component: {fileID: 1286750372}
+  m_Layer: 0
+  m_Name: Zone (17)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1286750371
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286750370}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 291, y: 12.43489, z: 565}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 762585074}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1286750372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286750370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6d1391045549dbaedc66eaf4944e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game::Deckbuilding.Zone
+  Radius: 71.65
+  Explored: 0
+--- !u!1 &1288882758
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1288882759}
+  - component: {fileID: 1288882760}
+  m_Layer: 0
+  m_Name: Zone (13)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1288882759
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1288882758}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 681, y: 12.43489, z: 571}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 762585074}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1288882760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1288882758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6d1391045549dbaedc66eaf4944e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game::Deckbuilding.Zone
+  Radius: 71.65
+  Explored: 0
 --- !u!1 &1299832967
 GameObject:
   m_ObjectHideFlags: 0
@@ -15409,6 +16108,52 @@ Transform:
   - {fileID: 1625214140}
   m_Father: {fileID: 1415626403}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1304641047
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1304641048}
+  - component: {fileID: 1304641049}
+  m_Layer: 0
+  m_Name: Zone (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1304641048
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304641047}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 165.7, y: 12.43489, z: 193.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 762585074}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1304641049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304641047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6d1391045549dbaedc66eaf4944e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game::Deckbuilding.Zone
+  Radius: 71.65
+  Explored: 0
 --- !u!1001 &1308452327
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15482,6 +16227,237 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5532521561286294485, guid: 0b93385878b615a468e34ba4c01d9036,
     type: 3}
   m_PrefabInstance: {fileID: 1308452327}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1321656919
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1321656920}
+  - component: {fileID: 1321656921}
+  m_Layer: 0
+  m_Name: Zone (18)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1321656920
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321656919}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 289, y: 12.43489, z: 447}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 762585074}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1321656921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321656919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6d1391045549dbaedc66eaf4944e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game::Deckbuilding.Zone
+  Radius: 71.65
+  Explored: 0
+--- !u!1001 &1331126941
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 283872907}
+    m_Modifications:
+    - target: {fileID: 978686630739801964, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.26100624
+      objectReference: {fileID: 0}
+    - target: {fileID: 978686630739801964, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.86942846
+      objectReference: {fileID: 0}
+    - target: {fileID: 978686630739801964, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 978686630739801964, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4282638079
+      objectReference: {fileID: 0}
+    - target: {fileID: 3563300719681342306, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 45a22b3618f01dd47b72e39cb344aaca,
+        type: 3}
+    - target: {fileID: 3563300719681342306, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.1603772
+      objectReference: {fileID: 0}
+    - target: {fileID: 3563300719681342306, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.89623433
+      objectReference: {fileID: 0}
+    - target: {fileID: 3563300719681342306, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4766483246171493120, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: ResourceType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5338008777393928497, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: Name
+      value: "\u0417\u043E\u043B\u043E\u0442\u043E"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5338008777393928497, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: Description
+      value: "\u041D\u0430\u0445\u043E\u0434\u0438\u0442\u0435 \u0437\u043E\u043B\u043E\u0442\u043E
+        \u0432 \u043F\u043E\u0434\u0437\u0435\u043C\u0435\u043B\u044C\u044F\u0445
+        \u0438\u043B\u0438 \u043E\u0431\u043C\u0435\u043D\u0438\u0432\u0430\u0439\u0442\u0435
+        \u0434\u0440\u0443\u0433\u0438\u0435 \u0440\u0435\u0441\u0443\u0440\u0441\u044B
+        \u043D\u0430 \u043D\u0435\u0433\u043E \u0432 \u043A\u043E\u043D\u0446\u0435
+        \u0441\u0435\u0437\u043E\u043D\u0430."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515439264733581769, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515439264733581769, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515439264733581769, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515439264733581769, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515439264733581769, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515439264733581769, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515439264733581769, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515439264733581769, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515439264733581769, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515439264733581769, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515439264733581769, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515439264733581769, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515439264733581769, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515439264733581769, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515439264733581769, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515439264733581769, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515439264733581769, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515439264733581769, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515439264733581769, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515439264733581769, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8521045993074756888, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_Name
+      value: PartyResource (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 869791555531885449b0a0e93b0e44c2, type: 3}
+--- !u!224 &1331126942 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5515439264733581769, guid: 869791555531885449b0a0e93b0e44c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1331126941}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1341418776 stripped
 Transform:
@@ -15654,6 +16630,7 @@ Transform:
   - {fileID: 1977538567}
   - {fileID: 180733083}
   - {fileID: 613821193}
+  - {fileID: 762585074}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1401307748
@@ -15827,6 +16804,7 @@ GameObject:
   - component: {fileID: 1415626415}
   - component: {fileID: 1415626416}
   - component: {fileID: 1415626417}
+  - component: {fileID: 1415626418}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -15984,6 +16962,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e59a9c51ed24e03b409e28b2b60fd22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Game::Deckbuilding.PartyMembers
+--- !u!114 &1415626418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415626397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4274ade0b3e2401c93e6cd1d2b07bcb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game::Deckbuilding.PartyResources.PartyResources
 --- !u!1001 &1416313622
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16641,6 +17631,52 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1540456205}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1553605393
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1553605394}
+  - component: {fileID: 1553605395}
+  m_Layer: 0
+  m_Name: Zone (10)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1553605394
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1553605393}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 703, y: 12.43489, z: 310}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 762585074}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1553605395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1553605393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6d1391045549dbaedc66eaf4944e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game::Deckbuilding.Zone
+  Radius: 71.65
+  Explored: 0
 --- !u!1 &1557998232
 GameObject:
   m_ObjectHideFlags: 17
@@ -17755,6 +18791,52 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1649661588}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1655502916
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1655502917}
+  - component: {fileID: 1655502918}
+  m_Layer: 0
+  m_Name: Zone (16)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1655502917
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655502916}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 416, y: 12.43489, z: 565}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 762585074}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1655502918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655502916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6d1391045549dbaedc66eaf4944e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game::Deckbuilding.Zone
+  Radius: 71.65
+  Explored: 0
 --- !u!1001 &1666915009
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18804,6 +19886,52 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1796443256}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1796652188
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1796652189}
+  - component: {fileID: 1796652190}
+  m_Layer: 0
+  m_Name: Zone (15)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1796652189
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796652188}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 545, y: 12.43489, z: 693}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 762585074}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1796652190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796652188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6d1391045549dbaedc66eaf4944e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game::Deckbuilding.Zone
+  Radius: 71.65
+  Explored: 0
 --- !u!1001 &1804639330
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19488,12 +20616,104 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1831588377}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1845043233
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1845043234}
+  - component: {fileID: 1845043235}
+  m_Layer: 0
+  m_Name: Zone (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1845043234
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1845043233}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 166.4, y: 12.43489, z: 309.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 762585074}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1845043235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1845043233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6d1391045549dbaedc66eaf4944e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game::Deckbuilding.Zone
+  Radius: 71.65
+  Explored: 0
 --- !u!4 &1858765305 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8899514477790731949, guid: 9310712e4983f244fadc550568403aa1,
     type: 3}
   m_PrefabInstance: {fileID: 94834163}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1869401078
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1869401079}
+  - component: {fileID: 1869401080}
+  m_Layer: 0
+  m_Name: Zone (19)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1869401079
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869401078}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 275, y: 12.43489, z: 700}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 762585074}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1869401080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869401078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6d1391045549dbaedc66eaf4944e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game::Deckbuilding.Zone
+  Radius: 71.65
+  Explored: 0
 --- !u!1001 &1889014665
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20990,7 +22210,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 11.064514, y: 28.383}
+  m_AnchoredPosition: {x: 11.064453, y: 28.382996}
   m_SizeDelta: {x: -67.9389, y: -164.3699}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2136730422
@@ -21061,6 +22281,175 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2136730420}
   m_CullTransparentMesh: 1
+--- !u!1001 &1256169985014498799
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 283872907}
+    m_Modifications:
+    - target: {fileID: 978686630739801964, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.70215744
+      objectReference: {fileID: 0}
+    - target: {fileID: 978686630739801964, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.8805031
+      objectReference: {fileID: 0}
+    - target: {fileID: 978686630739801964, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.678375
+      objectReference: {fileID: 0}
+    - target: {fileID: 978686630739801964, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4289978797
+      objectReference: {fileID: 0}
+    - target: {fileID: 3563300719681342306, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.4570823
+      objectReference: {fileID: 0}
+    - target: {fileID: 3563300719681342306, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.7610062
+      objectReference: {fileID: 0}
+    - target: {fileID: 3563300719681342306, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.47490728
+      objectReference: {fileID: 0}
+    - target: {fileID: 5338008777393928497, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: Name
+      value: "\u041E\u0442\u0447\u0435\u0442\u044B"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5338008777393928497, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: Description
+      value: "\u0412\u044B \u043F\u043E\u043B\u0443\u0447\u0430\u0435\u0442\u0435
+        \u043E\u0442\u0447\u0435\u0442\u044B \u043F\u043E\u0441\u0435\u0449\u0430\u044F
+        \u043D\u043E\u0432\u044B\u0435 \u043C\u0435\u0441\u0442\u0430. \u0420\u0430\u0442\u0443\u0448\u0430
+        \u043F\u043B\u0430\u0442\u0438\u0442 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044E
+        \u043E \u0442\u043E\u043C \u0447\u0442\u043E \u043F\u0440\u043E\u0438\u0441\u0445\u043E\u0434\u0438\u0442
+        \u0432 \u043F\u043E\u0434\u0437\u0435\u043C\u0435\u043B\u044C\u044F\u0445
+        \u0432 \u043A\u043E\u043D\u0446\u0435 \u0441\u0435\u0437\u043E\u043D\u0430. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515439264733581769, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515439264733581769, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515439264733581769, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515439264733581769, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515439264733581769, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515439264733581769, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515439264733581769, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515439264733581769, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515439264733581769, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515439264733581769, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515439264733581769, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515439264733581769, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515439264733581769, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515439264733581769, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515439264733581769, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515439264733581769, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515439264733581769, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515439264733581769, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515439264733581769, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515439264733581769, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8521045993074756888, guid: 869791555531885449b0a0e93b0e44c2,
+        type: 3}
+      propertyPath: m_Name
+      value: PartyResource
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 869791555531885449b0a0e93b0e44c2, type: 3}
 --- !u!1001 &2961980220973238803
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -31,6 +31,7 @@ namespace Deckbuilding
                 PartyMovement.Instance.transform.position = TavernPoint.Instance.transform.position;
                 Enemy.ResetEnemies();
                 Bullet.DestroyAll();
+                Zone.NewSeason();
                 ResetMembers();
             }
 
@@ -45,6 +46,7 @@ namespace Deckbuilding
             ContinueButton.interactable = selectedCount > 0 && selectedCount <= MaxSelected;
             CountText.text = $"{selectedCount}/{MaxSelected}";
         }
+
 
         public void Show()
         {
