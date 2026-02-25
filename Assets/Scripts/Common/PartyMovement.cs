@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using Camping;
 using Common;
 using UnityEngine;
@@ -7,6 +9,10 @@ using UnityEngine.EventSystems;
 public class PartyMovement : SingletonMonoBehavior<PartyMovement>
 {
     public NavMeshAgent Agent;
+    private GameObject _target;
+    private float _distanceToTarget;
+    private bool _ignoreNextClick;
+    private bool _clicked;
 
     void Start()
     {
@@ -21,7 +27,7 @@ public class PartyMovement : SingletonMonoBehavior<PartyMovement>
         { 
             if (!Agent.enabled)
                 return;
-            
+
             Agent.SetDestination(transform.position);
             Agent.velocity = Vector3.zero;
             Agent.enabled = false;
@@ -29,8 +35,8 @@ public class PartyMovement : SingletonMonoBehavior<PartyMovement>
         }
 
         Agent.enabled = true;
-        
-        if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject())
+
+        if (!_ignoreNextClick && Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -39,9 +45,33 @@ public class PartyMovement : SingletonMonoBehavior<PartyMovement>
             {
                 Agent.SetDestination(hit.point);
             }
+
+            _target = null;
         }
+        else if (_target != null)
+        {
+            if (Vector3.Distance(transform.position, _target.transform.position) <= _distanceToTarget)
+            {
+                _target = null;
+                Agent.ResetPath();
+                //Agent.velocity = Vector3.zero;
+            }
+            else
+            {
+                Agent.SetDestination(_target.transform.position);
+            }
+        }
+
+        _ignoreNextClick = false;
     }
 
+    public void Set(GameObject target, float distance)
+    {
+        _target = target;
+        _distanceToTarget = distance;
+        _ignoreNextClick = true;
+    }
+    
     public static bool IsMoving()
     {
         if (Instance == null)

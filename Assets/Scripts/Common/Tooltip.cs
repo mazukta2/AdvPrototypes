@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 
 namespace Common
 {
-    public class Tooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+    public class Tooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, ITooltip
     {
         public string Name;
         [Multiline]public string Description;
@@ -22,6 +22,16 @@ namespace Common
         protected void OnDisable()
         {
             TooltipWindow.Remove(this);
+        }
+
+        public string GetName()
+        {
+            return Name;
+        }
+
+        public string GetDescription()
+        {
+            return Description;
         }
     }
 }

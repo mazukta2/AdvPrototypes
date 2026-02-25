@@ -9,18 +9,18 @@ namespace Common
         public TextMeshProUGUI Name;
         public TextMeshProUGUI Description;
 
-        private List<Tooltip> _list = new List<Tooltip>();
+        private List<ITooltip> _list = new List<ITooltip>();
 
-        public static void Add(Tooltip tooltip)
+        public static void Add(ITooltip tooltip)
         {
             Instance._list.Add(tooltip);
             Instance.UpdateText();
         }
         
-        public static void Remove(Tooltip tooltip)
+        public static void Remove(ITooltip tooltip)
         {
-            Instance._list.Remove(tooltip);
-            Instance.UpdateText();
+            Instance?._list?.Remove(tooltip);
+            Instance?.UpdateText();
         }
 
         private  void UpdateText()
@@ -33,8 +33,8 @@ namespace Common
             else
             {
                 var instance = _list.First();
-                Name.text  = instance.Name;
-                Description.text  = instance.Description;
+                Name.text  = instance.GetName();
+                Description.text  = instance.GetDescription();
             }
         }
 
