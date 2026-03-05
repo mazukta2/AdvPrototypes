@@ -1,5 +1,6 @@
 ﻿using System;
 using Common;
+using Deckbuilding.Interactables;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -36,6 +37,7 @@ namespace Deckbuilding
                 Enemy.ResetEnemies();
                 Bullet.DestroyAll();
                 Zone.NewSeason();
+                Gates.NewSeason();
                 ResetMembers();
             }
 

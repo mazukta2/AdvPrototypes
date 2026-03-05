@@ -1,10 +1,11 @@
 ﻿using System;
+using Common;
 using Deckbuilding.Windows;
 using UnityEngine;
 
 namespace Deckbuilding.Interactables
 {
-    public class Gates : MonoBehaviour
+    public class Gates : ListMonoBehavior<Gates>
     {
         public Animator Animator;
         
@@ -23,6 +24,14 @@ namespace Deckbuilding.Interactables
         public void CloseGates()
         {
             Animator.SetBool("Open", false);
+        }
+
+        public static void NewSeason()
+        {
+            foreach (var g in List)
+            {
+                g.CloseGates();
+            }
         }
     }
 }

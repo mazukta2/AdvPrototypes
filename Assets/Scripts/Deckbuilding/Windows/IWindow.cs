@@ -4,5 +4,6 @@
     {
         public void Open();
         public void Close();
+        void Init();
     }
 }

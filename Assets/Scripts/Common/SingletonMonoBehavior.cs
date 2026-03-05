@@ -15,5 +15,10 @@ namespace Common
         {
             Instance = null;
         }
+
+        public void Init()
+        {
+            Instance = this as T;
+        }
     }
 }
