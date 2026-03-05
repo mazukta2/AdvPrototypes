@@ -18,6 +18,7 @@ namespace Deckbuilding
         public TextMeshProUGUI CountText;
         public TextMeshProUGUI CostText;
         public int ExtraCost = 2;
+        private bool _requestEndSeason;
 
         public void OnEnable()
         {
@@ -26,8 +27,9 @@ namespace Deckbuilding
         
         public void Update()
         {
-            if (PartyHealth.IsDead() && !Screen.activeSelf)
+            if ((_requestEndSeason || PartyHealth.IsDead()) && !Screen.activeSelf)
             {
+                _requestEndSeason = false;
                 Screen.SetActive(true);
                 PartyMembers.Instance.Clear();
                 PartyMovement.Instance.transform.position = TavernPoint.Instance.transform.position;
@@ -71,11 +73,9 @@ namespace Deckbuilding
             return cost;
         }
 
-
-        public void Show()
+        public void EndSeason()
         {
-            Screen.SetActive(true);
-            ResetMembers();
+            _requestEndSeason = true;
         }
         
         private void ResetMembers()
