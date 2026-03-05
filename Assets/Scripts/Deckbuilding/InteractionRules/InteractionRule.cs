@@ -11,7 +11,7 @@ namespace Deckbuilding.InteractionRules
         public BuildingTypes RequiredBuilding;
         
         [Header("Actions")]
-        public IRuleAction Action;
+        [SerializeReference] public IRuleAction Action;
 
         public bool Match(PartyMember member, Interactable interactable)
         {

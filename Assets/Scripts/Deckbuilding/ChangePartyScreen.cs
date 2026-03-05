@@ -33,7 +33,7 @@ namespace Deckbuilding
                 _requestEndSeason = false;
                 Screen.SetActive(true);
                 PartyMembers.Instance.Clear();
-                PartyMovement.Instance.transform.position = TavernPoint.Instance.transform.position;
+                PartyMovement.NewSeason();
                 Enemy.ResetEnemies();
                 Bullet.DestroyAll();
                 Zone.NewSeason();

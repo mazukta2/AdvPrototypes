@@ -1,25 +1,19 @@
 ﻿using System;
 using Common;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Deckbuilding.Interactables
 {
-    public class Interactable : MonoBehaviour, ITooltip
+    public class Interactable : ListMonoBehavior<Interactable>, ITooltip
     {
         public string Name;
         [Multiline] public string Description;
         public Outline Outline;
         public float Distance = 20;
-        private bool _selected;
+        public bool Selected;
         public Action OnReaching { get; set; }
 
-        public void Update()
-        {
-            if (Input.GetMouseButtonDown(0) && _selected)
-            {
-                PartyMovement.Instance.Set(this, Distance);
-            }
-        }
 
         private void OnMouseEnter()
         {
@@ -27,7 +21,7 @@ namespace Deckbuilding.Interactables
                 return;
             TooltipWindow.Add(this);
             Outline.enabled = true;
-            _selected = true;
+            Selected = true;
         }
 
         private void OnMouseExit()
@@ -37,7 +31,7 @@ namespace Deckbuilding.Interactables
             
             TooltipWindow.Remove(this);
             Outline.enabled = false;
-            _selected = false;
+            Selected = false;
         }
 
         protected void OnEnable()
@@ -49,7 +43,7 @@ namespace Deckbuilding.Interactables
         {
             TooltipWindow.Remove(this);
             Outline.enabled = false;
-            _selected = false;
+            Selected = false;
         }
         
         public string GetName()
