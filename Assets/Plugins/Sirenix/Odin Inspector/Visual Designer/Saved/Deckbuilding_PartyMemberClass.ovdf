@@ -1,0 +1,6 @@
+OVDF v1.1
+Deckbuilding.PartyMemberClass, Game
+MetaGuid:dd42d59bdf684f439b38ffa323ca6d57
+
+# MaxHealth
++ [Sirenix.OdinInspector.MinValueAttribute]
