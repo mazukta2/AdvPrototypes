@@ -15,3 +15,4 @@ MonoBehaviour:
   Classes:
   - {fileID: 11400000, guid: 62cf72f7302444b4e98aaf5f7d294e22, type: 2}
   - {fileID: 11400000, guid: e5e946832653f8749a60cf509929433d, type: 2}
+  GatesCost: 2

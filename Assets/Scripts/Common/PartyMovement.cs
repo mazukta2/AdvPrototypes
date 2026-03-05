@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using Camping;
 using Common;
+using Deckbuilding.Interactables;
+using Deckbuilding.Windows;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.EventSystems;
@@ -9,7 +11,7 @@ using UnityEngine.EventSystems;
 public class PartyMovement : SingletonMonoBehavior<PartyMovement>
 {
     public NavMeshAgent Agent;
-    private GameObject _target;
+    private Interactable _target;
     private float _distanceToTarget;
     private bool _ignoreNextClick;
     private bool _clicked;
@@ -46,12 +48,15 @@ public class PartyMovement : SingletonMonoBehavior<PartyMovement>
                 Agent.SetDestination(hit.point);
             }
 
+            Windows.Instance.CloseAll();
+            
             _target = null;
         }
         else if (_target != null)
         {
             if (Vector3.Distance(transform.position, _target.transform.position) <= _distanceToTarget)
             {
+                _target.InteractOnEndOfMovement();
                 _target = null;
                 Agent.ResetPath();
                 //Agent.velocity = Vector3.zero;
@@ -65,11 +70,12 @@ public class PartyMovement : SingletonMonoBehavior<PartyMovement>
         _ignoreNextClick = false;
     }
 
-    public void Set(GameObject target, float distance)
+    public void Set(Interactable target, float distance)
     {
         _target = target;
         _distanceToTarget = distance;
         _ignoreNextClick = true;
+        Windows.Instance.CloseAll();
     }
     
     public static bool IsMoving()

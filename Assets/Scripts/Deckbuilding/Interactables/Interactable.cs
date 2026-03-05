@@ -9,19 +9,22 @@ namespace Deckbuilding.Interactables
         public string Name;
         [Multiline] public string Description;
         public Outline Outline;
+        public float Distance = 20;
         private bool _selected;
-        public Action OnClick { get; set; }
+        public Action OnReaching { get; set; }
 
         public void Update()
         {
             if (Input.GetMouseButtonDown(0) && _selected)
             {
-                OnClick?.Invoke();
+                PartyMovement.Instance.Set(this, Distance);
             }
         }
 
         private void OnMouseEnter()
         {
+            if (!this.enabled)
+                return;
             TooltipWindow.Add(this);
             Outline.enabled = true;
             _selected = true;
@@ -29,6 +32,9 @@ namespace Deckbuilding.Interactables
 
         private void OnMouseExit()
         {
+            if (!this.enabled)
+                return;
+            
             TooltipWindow.Remove(this);
             Outline.enabled = false;
             _selected = false;
@@ -42,6 +48,8 @@ namespace Deckbuilding.Interactables
         protected void OnDisable()
         {
             TooltipWindow.Remove(this);
+            Outline.enabled = false;
+            _selected = false;
         }
         
         public string GetName()
@@ -52,6 +60,13 @@ namespace Deckbuilding.Interactables
         public string GetDescription()
         {
             return Description;
+        }
+
+        public void InteractOnEndOfMovement()
+        {
+            if (!this.enabled)
+                return;
+            OnReaching?.Invoke();
         }
     }
 }

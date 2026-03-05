@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Common;
+using QFSW.QC;
 
 namespace Deckbuilding
 {
@@ -38,5 +39,13 @@ namespace Deckbuilding
         {
             Resources[type] = value;
         }
+        
+        
+        [Command("add-gold")]
+        public static void DebugGold()
+        {
+            Instance.Change(ResourceType.Gold, 5);
+        }
+
     }
 }
