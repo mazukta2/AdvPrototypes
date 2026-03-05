@@ -6,6 +6,7 @@ namespace Deckbuilding
     public class PartyMemberClass : ScriptableObject
     {
         public string Name;
+        [Multiline]public string Description;
         public Sprite Icon;
         public Color Color = Color.white;
         public float MaxHealth = 100;

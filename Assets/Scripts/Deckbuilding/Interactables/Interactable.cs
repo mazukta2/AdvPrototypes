@@ -66,7 +66,17 @@ namespace Deckbuilding.Interactables
         {
             if (!this.enabled)
                 return;
-            OnReaching?.Invoke();
+            if (PartyMembers.Instance.SelectedMember != null)
+            {
+                PartyMembers.Instance.Interact(PartyMembers.Instance.SelectedMember, this);
+                PartyMembers.Instance.SelectedMember = null;
+            }
+            else
+            {
+                OnReaching?.Invoke();
+            }
+            
+            
         }
     }
 }

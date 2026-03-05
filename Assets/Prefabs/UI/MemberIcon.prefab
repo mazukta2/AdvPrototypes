@@ -132,6 +132,8 @@ MonoBehaviour:
   Tooltip: {fileID: 7898462274515113088}
   Dead: {fileID: 21300000, guid: 515fe1281da6af448a8721d58d7dd15e, type: 3}
   DeadColor: {r: 0.44025147, g: 0.44025147, b: 0.44025147, a: 1}
+  HighlightColor: {r: 1, g: 1, b: 1, a: 1}
+  SelectedColor: {r: 0.7924528, g: 0.78675723, b: 0.77500886, a: 1}
 --- !u!114 &7898462274515113088
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Camping;
 using Common;
+using Deckbuilding;
 using Deckbuilding.Interactables;
 using Deckbuilding.Windows;
 using UnityEngine;
@@ -49,6 +50,7 @@ public class PartyMovement : SingletonMonoBehavior<PartyMovement>
             }
 
             Windows.Instance.CloseAll();
+            PartyMembers.Instance.SelectedMember = null;
             
             _target = null;
         }
@@ -75,6 +77,7 @@ public class PartyMovement : SingletonMonoBehavior<PartyMovement>
         _target = target;
         _distanceToTarget = distance;
         _ignoreNextClick = true;
+        PartyMembers.Instance.SelectedMember = null;
         Windows.Instance.CloseAll();
     }
     

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd42d59bdf684f439b38ffa323ca6d57, type: 3}
+  m_Name: Berserck
+  m_EditorClassIdentifier: Game::Deckbuilding.PartyMemberClass
+  Name: "\u0411\u0435\u0440\u0441\u0435\u0440\u043A"
+  Description: "\u0411\u0435\u0440\u0441\u0435\u0440\u043A \u043C\u043E\u0436\u0435\u0442
+    <b>\u0441\u043B\u043E\u043C\u0430\u0442\u044C</b> \u0447\u0442\u043E-\u0442\u043E
+    \u043F\u043E\u0442\u0440\u0430\u0442\u0438\u0432 \u0437\u0430\u0440\u044F\u0434 "
+  Icon: {fileID: 21300000, guid: c1537644d08f8e94b84d597b87272f2c, type: 3}
+  Color: {r: 0.7169812, g: 0.50067174, b: 0.23222964, a: 1}
+  MaxHealth: 20

@@ -1,11 +1,13 @@
 ﻿using System.Collections.Generic;
 using Common;
+using Deckbuilding.Interactables;
 
 namespace Deckbuilding
 {
     public class PartyMembers : SingletonMonoBehavior<PartyMembers>
     {
         public List<PartyMember> Members = new List<PartyMember>();
+        public PartyMember SelectedMember;
 
         public PartyMember Add(PartyMemberClass memberClass)
         {
@@ -33,6 +35,18 @@ namespace Deckbuilding
                 PartyMembersHud.Instance.Remove(member);
             }
             Members.Clear();
+        }
+
+        public void Interact(PartyMember member, Interactable interactable)
+        {
+            foreach (var rule in GameSettings.Instance.InteractionRules)
+            {
+                if (rule.Match(member, interactable))
+                {
+                    rule.Action?.Execute(interactable);
+                    return;
+                }
+            }
         }
     }
 }

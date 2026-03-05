@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Deckbuilding.InteractionRules;
+using UnityEngine;
 
 namespace Deckbuilding
 {
@@ -8,6 +9,7 @@ namespace Deckbuilding
         public static GameSettings Instance { get; set; }
         
         public PartyMemberClass[] Classes;
+        public InteractionRule[] InteractionRules;
 
         public int GatesCost;
     }
