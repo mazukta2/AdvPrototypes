@@ -21,6 +21,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 69c408d92d781d449a5c4a0f56c593bf, type: 2}
   - {fileID: 11400000, guid: 59ac358c8e7599c42bd896528972f7d5, type: 2}
   - {fileID: 11400000, guid: 9b1fc2a3cce05b44aa88c9d5dce67293, type: 2}
+  - {fileID: 11400000, guid: 0709fc00b4006c246877075ef1c35159, type: 2}
   GatesCost: 2
   UknownEffect: "\u041D\u0435\u0438\u0437\u0432\u0435\u0441\u0442\u043D\u044B\u0439
     \u044D\u0444\u0444\u0435\u043A\u0442"
