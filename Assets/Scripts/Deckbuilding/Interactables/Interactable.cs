@@ -7,6 +7,7 @@ namespace Deckbuilding.Interactables
 {
     public class Interactable : ListMonoBehavior<Interactable>, ITooltip
     {
+        public BuildingTypes BuildingType;
         public string Name;
         [Multiline] public string Description;
         public Outline Outline;
@@ -80,6 +81,11 @@ namespace Deckbuilding.Interactables
             }
             
             
+        }
+
+        public BuildingTypes GetBuidingType()
+        {
+            return BuildingType;
         }
     }
 }

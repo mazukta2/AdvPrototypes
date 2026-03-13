@@ -9,7 +9,7 @@ namespace Deckbuilding.InteractionRules
     {
         [Header("Conditions")]
         public PartyMemberClass[] RequiredClasses;
-        public BuildingTypes RequiredBuilding;
+        public BuildingTypes[] RequiredBuilding;
         
         [Header("Actions")]
         [SerializeReference] public IRuleAction Action;
@@ -18,12 +18,9 @@ namespace Deckbuilding.InteractionRules
         {
             if (RequiredClasses != null && RequiredClasses.All(m => member.Class != m))
                 return false;
-            if (RequiredBuilding != BuildingTypes.None)
+            if (RequiredBuilding != null && RequiredBuilding.All(r => r !=  interactable.GetBuidingType()))
             {
-                if (RequiredBuilding == BuildingTypes.Tavern && interactable.GetComponent<Tavern>() == null)
-                    return false;
-                if (RequiredBuilding == BuildingTypes.Gates && interactable.GetComponent<Gates>() == null)
-                    return false;
+                return false;
             }
 
             return true;

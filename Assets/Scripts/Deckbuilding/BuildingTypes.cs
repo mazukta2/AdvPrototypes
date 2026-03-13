@@ -5,5 +5,6 @@
         None,
         Tavern,
         Gates,
+        Lighthouse
     }
 }

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Game::Deckbuilding.InteractionRules.InteractionRule
   RequiredClasses:
   - {fileID: 11400000, guid: e4dc71d6386329b4b8b35e29e59c9278, type: 2}
-  RequiredBuilding: 2
+  RequiredBuilding: 02000000
   Action:
     rid: 9098812892819227004
   references:

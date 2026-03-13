@@ -15,7 +15,7 @@ MonoBehaviour:
   RequiredClasses:
   - {fileID: 11400000, guid: 62cf72f7302444b4e98aaf5f7d294e22, type: 2}
   - {fileID: 11400000, guid: e5e946832653f8749a60cf509929433d, type: 2}
-  RequiredBuilding: 2
+  RequiredBuilding: 02000000
   Action:
     rid: 9098813073940545656
   references:
