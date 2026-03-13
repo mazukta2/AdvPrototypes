@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Common;
 using Deckbuilding.Interactables;
 
@@ -15,11 +16,20 @@ namespace Deckbuilding
             {
                 Class = memberClass,
                 CurrentHealth = memberClass.MaxHealth,
-                MaxHealth = memberClass.MaxHealth
+                MaxHealth = memberClass.MaxHealth,
+                Charge = memberClass.Charge,
             };
             Members.Add(member);
             PartyMembersHud.Instance.Add(member);
             return member;
+        }
+
+        protected void Update()
+        {
+            if (SelectedMember != null && SelectedMember.IsDead)
+            {
+                SelectedMember = null;
+            }
         }
 
         public void Remove(PartyMember member)
@@ -43,7 +53,7 @@ namespace Deckbuilding
             {
                 if (rule.Match(member, interactable))
                 {
-                    rule.Action?.Execute(interactable);
+                    rule.Action?.Execute(member, interactable);
                     return;
                 }
             }

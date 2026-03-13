@@ -10,5 +10,6 @@ namespace Deckbuilding
         public Sprite Icon;
         public Color Color = Color.white;
         public float MaxHealth = 100;
+        public int Charge = 1;
     }
 }

@@ -4,6 +4,6 @@ namespace Deckbuilding.InteractionRules
 {
     public interface IRuleAction
     {
-        public void Execute(Interactable interactable);
+        public void Execute(PartyMember member, Interactable interactable);
     }
 }

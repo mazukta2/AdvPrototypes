@@ -5,9 +5,15 @@ namespace Deckbuilding.InteractionRules
 {
     public class OpenGates : IRuleAction
     {
-        public void Execute(Interactable interactable)
+        [Multiline] public string ActionText;
+        
+        public void Execute(PartyMember member, Interactable interactable)
         {
-            Debug.Log("Gates opened");
+            interactable.GetComponent<Gates>().OpenGates();
+            
+            WorldMessenger.Instance.ShowMessage(interactable.transform.position, ActionText);
+
+            member.Charge--;
         }
     }
 }

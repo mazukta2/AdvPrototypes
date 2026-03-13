@@ -1,5 +1,6 @@
 ﻿using System;
 using Common;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -16,6 +17,7 @@ namespace Deckbuilding
         public Color DeadColor;
         public Color HighlightColor;
         public Color SelectedColor;
+        public TextMeshProUGUI Charge;
         private bool _highlight;
 
         public void Init(PartyMember member)
@@ -48,6 +50,7 @@ namespace Deckbuilding
             {
                 Image.color = Member.Class.Color;
             }
+            Charge.text = Member.Charge.ToString();
         }
 
         public void OnPointerEnter(PointerEventData eventData)
@@ -67,6 +70,12 @@ namespace Deckbuilding
                 PartyMembers.Instance.SelectedMember = null;
                 return;
             }
+            
+            if (Member.Charge <= 0)
+                return;
+            
+            if (Member.IsDead)
+                return;
             
             PartyMembers.Instance.SelectedMember = Member;
         }
