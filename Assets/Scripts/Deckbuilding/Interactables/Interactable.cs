@@ -53,6 +53,15 @@ namespace Deckbuilding.Interactables
 
         public string GetDescription()
         {
+            if (PartyMembers.Instance.SelectedMember != null)
+            {
+                var rule = PartyMembers.Instance.GetRule(PartyMembers.Instance.SelectedMember, this);
+                if (rule != null)
+                {
+                    return   Description + "\r\n\r\n<b>" + rule.GetDescription() + "</b>";
+                }
+            }
+            
             return Description;
         }
 

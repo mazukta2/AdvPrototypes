@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Common;
 using Deckbuilding.Interactables;
+using Deckbuilding.InteractionRules;
 
 namespace Deckbuilding
 {
@@ -57,6 +58,19 @@ namespace Deckbuilding
                     return;
                 }
             }
+        }
+        
+        public IRuleAction GetRule(PartyMember member, Interactable interactable)
+        {
+            foreach (var rule in GameSettings.Instance.InteractionRules)
+            {
+                if (rule.Match(member, interactable))
+                {
+                    return rule.Action;
+                }
+            }
+
+            return null;
         }
     }
 }

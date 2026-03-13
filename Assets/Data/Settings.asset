@@ -19,3 +19,5 @@ MonoBehaviour:
   InteractionRules:
   - {fileID: 11400000, guid: 69c408d92d781d449a5c4a0f56c593bf, type: 2}
   GatesCost: 2
+  UknownEffect: "\u041D\u0435\u0438\u0437\u0432\u0435\u0441\u0442\u043D\u044B\u0439
+    \u044D\u0444\u0444\u0435\u043A\u0442"

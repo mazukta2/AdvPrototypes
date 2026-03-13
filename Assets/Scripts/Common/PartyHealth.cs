@@ -29,6 +29,8 @@ namespace Common
                 return;
             var randomMember = nonDead[Random.Range(0, nonDead.Length)];
             randomMember.CurrentHealth -= damage;
+            if (randomMember.IsDead)
+                randomMember.Charge = 0;
         }
     }
 }
