@@ -1,4 +1,5 @@
-﻿using Deckbuilding.Interactables;
+﻿using System.Linq;
+using Deckbuilding.Interactables;
 using UnityEngine;
 
 namespace Deckbuilding.InteractionRules
@@ -7,7 +8,7 @@ namespace Deckbuilding.InteractionRules
     public class InteractionRule : ScriptableObject
     {
         [Header("Conditions")]
-        public PartyMemberClass RequiredClass;
+        public PartyMemberClass[] RequiredClasses;
         public BuildingTypes RequiredBuilding;
         
         [Header("Actions")]
@@ -15,7 +16,7 @@ namespace Deckbuilding.InteractionRules
 
         public bool Match(PartyMember member, Interactable interactable)
         {
-            if (RequiredClass != null && member.Class != RequiredClass)
+            if (RequiredClasses != null && RequiredClasses.All(m => member.Class != m))
                 return false;
             if (RequiredBuilding != BuildingTypes.None)
             {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Deckbuilding.InteractionRules
 {
-    public class OpenGates : IRuleAction
+    public class NoEffect : IRuleAction
     {
         [Multiline] public string ActionText;
         [Multiline] public string ActionDescText;
@@ -13,10 +13,7 @@ namespace Deckbuilding.InteractionRules
         
         public void Execute(PartyMember member, Interactable interactable)
         {
-            interactable.GetComponent<Gates>().OpenGates();
-            
-            WorldMessenger.Instance.ShowMessage(interactable.transform.position, ActionText);
-
+            WorldMessenger.Instance.ShowMessage(interactable.transform.position, string.Format(ActionText, member.Class.Name));
             member.Charge--;
             _knownClasses.Add(member.Class);
         }

@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b74f1731a948408c872528ff362b8981, type: 3}
   m_Name: GatesBreserk
   m_EditorClassIdentifier: Game::Deckbuilding.InteractionRules.InteractionRule
-  RequiredClass: {fileID: 11400000, guid: 77daf126804fab74d8f2926828bacac0, type: 2}
+  RequiredClasses:
+  - {fileID: 11400000, guid: 77daf126804fab74d8f2926828bacac0, type: 2}
   RequiredBuilding: 2
   Action:
     rid: 9098812892819227004

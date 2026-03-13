@@ -15,8 +15,8 @@ namespace Deckbuilding
         public Tooltip Tooltip;
         public Sprite Dead;
         public Color DeadColor;
-        public Color HighlightColor;
-        public Color SelectedColor;
+        public Image Highlight;
+        public Image Selected;
         public TextMeshProUGUI Charge;
         private bool _highlight;
 
@@ -27,7 +27,8 @@ namespace Deckbuilding
             Image.color = member.Class.Color;
             Tooltip.Name = member.Class.Name;
             Tooltip.Description = member.Class.Description;
-            
+            Highlight.sprite = member.Class.Icon;
+            Selected.sprite = member.Class.Icon;
         }
 
         public void Update()
@@ -37,18 +38,24 @@ namespace Deckbuilding
             {
                 Image.sprite = Dead;
                 Image.color = DeadColor;
+                Selected.gameObject.SetActive(false);
+                Highlight.gameObject.SetActive(false);
             }
             else if (_highlight)
             {
-                Image.color = HighlightColor;
+                Selected.gameObject.SetActive(false);
+                Highlight.gameObject.SetActive(true);
             }
             else if (PartyMembers.Instance.SelectedMember == Member)
             {
-                Image.color = SelectedColor;
+                Selected.gameObject.SetActive(true);
+                Highlight.gameObject.SetActive(false);
             }
             else
             {
                 Image.color = Member.Class.Color;
+                Selected.gameObject.SetActive(false);
+                Highlight.gameObject.SetActive(false);
             }
             Charge.text = Member.Charge.ToString();
         }
