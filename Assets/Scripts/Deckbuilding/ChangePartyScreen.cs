@@ -1,6 +1,7 @@
 ﻿using System;
 using Common;
 using Deckbuilding.Interactables;
+using Deckbuilding.Windows;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -38,6 +39,7 @@ namespace Deckbuilding
                 Bullet.DestroyAll();
                 Zone.NewSeason();
                 Gates.NewSeason();
+                Lighthouse.NewSeason();
                 ResetMembers();
             }
 

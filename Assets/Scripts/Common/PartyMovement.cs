@@ -46,6 +46,7 @@ public class PartyMovement : SingletonMonoBehavior<PartyMovement>
             {
                 _target.InteractOnEndOfMovement();
                 _target = null;
+                _targetPosition = transform.position;
                 Agent.ResetPath();
                 //Agent.velocity = Vector3.zero;
             }
