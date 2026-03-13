@@ -13,6 +13,7 @@ namespace Deckbuilding.Windows
 
         public void OnEnable()
         {
+            Rest.onClick.RemoveAllListeners();
             Rest.onClick.AddListener(() =>
             {
                 ChangePartyScreen.Instance.EndSeason();

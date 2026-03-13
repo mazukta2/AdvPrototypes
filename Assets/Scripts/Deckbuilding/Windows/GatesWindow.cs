@@ -17,6 +17,7 @@ namespace Deckbuilding.Windows
         {
             Cost.text = GameSettings.Instance.GatesCost.ToString();
             
+            Pay.onClick.RemoveAllListeners();
             Pay.onClick.AddListener(() =>
             {
                 PartyResources.Instance.Change(PartyResources.ResourceType.Gold, -GameSettings.Instance.GatesCost);
