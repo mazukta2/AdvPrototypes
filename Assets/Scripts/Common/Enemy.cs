@@ -71,7 +71,8 @@ namespace Common
         {
             foreach (var enemy in List)
             {
-                enemy.Health = enemy.MaxHealth;
+                //enemy.Health = enemy.MaxHealth;
+                Destroy(enemy.gameObject);
             }
         }
     }

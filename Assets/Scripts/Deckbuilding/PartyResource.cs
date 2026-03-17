@@ -32,7 +32,8 @@ namespace Deckbuilding
         public enum ResourceType
         {
             Report,
-            Gold
+            Gold,
+            Fuel
         }
 
         public void Set(ResourceType type, int value)

@@ -182,14 +182,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69c8d016075c419485d9af2256e60560, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Game::Common.Enemy
-  Health: 50
+  Health: 20
   MaxHealth: 50
   Radius: 50
   Cooldown: 1
   BulletPrefab: {fileID: 5076167184865198995, guid: 7b3f9111573d99f4ea021e83c0e80d60,
     type: 3}
   CurrentCooldown: 0
-  Damage: 10
+  Damage: 5
   HealthBar: {fileID: 8596620644198957502}
   Gold: 2
   View: {fileID: 8680872642083432218}

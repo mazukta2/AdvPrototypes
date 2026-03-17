@@ -23,16 +23,15 @@ namespace Deckbuilding.Windows
             Pay.onClick.RemoveAllListeners();
             Pay.onClick.AddListener(() =>
             {
-                PartyResources.Instance.Change(PartyResources.ResourceType.Gold, -GameSettings.Instance.GatesCost);
+                PartyResources.Instance.Change(PartyResources.ResourceType.Fuel, -GameSettings.Instance.GatesCost);
                 _instance.TurnOn();
                 Close();
             });
-            
         }
 
         protected void Update()
         {
-            Pay.interactable = !_instance.IsTurnOn() && PartyResources.Instance.Get(PartyResources.ResourceType.Gold) >= GameSettings.Instance.GatesCost;
+            Pay.interactable = !_instance.IsTurnOn() && PartyResources.Instance.Get(PartyResources.ResourceType.Fuel) >= GameSettings.Instance.GatesCost;
             
             if (_instance.IsTurnOn())
             {

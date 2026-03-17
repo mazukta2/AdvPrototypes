@@ -37,9 +37,9 @@ namespace Deckbuilding
                 PartyMovement.NewSeason();
                 Enemy.ResetEnemies();
                 Bullet.DestroyAll();
+                Lighthouse.NewSeason();
                 Zone.NewSeason();
                 Gates.NewSeason();
-                Lighthouse.NewSeason();
                 ResetMembers();
             }
 
