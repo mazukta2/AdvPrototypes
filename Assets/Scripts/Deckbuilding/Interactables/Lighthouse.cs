@@ -13,6 +13,7 @@ namespace Deckbuilding.Interactables
         public bool _state;
         public int SeasonToTurnOff = 2;
         public int CurrrenCharge = 0;
+        public bool _destroed;
         
         public void OnEnable()
         {
@@ -56,6 +57,17 @@ namespace Deckbuilding.Interactables
         public bool IsTurnOn()
         {
             return _state;
+        }
+        public bool IsDestroyed()
+        {
+            return _destroed;
+        }
+
+        public void Decstruction()
+        {
+            TurnOff();
+            Animator.SetBool("Destroyed", true);
+            _destroed = true;
         }
     }
 }

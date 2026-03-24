@@ -14,6 +14,7 @@ namespace Deckbuilding.Windows
         public TextMeshProUGUI Decription;
         [Multiline] public string TurnOnDecriptionText;
         [Multiline] public string TurnOffDecriptionText;
+        [Multiline] public string DestroyedDescriptionText;
         private Lighthouse _instance;
 
         public void OnEnable()
@@ -31,7 +32,7 @@ namespace Deckbuilding.Windows
 
         protected void Update()
         {
-            Pay.interactable = !_instance.IsTurnOn() && PartyResources.Instance.Get(PartyResources.ResourceType.Fuel) >= GameSettings.Instance.GatesCost;
+            Pay.interactable = !_instance.IsTurnOn() && !_instance.IsDestroyed() && PartyResources.Instance.Get(PartyResources.ResourceType.Fuel) >= GameSettings.Instance.GatesCost;
             
             if (_instance.IsTurnOn())
             {
@@ -40,6 +41,11 @@ namespace Deckbuilding.Windows
             else
             {
                 Decription.text = TurnOffDecriptionText;
+            }
+
+            if (_instance.IsDestroyed())
+            {
+                Decription.text = DestroyedDescriptionText;
             }
         }
 
