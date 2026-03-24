@@ -5,6 +5,7 @@
         None,
         Tavern,
         Gates,
-        Lighthouse
+        Lighthouse,
+        Sawmill,
     }
 }

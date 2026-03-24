@@ -40,6 +40,7 @@ namespace Deckbuilding
                 Lighthouse.NewSeason();
                 Zone.NewSeason();
                 Gates.NewSeason();
+                Sawmill.NewSeason();
                 ResetMembers();
             }
 
