@@ -30,7 +30,7 @@ namespace Deckbuilding
 
         public void Init(QuestData quest)
         {
-            Quest = new PartyQuest() { Data = quest};
+            Quest = new PartyQuest() { Data = quest, Logic = quest.Rule.Create() };
             QuestName.text = quest.Name;
             QuestDescription.text = quest.Description;
             CostUI.Cost = quest.Reward;

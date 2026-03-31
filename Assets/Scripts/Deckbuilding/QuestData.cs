@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Deckbuilding.QuestRules;
+using UnityEngine;
 
 namespace Deckbuilding
 {
@@ -8,5 +9,6 @@ namespace Deckbuilding
         public string Name;
         [Multiline]public string Description;
         public int Reward;
+        [SerializeReference] public IQuestRule Rule;
     }
 }

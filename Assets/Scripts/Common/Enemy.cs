@@ -18,6 +18,7 @@ namespace Common
         public Image HealthBar;
         public int Gold = 2;
         public GameObject View;
+        public GameObject Highlight;
 
         public void Update()
         {
@@ -59,6 +60,7 @@ namespace Common
             if (IsDead())
             {
                 View.SetActive(false);
+                Highlight.SetActive(false);
             } 
         }
 
@@ -74,6 +76,11 @@ namespace Common
                 //enemy.Health = enemy.MaxHealth;
                 Destroy(enemy.gameObject);
             }
+        }
+
+        public void SetHighlight()
+        {
+            Highlight.SetActive(true);
         }
     }
 }
