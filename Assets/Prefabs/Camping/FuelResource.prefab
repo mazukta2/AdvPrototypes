@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb4c573d6afe46fa890375ffd73dad34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Game::Deckbuilding.GameResourcePile
-  Amount: 2
+  Amount: 1
   ResourceType: 2
   Distance: 15
 --- !u!65 &5856022628996937740

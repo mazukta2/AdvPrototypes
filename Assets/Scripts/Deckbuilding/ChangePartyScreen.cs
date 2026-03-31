@@ -33,6 +33,10 @@ namespace Deckbuilding
             {
                 _requestEndSeason = false;
                 Screen.SetActive(true);
+                
+                PartyResources.Instance.Change(PartyResources.ResourceType.Gold, PartyResources.Instance.Get(PartyResources.ResourceType.Fuel));
+                PartyResources.Instance.Set(PartyResources.ResourceType.Fuel, 0);
+                
                 PartyMembers.Instance.Clear();
                 PartyMovement.NewSeason();
                 Enemy.ResetEnemies();
@@ -41,6 +45,8 @@ namespace Deckbuilding
                 Zone.NewSeason();
                 Gates.NewSeason();
                 Sawmill.NewSeason();
+                
+                
                 ResetMembers();
             }
 
