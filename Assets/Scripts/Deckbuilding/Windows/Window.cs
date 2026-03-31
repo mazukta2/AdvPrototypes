@@ -24,5 +24,10 @@ namespace Deckbuilding.Windows
         {
             gameObject.SetActive(false);
         }
+        
+        public bool IsOpened()
+        {
+            return gameObject.activeSelf;
+        }
     }
 }

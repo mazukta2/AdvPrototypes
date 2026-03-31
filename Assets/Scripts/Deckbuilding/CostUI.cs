@@ -12,7 +12,7 @@ namespace Deckbuilding
         
         public TextMeshProUGUI CostText;
 
-        public void OnEnable()
+        public void Update()
         {
             CostText.text = $"{Name} {Cost} {GetResourceText(ResourceType)}";
         }

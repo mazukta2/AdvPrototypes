@@ -8,9 +8,8 @@ using UnityEngine.UI;
 
 namespace Deckbuilding
 {
-    public class ChangePartyScreen : SingletonMonoBehavior<ChangePartyScreen>
+    public class ChangePartyScreen : Window<ChangePartyScreen>
     {
-        public GameObject Screen;
         public GameObject PartyMemberPrefab;
         public GameObject PartyMembersList;
         public Button ContinueButton;
@@ -20,36 +19,14 @@ namespace Deckbuilding
         public TextMeshProUGUI CountText;
         public TextMeshProUGUI CostText;
         public int ExtraCost = 2;
-        private bool _requestEndSeason;
 
-        public void OnEnable()
+        public void Start()
         {
             ContinueButton.onClick.AddListener(OnContinue);
         }
         
         public void Update()
         {
-            if ((_requestEndSeason || PartyHealth.IsDead()) && !Screen.activeSelf)
-            {
-                _requestEndSeason = false;
-                Screen.SetActive(true);
-                
-                PartyResources.Instance.Change(PartyResources.ResourceType.Gold, PartyResources.Instance.Get(PartyResources.ResourceType.Fuel));
-                PartyResources.Instance.Set(PartyResources.ResourceType.Fuel, 0);
-                
-                PartyMembers.Instance.Clear();
-                PartyMovement.NewSeason();
-                Enemy.ResetEnemies();
-                Bullet.DestroyAll();
-                Lighthouse.NewSeason();
-                Zone.NewSeason();
-                Gates.NewSeason();
-                Sawmill.NewSeason();
-                
-                
-                ResetMembers();
-            }
-
             var selectedCount = GetSelectedCount();
             var cost = GetCost();
 
@@ -84,12 +61,13 @@ namespace Deckbuilding
             return cost;
         }
 
-        public void EndSeason()
+
+        public void OnEnable()
         {
-            _requestEndSeason = true;
+            ResetMembers();
         }
-        
-        private void ResetMembers()
+
+        public void ResetMembers()
         {
             foreach (Transform child in PartyMembersList.transform)
             {
@@ -110,7 +88,7 @@ namespace Deckbuilding
 
         private void OnContinue()
         {
-            Screen.SetActive(false);
+            Close();
             PartyResources.Instance.Change(PartyResources.ResourceType.Gold, -GetCost());
         }
     }

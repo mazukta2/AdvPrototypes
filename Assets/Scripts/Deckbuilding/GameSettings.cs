@@ -9,6 +9,7 @@ namespace Deckbuilding
         public static GameSettings Instance { get; set; }
         
         public PartyMemberClass[] Classes;
+        public QuestData[] Quests;
         public InteractionRule[] InteractionRules;
 
         public int GatesCost;
