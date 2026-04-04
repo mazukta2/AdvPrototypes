@@ -28,6 +28,7 @@ namespace Deckbuilding
                 Zone.NewSeason();
                 Gates.NewSeason();
                 Sawmill.NewSeason();
+                PartyQuests.NewSeason();
                 
                 ChangeQuestScreen.Instance.Open();
             }

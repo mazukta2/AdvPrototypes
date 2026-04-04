@@ -19,6 +19,11 @@ namespace Deckbuilding
             QuestHudText.text = member.Data.Name;
         }
 
+        protected void OnDisable()
+        {
+            Clear();
+        }
+
         public void Clear()
         {
             _quest = null;

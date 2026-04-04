@@ -33,5 +33,16 @@ namespace Deckbuilding
             Quests.Clear();
         }
 
+        public static void NewSeason()
+        {
+            foreach (var member in Instance.Quests)
+            {
+                if (member.Logic.IsCompleted())
+                {
+                    member.OnComplete();
+                }
+            }
+            Instance.Clear();
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Common;
+﻿using System;
+using Common;
 using UnityEngine;
 
 namespace Deckbuilding.QuestRules
@@ -34,7 +35,7 @@ namespace Deckbuilding.QuestRules
             public bool IsCompleted()
             {
                 if (_randomEnemy == null)
-                    return true;
+                    throw new Exception("enemy is null");
                 
                 if (_randomEnemy.IsDead())
                     return true;

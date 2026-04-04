@@ -11,5 +11,10 @@ namespace Deckbuilding
     {
         public QuestData Data;
         public IQuestLogic Logic;
+
+        public void OnComplete()
+        {
+            PartyResources.Instance.Change(PartyResources.ResourceType.Gold, Data.Reward);
+        }
     }
 }
