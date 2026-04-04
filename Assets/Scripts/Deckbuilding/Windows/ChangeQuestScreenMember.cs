@@ -15,7 +15,8 @@ namespace Deckbuilding
         public bool IsSelected;
         public CostUI CostUI;
 
-        public PartyQuest Quest { get; set; }
+
+        public QuestData QuestData { get; set; }
 
         public void OnEnable()
         {
@@ -30,7 +31,7 @@ namespace Deckbuilding
 
         public void Init(QuestData quest)
         {
-            Quest = new PartyQuest() { Data = quest, Logic = quest.Rule.Create() };
+            QuestData = quest;
             QuestName.text = quest.Name;
             QuestDescription.text = quest.Description;
             CostUI.Cost = quest.Reward;
@@ -42,16 +43,14 @@ namespace Deckbuilding
             SelectButton.GetComponent<Image>().color = IsSelected ? Color.green : Color.white;
             if (IsSelected)
             {
-                PartyQuests.Instance.Add(Quest);
-                QuestHud.Instance.Set(Quest);
+                var quest = new PartyQuest() { Data = QuestData, Logic = QuestData.Rule.Create() };
+                PartyQuests.Instance.Add(quest);
+                QuestHud.Instance.Set(quest);
             }
             else
             {
-                if (Quest != null)
-                {
-                    PartyQuests.Instance.Remove(Quest);
-                    QuestHud.Instance.Clear();
-                }
+                PartyQuests.Instance.Clear();
+                QuestHud.Instance.Clear();
             }
         }
     }

@@ -1,5 +1,6 @@
 ﻿using System;
 using Camping;
+using Map;
 using UnityEngine;
 using UnityEngine.UI;
 using Input = UnityEngine.Windows.Input;
@@ -37,6 +38,15 @@ namespace Common
                 {
                     CurrentCooldown -= Time.deltaTime;
                 }
+            }
+
+            if (SelectMapButton.Instance.IsMap)
+            {
+                Highlight.transform.localScale = Vector3.one * 10;
+            }
+            else
+            {
+                Highlight.transform.localScale = Vector3.one * 3;
             }
         }
         
