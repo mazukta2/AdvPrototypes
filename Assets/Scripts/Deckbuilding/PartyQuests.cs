@@ -29,6 +29,7 @@ namespace Deckbuilding
         {
             foreach (var member in Quests)
             {
+                member.Clear();
             }
             Quests.Clear();
         }

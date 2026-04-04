@@ -16,5 +16,10 @@ namespace Deckbuilding
         {
             PartyResources.Instance.Change(PartyResources.ResourceType.Gold, Data.Reward);
         }
+
+        public void Clear()
+        {
+            Logic.Clear();
+        }
     }
 }

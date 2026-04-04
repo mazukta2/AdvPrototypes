@@ -7,5 +7,6 @@ namespace Deckbuilding.QuestRules
         public GameObject GetTrackingObject();
 
         public bool IsCompleted();
+        void Clear();
     }
 }

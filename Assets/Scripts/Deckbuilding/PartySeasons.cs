@@ -17,6 +17,8 @@ namespace Deckbuilding
             {
                 _requestEndSeason = false;
                 
+                PartyQuests.NewSeason();
+                
                 PartyResources.Instance.Change(PartyResources.ResourceType.Gold, PartyResources.Instance.Get(PartyResources.ResourceType.Fuel));
                 PartyResources.Instance.Set(PartyResources.ResourceType.Fuel, 0);
                 
@@ -28,7 +30,6 @@ namespace Deckbuilding
                 Zone.NewSeason();
                 Gates.NewSeason();
                 Sawmill.NewSeason();
-                PartyQuests.NewSeason();
                 
                 ChangeQuestScreen.Instance.Open();
             }

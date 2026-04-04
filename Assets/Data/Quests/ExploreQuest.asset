@@ -16,10 +16,10 @@ MonoBehaviour:
   Description: "\u041F\u043E\u0441\u0435\u0442\u0438\u0442\u0435 4 \u043F\u0435\u0449\u0435\u0440\u044B"
   Reward: 6
   Rule:
-    rid: 6326883095207739740
+    rid: 3198867558835683661
   references:
     version: 2
     RefIds:
-    - rid: 6326883095207739740
-      type: {class: KillMonster, ns: Deckbuilding.QuestRules, asm: Game}
+    - rid: 3198867558835683661
+      type: {class: ExploreDungeons, ns: Deckbuilding.QuestRules, asm: Game}
       data: 

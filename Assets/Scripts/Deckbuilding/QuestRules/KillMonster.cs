@@ -13,12 +13,12 @@ namespace Deckbuilding.QuestRules
         
         public class Logic : IQuestLogic
         {
-            private readonly Enemy _randomEnemy;
+            private  Enemy _randomEnemy;
 
             public Logic()
             {
                 _randomEnemy = Enemy.List[UnityEngine.Random.Range(0, Enemy.List.Count)];
-                _randomEnemy.SetHighlight();
+                _randomEnemy.SetHighlight(true);
             }
             
             public GameObject GetTrackingObject()
@@ -41,6 +41,12 @@ namespace Deckbuilding.QuestRules
                     return true;
                 
                 return false;
+            }
+
+            public void Clear()
+            {
+                _randomEnemy.SetHighlight(false);
+                _randomEnemy = null;
             }
         }
     }

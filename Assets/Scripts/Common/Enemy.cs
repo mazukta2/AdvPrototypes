@@ -88,9 +88,9 @@ namespace Common
             }
         }
 
-        public void SetHighlight()
+        public void SetHighlight(bool b)
         {
-            Highlight.SetActive(true);
+            Highlight.SetActive(b);
         }
     }
 }
