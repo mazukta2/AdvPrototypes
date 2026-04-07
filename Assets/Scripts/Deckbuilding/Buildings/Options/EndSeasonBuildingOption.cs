@@ -7,12 +7,12 @@ namespace Deckbuilding.Buildings.Options
         public string OptionName;
         [Multiline]public string OptionDesc;
         
-        public string GetName()
+        public string GetName(BuildingWindowContext context)
         {
             return OptionName;
         }
 
-        public string GetDescription()
+        public string GetDescription(BuildingWindowContext context)
         {
             return OptionDesc;
         }

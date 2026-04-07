@@ -57,8 +57,11 @@ namespace Common
                         var tagComponent = go.GetComponent<BuildingWindowTag>();
                         tagComponent.Text.text = tagData.TagName;
                         tagComponent.Background.color = tagData.Color;
-                        tagComponent.Tooltip.Name = tagData.TagName;
-                        tagComponent.Tooltip.Description = tagData.TagDescription;
+                        if (tagComponent.Tooltip != null)
+                        {
+                            tagComponent.Tooltip.Name = tagData.TagName;
+                            tagComponent.Tooltip.Description = tagData.TagDescription;
+                        }
                     }
                 }
                 

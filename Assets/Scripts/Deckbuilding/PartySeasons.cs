@@ -1,5 +1,6 @@
 ﻿using System;
 using Common;
+using Deckbuilding.Buildings;
 using Deckbuilding.Interactables;
 
 namespace Deckbuilding
@@ -30,6 +31,7 @@ namespace Deckbuilding
                 Zone.NewSeason();
                 Gates.NewSeason();
                 Sawmill.NewSeason();
+                Building.NewSeason();
                 
                 ChangeQuestScreen.Instance.Open();
             }

@@ -2,8 +2,8 @@
 {
     public interface IBuildingOption
     {
-        public string GetName();
-        public string GetDescription();
+        public string GetName(BuildingWindowContext context);
+        public string GetDescription(BuildingWindowContext context);
 
         public void Click(BuildingWindowContext context);
     }

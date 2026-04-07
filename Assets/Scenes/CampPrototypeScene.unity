@@ -1079,7 +1079,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Game::Common.TooltipWindow
   Name: {fileID: 1788332251}
   Description: {fileID: 2129493210}
-  TagPrefab: {fileID: 2512978994289395252, guid: 22cba620490929d4d8754438bd490cda,
+  TagPrefab: {fileID: 2512978994289395252, guid: 16917b3e0edfb8345bb2ac2c979264dd,
     type: 3}
   TagContainer: {fileID: 358161360}
 --- !u!1001 &94834163
@@ -3950,7 +3950,7 @@ MonoBehaviour:
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 50, y: 9}
-  m_Spacing: {x: 0, y: 0}
+  m_Spacing: {x: 2, y: 2}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!1 &369998460
@@ -4333,6 +4333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Game::Deckbuilding.Buildings.Building
   Data: {fileID: 11400000, guid: ac9d106b7a7f38546a7ef340af424ea8, type: 2}
+  Tags: []
 --- !u!65 &394485461
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17606,7 +17607,7 @@ MonoBehaviour:
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 50, y: 9}
-  m_Spacing: {x: 0, y: 0}
+  m_Spacing: {x: 2, y: 2}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!1 &1080201632
@@ -17618,6 +17619,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1080201633}
+  - component: {fileID: 1080201634}
   m_Layer: 0
   m_Name: --- COMMON ---
   m_TagString: Untagged
@@ -17652,6 +17654,21 @@ Transform:
   - {fileID: 1500230754}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1080201634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080201632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a51d4388506d4c67ad16fd170251d9fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game::Deckbuilding.EnemySpawner
+  EnemyPrefab: {fileID: 3735605501970139825, guid: ed2961266576fbc40a7f00277a344f64,
+    type: 3}
+  Radius: 40
 --- !u!1001 &1090812247
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27358,6 +27375,52 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &1723172195
+GameObject:
+  m_ObjectHideFlags: 17
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1723172197}
+  - component: {fileID: 1723172196}
+  m_Layer: 0
+  m_Name: PinnedStorage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1723172196
+MonoBehaviour:
+  m_ObjectHideFlags: 17
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1723172195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1b79da6efc904be0afbd621fe755d16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Postica.BindingSystem.Runtime::Postica.BindingSystem.PinningLogic.PinnedStorageComponent
+  _lastUsedContexts: []
+  _paths: []
+--- !u!4 &1723172197
+Transform:
+  m_ObjectHideFlags: 17
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1723172195}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1727978333 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8899514477790731949, guid: 92d4ea35576e0664f9e88f29232d4bdd,
@@ -29302,6 +29365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Game::Deckbuilding.Buildings.Building
   Data: {fileID: 11400000, guid: 2502e8997dcbb9340aa31b99ecf9fd9b, type: 2}
+  Tags: []
 --- !u!1001 &1889014665
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32163,3 +32227,4 @@ SceneRoots:
   - {fileID: 1515244059}
   - {fileID: 1481629318}
   - {fileID: 1215748789}
+  - {fileID: 1723172197}

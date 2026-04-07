@@ -71,8 +71,12 @@ namespace Deckbuilding.Windows
                 var tagComponent = go.GetComponent<BuildingWindowTag>();
                 tagComponent.Text.text = tagData.TagName;
                 tagComponent.Background.color = tagData.Color;
-                tagComponent.Tooltip.Name = tagData.TagName;
-                tagComponent.Tooltip.Description = tagData.TagDescription;
+                if (tagComponent.Tooltip != null)
+                {
+                    
+                    tagComponent.Tooltip.Name = tagData.TagName;
+                    tagComponent.Tooltip.Description = tagData.TagDescription;
+                }
                 
                 foreach (var option in tagData.Options)
                 {
@@ -85,13 +89,13 @@ namespace Deckbuilding.Windows
         {
             var go = Instantiate(OptionPrefab, OptionContainer.transform); 
             var optionComponent = go.GetComponent<BuildingWindowOption>();
-            optionComponent.Text.text = option.GetName();
+            optionComponent.Text.text = option.GetName(_context);
             optionComponent.Button.onClick.AddListener(() =>
             {
                 option.Click(_context);
             });
-            optionComponent.Tooltip.Name = option.GetName();
-            optionComponent.Tooltip.Description = option.GetDescription();
+            optionComponent.Tooltip.Name = option.GetName(_context);
+            optionComponent.Tooltip.Description = option.GetDescription(_context);
         }
     }
 }
