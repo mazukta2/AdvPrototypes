@@ -8,5 +8,6 @@ namespace Deckbuilding.Buildings
         public string TagName;
         [Multiline] public string TagDescription;
         public Color Color;
+        [SerializeReference] public IBuildingOption[] Options;
     }
 }

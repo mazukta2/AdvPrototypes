@@ -109,5 +109,14 @@ namespace Deckbuilding.Interactables
         {
             return BuildingType;
         }
+
+        public void RebuildTooltip()
+        {
+            if (_isHiglighted)
+            {
+                TooltipWindow.Remove(this);
+                TooltipWindow.Add(this);
+            }
+        }
     }
 }

@@ -6,5 +6,6 @@ namespace Deckbuilding.Buildings
     {
         public BuildingWindow Window { get; set; }
         public BuildingData Data { get; set; }
+        public Building Building { get; set; }
     }
 }   

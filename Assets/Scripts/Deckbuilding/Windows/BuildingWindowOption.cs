@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using Common;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +9,7 @@ namespace Deckbuilding.Windows
     {
         public TextMeshProUGUI Text;
         public Button Button;
+        public Tooltip Tooltip;
         
     }
 }
