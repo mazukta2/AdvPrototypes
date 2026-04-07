@@ -14,6 +14,8 @@ namespace Deckbuilding.Windows
         public TextMeshProUGUI DescriptionText;
         public GameObject OptionPrefab;
         public GameObject OptionContainer;
+        public GameObject TagPrefab;
+        public GameObject TagContainer;
         
         private BuildingWindowContext _context;
 
@@ -36,6 +38,21 @@ namespace Deckbuilding.Windows
                 {
                     option.Click(_context);
                 });
+            }
+            
+            foreach (Transform child in TagContainer.transform)
+            {
+                Destroy(child.gameObject);
+            }
+            
+            foreach (var tagData in _context.Data.Tags)
+            {
+                var go = Instantiate(TagPrefab, TagContainer.transform); 
+                var tagComponent = go.GetComponent<BuildingWindowTag>();
+                tagComponent.Text.text = tagData.TagName;
+                tagComponent.Background.color = tagData.Color;
+                tagComponent.Tooltip.Name = tagData.TagName;
+                tagComponent.Tooltip.Description = tagData.TagDescription;
             }
         }
 

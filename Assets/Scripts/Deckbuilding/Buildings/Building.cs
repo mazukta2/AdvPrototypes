@@ -9,11 +9,16 @@ namespace Deckbuilding.Buildings
         public BuildingData Data;
         public void OnEnable()
         {
-            GetComponent<Interactable>().OnReaching = () =>
+            var interactables = GetComponent<Interactable>();
+            
+            interactables.OnReaching = () =>
             {
                 BuildingWindow.Instance.Set(gameObject);
                 BuildingWindow.Instance.Open();
             };
+            interactables.Name = Data.BuidlingName;
+            interactables.Description = Data.BuidlingShortDescription;
+            interactables.Tags = Data.Tags;
         }
     }
 }

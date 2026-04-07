@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Deckbuilding.Windows;
 using TMPro;
+using UnityEngine;
 
 namespace Common
 {
@@ -8,6 +10,8 @@ namespace Common
     {
         public TextMeshProUGUI Name;
         public TextMeshProUGUI Description;
+        public GameObject TagPrefab;
+        public GameObject TagContainer;
 
         private List<ITooltip> _list = new List<ITooltip>();
 
@@ -29,12 +33,35 @@ namespace Common
             {
                 Name.text = "";
                 Description.text  = "";
+                foreach (Transform child in TagContainer.transform)
+                {
+                    Destroy(child.gameObject);
+                }
             }
             else
             {
                 var instance = _list.First();
                 Name.text  = instance.GetName();
                 Description.text  = instance.GetDescription();
+                
+                foreach (Transform child in TagContainer.transform)
+                {
+                    Destroy(child.gameObject);
+                }
+
+                if (instance.GetTags() != null)
+                {
+                    foreach (var tagData in instance.GetTags())
+                    {
+                        var go = Instantiate(TagPrefab, TagContainer.transform); 
+                        var tagComponent = go.GetComponent<BuildingWindowTag>();
+                        tagComponent.Text.text = tagData.TagName;
+                        tagComponent.Background.color = tagData.Color;
+                        tagComponent.Tooltip.Name = tagData.TagName;
+                        tagComponent.Tooltip.Description = tagData.TagDescription;
+                    }
+                }
+                
             }
         }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using Common;
+using Deckbuilding.Buildings;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -10,29 +11,45 @@ namespace Deckbuilding.Interactables
         public BuildingTypes BuildingType;
         public string Name;
         [Multiline] public string Description;
+        public TagData[] Tags;
         public Outline Outline;
         public float Distance = 20;
         public bool Selected;
+        private bool _isOverObject;
+        private bool _isHiglighted;
         public Action OnReaching { get; set; }
 
 
         private void OnMouseEnter()
         {
-            if (!this.enabled)
-                return;
-            TooltipWindow.Add(this);
-            Outline.enabled = true;
-            Selected = true;
+            _isOverObject = true;
         }
 
         private void OnMouseExit()
         {
-            if (!this.enabled)
-                return;
+            _isOverObject = false;
             
-            TooltipWindow.Remove(this);
-            Outline.enabled = false;
-            Selected = false;
+        }
+
+        public void Update()
+        {
+            var isOverUI = (UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject());
+            
+            var needToHighlight = !isOverUI && _isOverObject;
+            if (_isHiglighted && !needToHighlight)
+            {
+                _isHiglighted = false;
+                TooltipWindow.Remove(this);
+                Outline.enabled = false;
+                Selected = false;
+                
+            } else if (!_isHiglighted && needToHighlight)
+            {
+                _isHiglighted = true;
+                TooltipWindow.Add(this);
+                Outline.enabled = true;
+                Selected = true;
+            }
         }
 
         protected void OnEnable()
@@ -64,6 +81,11 @@ namespace Deckbuilding.Interactables
             }
             
             return Description;
+        }
+
+        public TagData[] GetTags()
+        {
+            return Tags;
         }
 
         public void InteractOnEndOfMovement()

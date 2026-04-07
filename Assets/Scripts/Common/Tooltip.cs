@@ -1,4 +1,5 @@
 ﻿using System;
+using Deckbuilding.Buildings;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -32,6 +33,11 @@ namespace Common
         public string GetDescription()
         {
             return Description;
+        }
+
+        public TagData[] GetTags()
+        {
+            return null;
         }
     }
 }
