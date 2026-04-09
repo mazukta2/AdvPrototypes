@@ -3,6 +3,7 @@ using Common;
 using Deckbuilding.Buildings;
 using Deckbuilding.Interactables;
 using TMPro;
+using Unity.VisualScripting.YamlDotNet.Core.Tokens;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -69,7 +70,12 @@ namespace Deckbuilding.Windows
             {
                 var go = Instantiate(TagPrefab, TagContainer.transform); 
                 var tagComponent = go.GetComponent<BuildingWindowTag>();
-                tagComponent.Text.text = tagData.TagName;
+                var tagName =  tagData.TagName;
+                if (_context.Building.Counters.TryGetValue(tagData, out var counter))
+                {
+                    tagName += ":"+counter;
+                }   
+                tagComponent.Text.text = tagName;
                 tagComponent.Background.color = tagData.Color;
                 if (tagComponent.Tooltip != null)
                 {
@@ -77,8 +83,11 @@ namespace Deckbuilding.Windows
                     tagComponent.Tooltip.Name = tagData.TagName;
                     tagComponent.Tooltip.Description = tagData.TagDescription;
                 }
-                
-                foreach (var option in tagData.Options)
+            }
+
+            foreach (var rule in GameSettings.Instance.BuildingCombinationRules)
+            {
+                foreach (var option in rule.GetOptionsForBuilding(_context.Building))
                 {
                     MakeOption(option);
                 }

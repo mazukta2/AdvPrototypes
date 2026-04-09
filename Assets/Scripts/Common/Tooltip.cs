@@ -35,7 +35,7 @@ namespace Common
             return Description;
         }
 
-        public TagData[] GetTags()
+        public Building GetBuilding()
         {
             return null;
         }

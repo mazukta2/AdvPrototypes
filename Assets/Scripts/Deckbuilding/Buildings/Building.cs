@@ -25,23 +25,23 @@ namespace Deckbuilding.Buildings
             interactables.Name = Data.BuidlingName;
             interactables.Description = Data.BuidlingShortDescription;
             Tags.AddRange(Data.Tags);
-            interactables.Tags = Tags.ToArray();
+            interactables.Building = this;
         }
 
         public void RemoveTag(TagData tagData)
         {
             Tags.Remove(tagData);
             Counters.Remove(tagData);
-            if (tagData.OnRemove != null)
+            /*if (tagData.OnRemove != null)
             {
                 foreach (var buildingAction in tagData.OnRemove)
                 {
                     buildingAction.Execute(this);
                 }
-            }
+            }*/
             
             var interactables = GetComponent<Interactable>();
-            interactables.Tags = Tags.ToArray();
+            interactables.Building = this;
             interactables.RebuildTooltip();
 
             BuildingWindow.Instance.RebuildWindow();
@@ -52,16 +52,16 @@ namespace Deckbuilding.Buildings
             Tags.Add(tagData);
             if (seasons > 0) Counters.Add(tagData, seasons);
             
-            if (tagData.OnAdd != null)
+            /*if (tagData.OnAdd != null)
             {
                 foreach (var buildingAction in tagData.OnAdd)
                 {
                     buildingAction.Execute(this);
                 }
-            }
+            }*/
             
             var interactables = GetComponent<Interactable>();
-            interactables.Tags = Tags.ToArray();
+            interactables.Building = this;
             interactables.RebuildTooltip();
 
             BuildingWindow.Instance.RebuildWindow();
@@ -78,6 +78,14 @@ namespace Deckbuilding.Buildings
                     {
                         b.RemoveTag(counter.Key);
                     }
+                }
+            }
+
+            foreach (var rule in GameSettings.Instance.BuildingCombinationRules)
+            {
+                foreach (var b in List)
+                {
+                    rule.HandleSeasonChange(b);
                 }
             }
         }

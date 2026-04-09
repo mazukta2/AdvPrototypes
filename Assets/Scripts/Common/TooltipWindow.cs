@@ -49,13 +49,18 @@ namespace Common
                     Destroy(child.gameObject);
                 }
 
-                if (instance.GetTags() != null)
+                if (instance.GetBuilding() != null)
                 {
-                    foreach (var tagData in instance.GetTags())
+                    foreach (var tagData in instance.GetBuilding().Tags)
                     {
                         var go = Instantiate(TagPrefab, TagContainer.transform); 
                         var tagComponent = go.GetComponent<BuildingWindowTag>();
-                        tagComponent.Text.text = tagData.TagName;
+                        var tagName =  tagData.TagName;
+                        if (instance.GetBuilding().Counters.TryGetValue(tagData, out var counter))
+                        {
+                            tagName += ":"+counter;
+                        }   
+                        tagComponent.Text.text = tagName;
                         tagComponent.Background.color = tagData.Color;
                         if (tagComponent.Tooltip != null)
                         {

@@ -11,13 +11,13 @@ namespace Deckbuilding.Interactables
         public BuildingTypes BuildingType;
         public string Name;
         [Multiline] public string Description;
-        public TagData[] Tags;
         public Outline Outline;
         public float Distance = 20;
         public bool Selected;
         private bool _isOverObject;
         private bool _isHiglighted;
         public Action OnReaching { get; set; }
+        public Building Building { get; set; }
 
 
         private void OnMouseEnter()
@@ -83,9 +83,9 @@ namespace Deckbuilding.Interactables
             return Description;
         }
 
-        public TagData[] GetTags()
+        public Building GetBuilding()
         {
-            return Tags;
+            return Building;
         }
 
         public void InteractOnEndOfMovement()

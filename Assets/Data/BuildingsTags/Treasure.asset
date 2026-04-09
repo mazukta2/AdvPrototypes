@@ -30,8 +30,8 @@ MonoBehaviour:
       data:
         TreasureTag: {fileID: 11400000}
         GuardsTag: {fileID: 11400000, guid: 728351d2096f9de4086097fef66853d2, type: 2}
-        KilledGuardsTag: {fileID: 11400000, guid: 1df04fb2826c1d74789d88bc6508321b,
-          type: 2}
+        KilledGuardsTags:
+        - {fileID: 11400000, guid: 1df04fb2826c1d74789d88bc6508321b, type: 2}
         KilledGuardsAmount: 2
         Money: 4
         EnemyCount: 2

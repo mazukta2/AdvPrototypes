@@ -7,6 +7,6 @@ namespace Common
     {
         string GetName();
         string GetDescription();
-        TagData[] GetTags();
+        Building GetBuilding();
     }
 }

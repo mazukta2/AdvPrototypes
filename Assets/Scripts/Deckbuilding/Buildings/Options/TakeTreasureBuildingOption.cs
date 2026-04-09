@@ -7,7 +7,7 @@ namespace Deckbuilding.Buildings.Options
     {
         public TagData TreasureTag;
         public TagData GuardsTag;
-        public TagData KilledGuardsTag;
+        public TagData[] KilledGuardsTags;
         public int KilledGuardsAmount = 2;
         public int Money;
         public int EnemyCount;
@@ -38,7 +38,10 @@ namespace Deckbuilding.Buildings.Options
             } else if (state == State.TriggeredGuards)
             {
                 context.Building.RemoveTag(GuardsTag);
-                context.Building.AddTag(KilledGuardsTag, KilledGuardsAmount);
+                foreach (var tagData in KilledGuardsTags)
+                {
+                    context.Building.AddTag(tagData, KilledGuardsAmount);
+                }
                 context.Window.Close();
                 for (int i = 0; i < EnemyCount; i++)
                 {

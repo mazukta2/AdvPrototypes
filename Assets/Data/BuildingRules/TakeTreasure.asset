@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 072d4a2ad4cf4c87a5c1428feaa9f051, type: 3}
+  m_Name: TakeTreasure
+  m_EditorClassIdentifier: Game::Deckbuilding.BuildingRules.BuildingCombinationRule
+  With:
+  - {fileID: 11400000, guid: f85fa8f56f8648b49a0c15900ffc0d78, type: 2}
+  Without:
+  - {fileID: 11400000, guid: 728351d2096f9de4086097fef66853d2, type: 2}
+  Options:
+  - rid: 3198867672654676080
+  OnChangeSeason: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 3198867672654676080
+      type: {class: CommonOption, ns: Deckbuilding.Buildings.Options, asm: Game}
+      data:
+        OptionName: "\u0417\u0430\u0431\u0440\u0430\u0442\u044C \u0441\u043E\u043A\u0440\u043E\u0432\u0438\u0449\u0430"
+        OptionDesc: "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u0435 {0} \u0437\u043E\u043B\u043E\u0442\u0430."
+        CloseWindow: 1
+        Actions:
+        - rid: 3198867672654676082
+        - rid: 3198867672654676083
+        - rid: 3198867672654676096
+    - rid: 3198867672654676082
+      type: {class: ShowActionMessage, ns: Deckbuilding.Buildings.BuildingActions,
+        asm: Game}
+      data:
+        ActionDescText: "\u0412\u044B \u0437\u0430\u0431\u0438\u0440\u0430\u0435\u0442\u0435
+          \u0441\u043E\u043A\u0440\u043E\u0432\u0438\u0449\u0430 \u0431\u0435\u0437
+          \u043A\u0430\u043A\u043E\u0433\u043E-\u0442\u043E \u0441\u043E\u043F\u0440\u043E\u0442\u0438\u0432\u043B\u0435\u043D\u0438\u044F"
+    - rid: 3198867672654676083
+      type: {class: ChangeResources, ns: Deckbuilding.Buildings.BuildingActions, asm: Game}
+      data:
+        ResourceType: 1
+        Value: 4
+    - rid: 3198867672654676096
+      type: {class: RemoveTags, ns: Deckbuilding.Buildings.BuildingActions, asm: Game}
+      data:
+        Tags:
+        - {fileID: 11400000, guid: f85fa8f56f8648b49a0c15900ffc0d78, type: 2}

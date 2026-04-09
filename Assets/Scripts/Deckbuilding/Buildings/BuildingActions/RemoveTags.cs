@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace Deckbuilding.Buildings.BuildingActions
+﻿namespace Deckbuilding.Buildings.BuildingActions
 {
-    public class GiveTags : IBuildingAction
+    public class RemoveTags : IBuildingAction
     {
         public TagData[] Tags;
         
@@ -10,16 +8,16 @@ namespace Deckbuilding.Buildings.BuildingActions
         {
             foreach (var tag in Tags)
             {
-                if (!building.Tags.Contains(tag))
+                if (building.Tags.Contains(tag))
                 {
-                    building.Tags.Add(tag);
+                    building.Tags.Remove(tag);
                 }
             }
         }
 
         public object[] GetParameters()
         {
-            return Array.Empty<object>();
+            return new object[] {};
         }
     }
 }

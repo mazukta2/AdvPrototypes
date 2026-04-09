@@ -1,4 +1,5 @@
-﻿using Deckbuilding.InteractionRules;
+﻿using Deckbuilding.BuildingRules;
+using Deckbuilding.InteractionRules;
 using UnityEngine;
 
 namespace Deckbuilding
@@ -11,6 +12,7 @@ namespace Deckbuilding
         public PartyMemberClass[] Classes;
         public QuestData[] Quests;
         public InteractionRule[] InteractionRules;
+        public BuildingCombinationRule[] BuildingCombinationRules;
 
         public int GatesCost;
         

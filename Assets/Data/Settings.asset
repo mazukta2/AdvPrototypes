@@ -29,6 +29,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fbd35858fb8d7ea49bd30ad3b12c159d, type: 2}
   - {fileID: 11400000, guid: 0709fc00b4006c246877075ef1c35159, type: 2}
   - {fileID: 11400000, guid: 4b4ec37cb01ad3e4aa3abf47dad564c2, type: 2}
+  BuildingCombinationRules:
+  - {fileID: 11400000, guid: 6aa8d365526112546b7489e681e33af1, type: 2}
+  - {fileID: 11400000, guid: 690a1a5535c8741479ac9148ec0cdae6, type: 2}
+  - {fileID: 11400000, guid: a61f2361e7def00418cc8babd6bc0273, type: 2}
   GatesCost: 1
   UknownEffect: "\u041D\u0435\u0438\u0437\u0432\u0435\u0441\u0442\u043D\u044B\u0439
     \u044D\u0444\u0444\u0435\u043A\u0442"

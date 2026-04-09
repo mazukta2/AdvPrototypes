@@ -4388,7 +4388,6 @@ MonoBehaviour:
   BuildingType: 0
   Name: 
   Description: 
-  Tags: []
   Outline: {fileID: 394485462}
   Distance: 20
   Selected: 0
@@ -4911,7 +4910,6 @@ MonoBehaviour:
   Description: "\u041A\u043E\u0431\u043E\u043B\u044C\u0434\u044B \u043E\u043A\u0443\u043F\u0438\u0440\u043E\u0432\u0430\u043B\u0438
     \u0437\u0430\u0441\u0442\u0430\u0432\u0443 \u0438 \u0442\u0440\u0435\u0431\u0443\u044E\u0442
     \u043F\u043B\u0430\u0442\u044B \u0437\u0430 \u043F\u0440\u043E\u0445\u043E\u0434"
-  Tags: []
   Outline: {fileID: 425917345}
   Distance: 20
   Selected: 0
@@ -5320,7 +5318,6 @@ MonoBehaviour:
   Description: "\u041E\u0441\u0442\u0430\u0432\u0448\u0438\u0439\u0441\u044F \u0441
     \u0434\u0440\u0435\u0432\u043D\u0438\u0445 \u0432\u0440\u0435\u043C\u0435\u043D
     \u043F\u0435\u0449\u0435\u0440\u043D\u044B\u0439 \u043C\u0430\u044F\u043A."
-  Tags: []
   Outline: {fileID: 440057430}
   Distance: 20
   Selected: 0
@@ -29327,7 +29324,6 @@ MonoBehaviour:
   BuildingType: 1
   Name: 
   Description: 
-  Tags: []
   Outline: {fileID: 1876232388}
   Distance: 20
   Selected: 0
@@ -30068,7 +30064,6 @@ MonoBehaviour:
   Description: "\u0413\u0440\u0443\u043F\u043F\u0430 \u043A\u0440\u0435\u0441\u0442\u044C\u044F\u043D
     \u0434\u043E\u0431\u044B\u0432\u0430\u0435\u0442 \u0437\u0434\u0435\u0441\u044C
     \u0434\u0440\u0435\u0432\u043E\u0433\u0440\u0438\u0431."
-  Tags: []
   Outline: {fileID: 1953772647}
   Distance: 20
   Selected: 0

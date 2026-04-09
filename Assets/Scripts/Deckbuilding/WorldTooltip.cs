@@ -10,7 +10,6 @@ namespace Deckbuilding.Interactables
     {
         public string Name;
         [Multiline] public string Description;
-        public TagData[] Tags;
         public Outline Outline;
         public bool Selected;
 
@@ -55,9 +54,9 @@ namespace Deckbuilding.Interactables
             return Description;
         }
 
-        public TagData[] GetTags()
+        public Building GetBuilding()
         {
-            return Tags;
+            return null;
         }
     }
 }
