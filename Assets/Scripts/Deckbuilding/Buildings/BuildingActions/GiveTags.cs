@@ -5,6 +5,7 @@ namespace Deckbuilding.Buildings.BuildingActions
     public class GiveTags : IBuildingAction
     {
         public TagData[] Tags;
+        public int Time;
         
         public void Execute(Building building)
         {
@@ -14,6 +15,9 @@ namespace Deckbuilding.Buildings.BuildingActions
                 {
                     building.Tags.Add(tag);
                 }
+
+                if (Time > 0)
+                    building.Counters[tag] = Time;
             }
         }
 

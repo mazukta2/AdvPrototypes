@@ -13,10 +13,7 @@ MonoBehaviour:
   m_Name: Settings
   m_EditorClassIdentifier: Game::Deckbuilding.GameSettings
   Classes:
-  - {fileID: 11400000, guid: 62cf72f7302444b4e98aaf5f7d294e22, type: 2}
   - {fileID: 11400000, guid: e5e946832653f8749a60cf509929433d, type: 2}
-  - {fileID: 11400000, guid: 77daf126804fab74d8f2926828bacac0, type: 2}
-  - {fileID: 11400000, guid: e4dc71d6386329b4b8b35e29e59c9278, type: 2}
   Quests:
   - {fileID: 11400000, guid: ff07e60d13b15b84ab8c61d5644f4276, type: 2}
   - {fileID: 11400000, guid: 63f6d492a2db81e42a6fab5da638f316, type: 2}

@@ -51,6 +51,7 @@ MonoBehaviour:
       data:
         Tags:
         - {fileID: 11400000, guid: 1df04fb2826c1d74789d88bc6508321b, type: 2}
+        Time: 2
     - rid: 3198867672654676089
       type: {class: SpawnEnemies, ns: Deckbuilding.Buildings.BuildingActions, asm: Game}
       data:
