@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Deckbuilding.InteractionRules
 {
-    public class RestoreHealth : IRuleAction
+    /*public class OpenGates : IRuleAction
     {
         [Multiline] public string ActionText;
         [Multiline] public string ActionDescText;
@@ -13,7 +13,8 @@ namespace Deckbuilding.InteractionRules
         
         public void Execute(PartyMember member, Interactable interactable)
         {
-            member.CurrentHealth = member.MaxHealth;
+            interactable.GetComponent<Gates>().OpenGates();
+            
             WorldMessenger.Instance.ShowMessage(interactable.transform.position, ActionText);
 
             member.Charge--;
@@ -24,5 +25,5 @@ namespace Deckbuilding.InteractionRules
         {
             return !_knownClasses.Contains(member.Class)?  GameSettings.Instance.UknownEffect: ActionDescText;
         }
-    }
+    }*/
 }

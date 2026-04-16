@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Deckbuilding.InteractionRules
 {
-    [CreateAssetMenu(fileName = "InteractionRule", menuName = "ScriptableObjects/InteractionRule", order = 1)]
+    /*[CreateAssetMenu(fileName = "InteractionRule", menuName = "ScriptableObjects/InteractionRule", order = 1)]
     public class InteractionRule : ScriptableObject
     {
         [Header("Conditions")]
@@ -25,5 +25,5 @@ namespace Deckbuilding.InteractionRules
 
             return true;
         }
-    }
+    }*/
 }

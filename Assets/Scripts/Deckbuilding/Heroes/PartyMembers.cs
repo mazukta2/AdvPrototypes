@@ -41,29 +41,5 @@ namespace Deckbuilding
             Members.Clear();
         }
 
-        public void Interact(PartyMember member, Interactable interactable)
-        {
-            foreach (var rule in GameSettings.Instance.InteractionRules)
-            {
-                if (rule.Match(member, interactable))
-                {
-                    rule.Action?.Execute(member, interactable);
-                    return;
-                }
-            }
-        }
-        
-        public IRuleAction GetRule(PartyMember member, Interactable interactable)
-        {
-            foreach (var rule in GameSettings.Instance.InteractionRules)
-            {
-                if (rule.Match(member, interactable))
-                {
-                    return rule.Action;
-                }
-            }
-
-            return null;
-        }
     }
 }

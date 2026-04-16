@@ -11,7 +11,6 @@ namespace Deckbuilding
         
         public PartyMemberClass[] Classes;
         public QuestData[] Quests;
-        public InteractionRule[] InteractionRules;
         public BuildingCombinationRule[] BuildingCombinationRules;
 
         [Multiline] public string Names;

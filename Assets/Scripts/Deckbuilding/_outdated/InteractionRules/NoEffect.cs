@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Deckbuilding.InteractionRules
 {
-    public class NoEffect : IRuleAction
+    /*public class NoEffect : IRuleAction
     {
         [Multiline] public string ActionText;
         [Multiline] public string ActionDescText;
@@ -22,5 +22,5 @@ namespace Deckbuilding.InteractionRules
         {
             return !_knownClasses.Contains(member.Class)?  GameSettings.Instance.UknownEffect: ActionDescText;
         }
-    }
+    }*/
 }

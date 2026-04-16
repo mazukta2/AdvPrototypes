@@ -71,14 +71,6 @@ namespace Deckbuilding.Interactables
 
         public string GetDescription()
         {
-            if (PartyMembers.Instance.SelectedMember != null)
-            {
-                var rule = PartyMembers.Instance.GetRule(PartyMembers.Instance.SelectedMember, this);
-                if (rule != null)
-                {
-                    return   Description + "\r\n\r\n<b>" + rule.GetDescription(PartyMembers.Instance.SelectedMember, this) + "</b>";
-                }
-            }
             
             return Description;
         }
@@ -92,17 +84,8 @@ namespace Deckbuilding.Interactables
         {
             if (!this.enabled)
                 return;
-            if (PartyMembers.Instance.SelectedMember != null)
-            {
-                PartyMembers.Instance.Interact(PartyMembers.Instance.SelectedMember, this);
-                PartyMembers.Instance.SelectedMember = null;
-            }
-            else
-            {
-                OnReaching?.Invoke();
-            }
             
-            
+            OnReaching?.Invoke();
         }
 
         public BuildingTypes GetBuidingType()
