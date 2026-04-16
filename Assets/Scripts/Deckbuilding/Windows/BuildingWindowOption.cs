@@ -10,6 +10,5 @@ namespace Deckbuilding.Windows
         public TextMeshProUGUI Text;
         public Button Button;
         public Tooltip Tooltip;
-        
     }
 }

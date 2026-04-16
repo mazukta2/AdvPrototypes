@@ -25,7 +25,7 @@ namespace Deckbuilding
             Member = member;
             Image.sprite = member.Class.Icon;
             Image.color = member.Class.Color;
-            Tooltip.Name = member.Class.Name;
+            Tooltip.Name = member.Name + " (" + member.Class.Name + ")";
             Tooltip.Description = member.Class.Description;
             Highlight.sprite = member.Class.Icon;
             Selected.sprite = member.Class.Icon;

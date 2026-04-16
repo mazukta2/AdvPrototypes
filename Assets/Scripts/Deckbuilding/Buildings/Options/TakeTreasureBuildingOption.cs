@@ -26,7 +26,7 @@ namespace Deckbuilding.Buildings.Options
             return string.Format(GetStateDesc(context).OptionDesc, Money);
         }
 
-        public void Click(BuildingWindowContext context)
+        public void Click(BuildingWindowContext context, PartyMember partyMember)
         {
             var state = GetState(context);
             WorldMessenger.Instance.ShowMessage(context.Building.transform.position, GetStateDesc(context).ActionDescText);

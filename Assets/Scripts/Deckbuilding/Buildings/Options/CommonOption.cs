@@ -21,7 +21,7 @@ namespace Deckbuilding.Buildings.Options
             return string.Format(OptionDesc, Actions.SelectMany(a => a.GetParameters()).ToArray());
         }
 
-        public void Click(BuildingWindowContext context)
+        public void Click(BuildingWindowContext context, PartyMember partyMember)
         {
             foreach (var action in Actions)
             {

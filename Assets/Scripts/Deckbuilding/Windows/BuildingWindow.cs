@@ -1,6 +1,7 @@
 ﻿using System;
 using Common;
 using Deckbuilding.Buildings;
+using Deckbuilding.Heroes;
 using Deckbuilding.Interactables;
 using TMPro;
 using Unity.VisualScripting.YamlDotNet.Core.Tokens;
@@ -18,13 +19,17 @@ namespace Deckbuilding.Windows
         public GameObject TagPrefab;
         public GameObject TagContainer;
         
+        public GameObject Selector;
+        public GameObject SelectorContainer;
+        public GameObject SelectorButtonPrefab;
+        
         private BuildingWindowContext _context;
 
         public void OnEnable()
         {
             NameText.text = _context.Data.BuidlingName;
             DescriptionText.text = _context.Data.BuidlingDescription;
-
+            Selector.SetActive(false);
 
             RebuildWindow();
         }
@@ -101,10 +106,43 @@ namespace Deckbuilding.Windows
             optionComponent.Text.text = option.GetName(_context);
             optionComponent.Button.onClick.AddListener(() =>
             {
-                option.Click(_context);
+                Selector.SetActive(!Selector.activeSelf);
+                
+                if (!Selector.activeSelf)
+                    return;
+                
+                // remove children
+                foreach (Transform selector in SelectorContainer.transform)
+                {
+                    Destroy(selector.gameObject);
+                }
+                
+                foreach (var partyMember in PartyMembers.Instance.Members)
+                {
+                    var memberGo = Instantiate(SelectorButtonPrefab, SelectorContainer.transform);
+                    var memberOptionComponent = memberGo.GetComponent<HeroOptionButton>();
+                    memberOptionComponent.Button.onClick.AddListener(() =>
+                    {
+                        option.Click(_context, partyMember);
+                        Selector.SetActive(false);
+                    });
+                    memberOptionComponent.Name.text = partyMember.Name;
+                    if (partyMember.IsDead)
+                    {
+                        memberOptionComponent.Icon.sprite = memberOptionComponent.Dead;
+                        memberOptionComponent.Icon.color = memberOptionComponent.DeadColor;
+                        memberOptionComponent.Button.interactable = false;
+                    }
+                    else
+                    {
+                        memberOptionComponent.Icon.sprite = memberOptionComponent.NormalIcon;
+                        memberOptionComponent.Icon.color = partyMember.Class.Color;
+                    }
+                }
             });
             optionComponent.Tooltip.Name = option.GetName(_context);
             optionComponent.Tooltip.Description = option.GetDescription(_context);
+
         }
     }
 }

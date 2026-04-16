@@ -138,6 +138,10 @@ MonoBehaviour:
   Text: {fileID: 1338181721131942712}
   Button: {fileID: 3534915184477985822}
   Tooltip: {fileID: 1821019608752988107}
+  Selector: {fileID: 0}
+  SelectorContainer: {fileID: 0}
+  SelectorButtonPrefab: {fileID: 3296417961602165167, guid: 592197975a419bc4cbbf6170a62449c6,
+    type: 3}
 --- !u!114 &1821019608752988107
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,6 +5,6 @@
         public string GetName(BuildingWindowContext context);
         public string GetDescription(BuildingWindowContext context);
 
-        public void Click(BuildingWindowContext context);
+        public void Click(BuildingWindowContext context, PartyMember partyMember);
     }
 }

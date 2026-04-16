@@ -17,7 +17,7 @@ namespace Deckbuilding.Buildings.Options
             return OptionDesc;
         }
 
-        public void Click(BuildingWindowContext context)
+        public void Click(BuildingWindowContext context, PartyMember partyMember)
         {
             PartySeasons.Instance.EndSeason();
             context.Window.Close();
