@@ -29,5 +29,10 @@ namespace Deckbuilding.Windows
 
             return amount;
         }
+
+        public static float GetChances(int skill, int rollValue)
+        {
+            return 0.5f + ((skill-rollValue) * 0.025f);
+        }
     }
 }

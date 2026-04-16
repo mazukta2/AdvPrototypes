@@ -57,7 +57,13 @@ namespace Deckbuilding
                 if (tagComponent.Tooltip != null)
                 {
                     tagComponent.Tooltip.Name = heroTag.Data.Name;
-                    tagComponent.Tooltip.Description = heroTag.Data.Description;
+                    tagComponent.Tooltip.Description = heroTag.Data.Description 
+                                                       + "\r\n"+
+                                                       string.Join("\r\n",
+                                                           heroTag.Data.SkillModifiers
+                                                               .Select(t => 
+                                                                   t.Skill.Name + 
+                                                                   (t.Value>=0 ? " +" :" ")+ t.Value));
                 }
             }
         }

@@ -22,9 +22,29 @@ namespace Deckbuilding.Buildings.Options
             return OptionName;
         }
 
+        public string GetDescription(BuildingWindowContext context, PartyMember partyMember)
+        {
+            var skillCheck = "";
+            if (SkillCheck != null)
+            {
+                var skill = Rolls.GetSkill(partyMember, SkillCheck);
+                skillCheck += SkillCheck.Name + ": " + skill + " против " + SkillValue + "\r\n";
+                skillCheck += "Вероятность успеха: " + 
+                              (Rolls.GetChances(skill, SkillValue)*100) + "%\r\n\r\n";
+            }
+
+            return skillCheck + string.Format(OptionDesc, Success.SelectMany(a => a.GetParameters()).ToArray());
+        }
+
         public string GetDescription(BuildingWindowContext context)
         {
-            return string.Format(OptionDesc, Success.SelectMany(a => a.GetParameters()).ToArray());
+            var skillCheck = "";
+            if (SkillCheck != null)
+            {
+                skillCheck += SkillCheck.Name + ": " + SkillValue + "\r\n\r\n";
+            }
+            
+            return skillCheck + string.Format(OptionDesc, Success.SelectMany(a => a.GetParameters()).ToArray());
         }
 
         public void Click(BuildingWindowContext context, PartyMember partyMember)
@@ -56,6 +76,11 @@ namespace Deckbuilding.Buildings.Options
             
             if (CloseWindow)
                 context.Window.Close();
+        }
+
+        public bool HasSelector()
+        {
+            return SkillCheck !=null;
         }
     }
 }

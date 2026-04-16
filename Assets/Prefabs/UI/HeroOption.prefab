@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 7447065071879649801}
   - component: {fileID: 4807418867966749271}
   - component: {fileID: 8744456161928590499}
+  - component: {fileID: 9202473291298515495}
   m_Layer: 5
   m_Name: HeroOption
   m_TagString: Untagged
@@ -217,6 +218,21 @@ MonoBehaviour:
   Dead: {fileID: 21300000, guid: 515fe1281da6af448a8721d58d7dd15e, type: 3}
   NormalIcon: {fileID: 21300000, guid: c1537644d08f8e94b84d597b87272f2c, type: 3}
   DeadColor: {r: 0.38993704, g: 0.38993704, b: 0.38993704, a: 1}
+  Tooltip: {fileID: 9202473291298515495}
+--- !u!114 &9202473291298515495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3296417961602165167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4447bb5825dd4cc99ec31b1d3c6f1130, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game::Common.Tooltip
+  Name: 
+  Description: 
 --- !u!1 &6848583659786903082
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,7 +325,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35.05
+  m_fontSize: 26.7
   m_fontSizeBase: 10.5
   m_fontWeight: 400
   m_enableAutoSizing: 1

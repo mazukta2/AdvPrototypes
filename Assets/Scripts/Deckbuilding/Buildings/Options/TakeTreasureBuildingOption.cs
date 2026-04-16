@@ -21,6 +21,11 @@ namespace Deckbuilding.Buildings.Options
             return GetStateDesc(context).OptionName;
         }
         
+        public string GetDescription(BuildingWindowContext context, PartyMember partyMember)
+        {
+            return string.Format(GetStateDesc(context).OptionDesc, Money);
+        }
+
         public string GetDescription(BuildingWindowContext context)
         {
             return string.Format(GetStateDesc(context).OptionDesc, Money);
@@ -49,6 +54,11 @@ namespace Deckbuilding.Buildings.Options
                 }
             }
             
+        }
+
+        public bool HasSelector()
+        {
+            return false;
         }
 
         public ConditionDesc GetStateDesc(BuildingWindowContext context)

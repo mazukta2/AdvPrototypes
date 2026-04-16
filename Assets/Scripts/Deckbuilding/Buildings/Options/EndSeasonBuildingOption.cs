@@ -12,6 +12,16 @@ namespace Deckbuilding.Buildings.Options
             return OptionName;
         }
 
+        public bool HasSelector()
+        {
+            return false;
+        }
+        
+        public string GetDescription(BuildingWindowContext context, PartyMember partyMember)
+        {
+            return OptionDesc;
+        }
+
         public string GetDescription(BuildingWindowContext context)
         {
             return OptionDesc;

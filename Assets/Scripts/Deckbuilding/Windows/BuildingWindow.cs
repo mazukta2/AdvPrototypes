@@ -2,6 +2,7 @@
 using Common;
 using Deckbuilding.Buildings;
 using Deckbuilding.Heroes;
+using Deckbuilding.Heroes.Skills;
 using Deckbuilding.Interactables;
 using TMPro;
 using Unity.VisualScripting.YamlDotNet.Core.Tokens;
@@ -106,6 +107,13 @@ namespace Deckbuilding.Windows
             optionComponent.Text.text = option.GetName(_context);
             optionComponent.Button.onClick.AddListener(() =>
             {
+                if (!option.HasSelector())
+                {
+                    option.Click(_context, null);
+                    Selector.SetActive(false);
+                    return;
+                }
+                
                 Selector.SetActive(!Selector.activeSelf);
                 
                 if (!Selector.activeSelf)
@@ -138,6 +146,10 @@ namespace Deckbuilding.Windows
                         memberOptionComponent.Icon.sprite = memberOptionComponent.NormalIcon;
                         memberOptionComponent.Icon.color = partyMember.Class.Color;
                     }
+                    
+                    memberOptionComponent.Tooltip.Name = option.GetName(_context);
+                    memberOptionComponent.Tooltip.Description = 
+                        option.GetDescription(_context, partyMember);
                 }
             });
             optionComponent.Tooltip.Name = option.GetName(_context);
