@@ -54,7 +54,7 @@ namespace Common
                     foreach (var tagData in instance.GetBuilding().Tags)
                     {
                         var go = Instantiate(TagPrefab, TagContainer.transform); 
-                        var tagComponent = go.GetComponent<BuildingWindowTag>();
+                        var tagComponent = go.GetComponent<SimpleTag>();
                         var tagName =  tagData.TagName;
                         if (instance.GetBuilding().Counters.TryGetValue(tagData, out var counter))
                         {

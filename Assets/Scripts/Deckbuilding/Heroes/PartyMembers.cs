@@ -11,15 +11,8 @@ namespace Deckbuilding
         public List<PartyMember> Members = new List<PartyMember>();
         public PartyMember SelectedMember;
 
-        public PartyMember Add(PartyMemberClass memberClass)
+        public PartyMember Add(PartyMember member)
         {
-            var member = new PartyMember()
-            {
-                Class = memberClass,
-                CurrentHealth = memberClass.MaxHealth,
-                MaxHealth = memberClass.MaxHealth,
-                Charge = memberClass.Charge,
-            };
             Members.Add(member);
             PartyMembersHud.Instance.Add(member);
             return member;

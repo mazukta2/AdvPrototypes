@@ -69,7 +69,7 @@ namespace Deckbuilding.Windows
             foreach (var tagData in _context.Building.Tags)
             {
                 var go = Instantiate(TagPrefab, TagContainer.transform); 
-                var tagComponent = go.GetComponent<BuildingWindowTag>();
+                var tagComponent = go.GetComponent<SimpleTag>();
                 var tagName =  tagData.TagName;
                 if (_context.Building.Counters.TryGetValue(tagData, out var counter))
                 {

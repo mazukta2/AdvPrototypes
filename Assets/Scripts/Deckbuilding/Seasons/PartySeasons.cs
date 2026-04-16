@@ -33,7 +33,8 @@ namespace Deckbuilding
                 Sawmill.NewSeason();
                 Building.NewSeason();
                 
-                ChangeQuestScreen.Instance.Open();
+                ChangePartyScreen.Instance.Open();
+                //ChangeQuestScreen.Instance.Open();
             }
         }
         

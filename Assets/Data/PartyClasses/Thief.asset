@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd42d59bdf684f439b38ffa323ca6d57, type: 3}
-  m_Name: Warrior
+  m_Name: Thief
   m_EditorClassIdentifier: Game::Deckbuilding.PartyMemberClass
-  Name: "\u0412\u043E\u0438\u043D"
+  Name: "\u0412\u043E\u0440"
   Description: 
   Icon: {fileID: 21300000, guid: c1537644d08f8e94b84d597b87272f2c, type: 3}
-  Color: {r: 0.63522005, g: 0.2307587, b: 0.22172767, a: 1}
+  Color: {r: 0.84276724, g: 0.76456755, b: 0.40018183, a: 1}
   MaxHealth: 20
   Charge: 1
   Cost: 1
@@ -23,12 +23,12 @@ MonoBehaviour:
   - Tag: {fileID: 11400000, guid: 998238a763a13414bbed7143d7faf9af, type: 2}
     Chance: 0.1
   - Tag: {fileID: 11400000, guid: 42f56a5ac103c414b99e5eb3fb89a3b3, type: 2}
-    Chance: 0.1
+    Chance: 0.5
   - Tag: {fileID: 11400000, guid: bda1942b7e757dd41acfdfc297ee79c4, type: 2}
-    Chance: 0.1
+    Chance: 0.8
   - Tag: {fileID: 11400000, guid: 84aa08d19b0848848aff4b1c4ae32738, type: 2}
-    Chance: 0.3
+    Chance: 0.1
   - Tag: {fileID: 11400000, guid: 2b3c7b9666044bb4289220ee83623d41, type: 2}
     Chance: 0.5
   - Tag: {fileID: 11400000, guid: 9ec9fd1b1012ebc449e42160752db651, type: 2}
-    Chance: 0.5
+    Chance: 0.2

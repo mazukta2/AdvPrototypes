@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace Deckbuilding.Windows
 {
-    public class BuildingWindowTag : MonoBehaviour
+    public class PartyMemberWindowTag : MonoBehaviour
     {
         public TextMeshProUGUI Text;
         public Image Background;

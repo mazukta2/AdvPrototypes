@@ -14,6 +14,8 @@ namespace Deckbuilding
         public InteractionRule[] InteractionRules;
         public BuildingCombinationRule[] BuildingCombinationRules;
 
+        [Multiline] public string Names;
+
         public int GatesCost;
         
         [Multiline] public string UknownEffect;

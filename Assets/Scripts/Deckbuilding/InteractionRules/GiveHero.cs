@@ -13,12 +13,12 @@ namespace Deckbuilding.InteractionRules
         
         public void Execute(PartyMember member, Interactable interactable)
         {
-            var randomClass = GameSettings.Instance.Classes[UnityEngine.Random.Range(0, GameSettings.Instance.Classes.Length)];
+            /*var randomClass = GameSettings.Instance.Classes[UnityEngine.Random.Range(0, GameSettings.Instance.Classes.Length)];
             PartyMembers.Instance.Add(randomClass);
             WorldMessenger.Instance.ShowMessage(interactable.transform.position, ActionText);
 
             member.Charge--;
-            _knownClasses.Add(member.Class);
+            _knownClasses.Add(member.Class);*/
         }
 
         public string GetDescription(PartyMember member, Interactable interactable)

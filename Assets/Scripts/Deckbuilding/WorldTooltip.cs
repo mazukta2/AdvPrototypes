@@ -11,30 +11,45 @@ namespace Deckbuilding.Interactables
         public string Name;
         [Multiline] public string Description;
         public Outline Outline;
-        public bool Selected;
+        private bool _isOverObject;
+        private bool _isHiglighted;
+        public bool Selected { get; set; }
+
 
         private void OnMouseEnter()
         {
-            if (!this.enabled)
-                return;
-            TooltipWindow.Add(this);
-            Outline.enabled = true;
-            Selected = true;
+            _isOverObject = true;
         }
 
         private void OnMouseExit()
         {
-            if (!this.enabled)
-                return;
-            
-            TooltipWindow.Remove(this);
-            Outline.enabled = false;
-            Selected = false;
+            _isOverObject = false;
         }
 
         protected void OnEnable()
         {
             Outline.enabled = false;
+        }
+
+        public void Update()
+        {
+            var isOverUI = (UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject());
+            
+            var needToHighlight = !isOverUI && _isOverObject;
+            if (_isHiglighted && !needToHighlight)
+            {
+                _isHiglighted = false;
+                TooltipWindow.Remove(this);
+                Outline.enabled = false;
+                Selected = false;
+                
+            } else if (!_isHiglighted && needToHighlight)
+            {
+                _isHiglighted = true;
+                TooltipWindow.Add(this);
+                Outline.enabled = true;
+                Selected = true;
+            }
         }
 
         protected void OnDisable()

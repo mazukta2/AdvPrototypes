@@ -1,4 +1,6 @@
-﻿namespace Deckbuilding
+﻿using Deckbuilding.Tags;
+
+namespace Deckbuilding
 {
     public class PartyMember
     {
@@ -7,5 +9,7 @@
         public float MaxHealth { get; set; }
         public bool IsDead => CurrentHealth <= 0;
         public int Charge { get; set; }
+        public string Name { get; set; }
+        public HeroTag[] Tags { get; set; }
     }
 }
