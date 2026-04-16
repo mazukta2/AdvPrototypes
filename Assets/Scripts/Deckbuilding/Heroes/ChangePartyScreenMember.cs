@@ -61,9 +61,7 @@ namespace Deckbuilding
                                                        + "\r\n"+
                                                        string.Join("\r\n",
                                                            heroTag.Data.SkillModifiers
-                                                               .Select(t => 
-                                                                   t.Skill.Name + 
-                                                                   (t.Value>=0 ? " +" :" ")+ t.Value));
+                                                               .Select(t => t.GetFull()));
                 }
             }
         }

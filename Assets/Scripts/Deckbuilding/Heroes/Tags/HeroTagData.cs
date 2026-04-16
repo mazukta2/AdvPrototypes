@@ -18,6 +18,12 @@ namespace Deckbuilding.Tags
         {
             public SkillData Skill;
             public int Value;
+
+            public string GetFull()
+            {
+                return "<b>" + Skill.Name +
+                       (Value >= 0 ? ": +" : ": ") + Value + "</b>";
+            }
         }
     }
 }

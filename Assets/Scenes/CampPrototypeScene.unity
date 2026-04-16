@@ -32653,7 +32653,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 5, y: 0, z: 5, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -33240,6 +33240,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 633479932}
     m_Modifications:
+    - target: {fileID: 980674426634655366, guid: 592197975a419bc4cbbf6170a62449c6,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 35.05
+      objectReference: {fileID: 0}
     - target: {fileID: 3296417961602165167, guid: 592197975a419bc4cbbf6170a62449c6,
         type: 3}
       propertyPath: m_Name
