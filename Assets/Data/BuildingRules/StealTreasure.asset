@@ -28,24 +28,39 @@ MonoBehaviour:
         OptionName: "\u0423\u043A\u0440\u0430\u0441\u0442\u044C \u0441\u043E\u043A\u0440\u043E\u0432\u0438\u0449\u0435"
         OptionDesc: "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u0435 {0} \u0437\u043E\u043B\u043E\u0442\u0430."
         CloseWindow: 1
-        Actions:
-        - rid: 3198867672654676082
-        - rid: 3198867672654676083
-        - rid: 3198867672654676096
-    - rid: 3198867672654676082
+        SkillCheck: {fileID: 11400000, guid: 385da7871fb30314897557105b523267, type: 2}
+        SkillValue: 10
+        Success:
+        - rid: 3198867831447617674
+        - rid: 3198867831447617675
+        - rid: 3198867831447617676
+        Failure:
+        - rid: 3198867831447617683
+        - rid: 3198867831447617684
+    - rid: 3198867831447617674
       type: {class: ShowActionMessage, ns: Deckbuilding.Buildings.BuildingActions,
         asm: Game}
       data:
         ActionDescText: "\u0412\u044B \u043A\u0440\u0430\u0434\u0435\u0442\u0435
           \u0441\u043E\u043A\u0440\u043E\u0432\u0438\u0449\u0435 \u043F\u0440\u044F\u043C\u043E
           \u0438\u0437 \u043F\u043E\u0434 \u043D\u043E\u0441\u0430 \u043E\u0445\u0440\u0430\u043D\u044B"
-    - rid: 3198867672654676083
+    - rid: 3198867831447617675
       type: {class: ChangeResources, ns: Deckbuilding.Buildings.BuildingActions, asm: Game}
       data:
         ResourceType: 1
         Value: 4
-    - rid: 3198867672654676096
+    - rid: 3198867831447617676
       type: {class: RemoveTags, ns: Deckbuilding.Buildings.BuildingActions, asm: Game}
       data:
         Tags:
         - {fileID: 11400000, guid: f85fa8f56f8648b49a0c15900ffc0d78, type: 2}
+    - rid: 3198867831447617683
+      type: {class: ShowActionMessage, ns: Deckbuilding.Buildings.BuildingActions,
+        asm: Game}
+      data:
+        ActionDescText: "\u0412\u044B \u043F\u043E\u0434\u043D\u044F\u043B\u0438
+          \u0442\u0440\u0435\u0432\u043E\u0433\u0443"
+    - rid: 3198867831447617684
+      type: {class: SpawnEnemies, ns: Deckbuilding.Buildings.BuildingActions, asm: Game}
+      data:
+        EnemyCount: 2

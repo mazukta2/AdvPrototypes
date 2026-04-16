@@ -16,5 +16,8 @@ MonoBehaviour:
   Description: "\u041C\u0438\u043D\u0443\u0441\u044B \u043A \u0441\u043A\u0440\u044B\u0442\u043D\u044B\u043C
     \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044F\u043C."
   Color: {r: 0.34901962, g: 0.37366557, b: 0.49803922, a: 1}
+  SkillModifiers:
+  - Skill: {fileID: 11400000, guid: 385da7871fb30314897557105b523267, type: 2}
+    Value: -1
   OpositeTags:
   - {fileID: 11400000, guid: 42f56a5ac103c414b99e5eb3fb89a3b3, type: 2}

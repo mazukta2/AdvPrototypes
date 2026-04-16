@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using Deckbuilding.Heroes.Skills;
+using UnityEngine;
 
 namespace Deckbuilding.Tags
 {
@@ -8,7 +10,14 @@ namespace Deckbuilding.Tags
         public string Name;
         [Multiline]public string Description;
         public Color Color;
-        
+        public SkillModifier[] SkillModifiers;
         public HeroTagData[] OpositeTags;
+        
+        [Serializable]
+        public struct SkillModifier
+        {
+            public SkillData Skill;
+            public int Value;
+        }
     }
 }

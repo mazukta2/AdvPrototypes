@@ -1,4 +1,6 @@
 ﻿using System.Linq;
+using Deckbuilding.Heroes.Skills;
+using Deckbuilding.Windows;
 using UnityEngine;
 
 namespace Deckbuilding.Buildings.Options
@@ -8,8 +10,12 @@ namespace Deckbuilding.Buildings.Options
         public string OptionName;
         [Multiline]public string OptionDesc;
         public bool CloseWindow;
+
+        public SkillData SkillCheck;
+        public int SkillValue = 10;
         
-        [SerializeReference] public IBuildingAction[] Actions;
+        [SerializeReference] public IBuildingAction[] Success;
+        [SerializeReference] public IBuildingAction[] Failure;
         
         public string GetName(BuildingWindowContext context)
         {
@@ -18,15 +24,36 @@ namespace Deckbuilding.Buildings.Options
 
         public string GetDescription(BuildingWindowContext context)
         {
-            return string.Format(OptionDesc, Actions.SelectMany(a => a.GetParameters()).ToArray());
+            return string.Format(OptionDesc, Success.SelectMany(a => a.GetParameters()).ToArray());
         }
 
         public void Click(BuildingWindowContext context, PartyMember partyMember)
         {
-            foreach (var action in Actions)
+            if (SkillCheck == null)
             {
-                action.Execute(context.Building);
+                foreach (var action in Success)
+                {
+                    action.Execute(context.Building);
+                }
             }
+            else
+            {
+                if (Rolls.Roll(partyMember, SkillCheck, SkillValue))
+                {
+                    foreach (var action in Success)
+                    {
+                        action.Execute(context.Building);
+                    }
+                }
+                else
+                {
+                    foreach (var action in Failure)
+                    {
+                        action.Execute(context.Building);
+                    }
+                }
+            }
+            
             if (CloseWindow)
                 context.Window.Close();
         }
