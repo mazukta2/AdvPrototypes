@@ -19,5 +19,7 @@ MonoBehaviour:
   SkillModifiers:
   - Skill: {fileID: 11400000, guid: 385da7871fb30314897557105b523267, type: 2}
     Value: -5
+  - Skill: {fileID: 11400000, guid: 5225d8e79dcde6f40aa7cc8fffcc041e, type: 2}
+    Value: 3
   OpositeTags:
   - {fileID: 11400000, guid: bda1942b7e757dd41acfdfc297ee79c4, type: 2}
