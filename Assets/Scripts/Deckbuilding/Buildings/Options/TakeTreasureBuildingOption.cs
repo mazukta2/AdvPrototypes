@@ -30,6 +30,11 @@ namespace Deckbuilding.Buildings.Options
         {
             return string.Format(GetStateDesc(context).OptionDesc, Money);
         }
+        
+        public bool CanSelect(BuildingWindowContext context, PartyMember partyMember)
+        {
+            return true;
+        }
 
         public void Click(BuildingWindowContext context, PartyMember partyMember)
         {

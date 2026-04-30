@@ -13,13 +13,15 @@ namespace Deckbuilding.Buildings.Options
 
         public SkillData SkillCheck;
         public int SkillValue = 10;
+
+        public int Cost;
         
         [SerializeReference] public IBuildingAction[] Success;
         [SerializeReference] public IBuildingAction[] Failure;
         
         public string GetName(BuildingWindowContext context)
         {
-            return OptionName;
+            return OptionName + (Cost>0 ? " - " +Cost.ToString(): "");
         }
 
         public string GetDescription(BuildingWindowContext context, PartyMember partyMember)
@@ -49,6 +51,9 @@ namespace Deckbuilding.Buildings.Options
 
         public void Click(BuildingWindowContext context, PartyMember partyMember)
         {
+            if (partyMember != null)
+                partyMember.Charge -= Cost;
+            
             if (SkillCheck == null)
             {
                 foreach (var action in Success)
@@ -81,6 +86,17 @@ namespace Deckbuilding.Buildings.Options
         public bool HasSelector()
         {
             return SkillCheck !=null;
+        }
+
+        public bool CanSelect(BuildingWindowContext context, PartyMember partyMember)
+        {
+            if (partyMember == null)
+                return true;
+            
+            if (partyMember.Charge < Cost)
+                return false;
+            
+            return true;
         }
     }
 }

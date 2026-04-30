@@ -16,7 +16,12 @@ namespace Deckbuilding.Buildings.Options
         {
             return false;
         }
-        
+
+        public bool CanSelect(BuildingWindowContext context, PartyMember partyMember)
+        {
+            return true;
+        }
+
         public string GetDescription(BuildingWindowContext context, PartyMember partyMember)
         {
             return OptionDesc;

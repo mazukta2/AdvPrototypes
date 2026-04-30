@@ -30,6 +30,7 @@ MonoBehaviour:
         CloseWindow: 1
         SkillCheck: {fileID: 11400000, guid: 385da7871fb30314897557105b523267, type: 2}
         SkillValue: 10
+        Cost: 10
         Success:
         - rid: 3198867831447617674
         - rid: 3198867831447617675

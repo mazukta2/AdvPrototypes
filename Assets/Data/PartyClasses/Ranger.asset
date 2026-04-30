@@ -19,4 +19,6 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: c1537644d08f8e94b84d597b87272f2c, type: 3}
   Color: {r: 0.14951934, g: 0.35220122, b: 0.22020781, a: 1}
   MaxHealth: 20
-  Charge: 1
+  Charge: 20
+  Cost: 1
+  Tags: []

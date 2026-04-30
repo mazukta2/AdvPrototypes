@@ -145,6 +145,7 @@ namespace Deckbuilding.Windows
                     {
                         memberOptionComponent.Icon.sprite = memberOptionComponent.NormalIcon;
                         memberOptionComponent.Icon.color = partyMember.Class.Color;
+                        memberOptionComponent.Button.interactable = option.CanSelect(_context, partyMember);
                     }
                     
                     memberOptionComponent.Tooltip.Name = option.GetName(_context);
