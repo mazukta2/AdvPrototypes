@@ -15,7 +15,8 @@ MonoBehaviour:
   With:
   - {fileID: 11400000, guid: 728351d2096f9de4086097fef66853d2, type: 2}
   - {fileID: 11400000, guid: f85fa8f56f8648b49a0c15900ffc0d78, type: 2}
-  Without: []
+  Without:
+  - {fileID: 11400000, guid: 32736c72ebc72494ca82fc77d7d10afd, type: 2}
   Options:
   - rid: 3198867672654676079
   OnChangeSeason: []
@@ -38,11 +39,13 @@ MonoBehaviour:
         - rid: 3198867831447617671
         - rid: 3198867831447617672
         - rid: 3198867831447617673
+        - rid: 3198868150067134583
         Failure:
         - rid: 3198868150067134538
         - rid: 3198868150067134539
         - rid: 3198868150067134540
         - rid: 3198868150067134541
+        - rid: 3198868150067134584
     - rid: 3198867831447617670
       type: {class: ShowActionMessage, ns: Deckbuilding.Buildings.BuildingActions,
         asm: Game}
@@ -86,3 +89,15 @@ MonoBehaviour:
       type: {class: SpawnEnemies, ns: Deckbuilding.Buildings.BuildingActions, asm: Game}
       data:
         EnemyCount: 6
+    - rid: 3198868150067134583
+      type: {class: GiveTags, ns: Deckbuilding.Buildings.BuildingActions, asm: Game}
+      data:
+        Tags:
+        - {fileID: 11400000, guid: 32736c72ebc72494ca82fc77d7d10afd, type: 2}
+        Time: 1
+    - rid: 3198868150067134584
+      type: {class: GiveTags, ns: Deckbuilding.Buildings.BuildingActions, asm: Game}
+      data:
+        Tags:
+        - {fileID: 11400000, guid: 32736c72ebc72494ca82fc77d7d10afd, type: 2}
+        Time: 1
