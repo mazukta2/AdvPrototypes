@@ -24,7 +24,7 @@ namespace Deckbuilding.QuestRules
 
             public bool IsCompleted()
             {
-                return PartyResources.Instance.Get(PartyResources.ResourceType.Report) >= 4;
+                return false;//PartyResources.Instance.Get(PartyResources.ResourceType.Report) >= 4;
             }
 
             public void Clear()

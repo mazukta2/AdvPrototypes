@@ -14,7 +14,7 @@ namespace Deckbuilding
 
         public void OnComplete()
         {
-            PartyResources.Instance.Change(PartyResources.ResourceType.Gold, Data.Reward);
+            //PartyResources.Instance.Change(PartyResources.ResourceType.Gold, Data.Reward);
         }
 
         public void Clear()

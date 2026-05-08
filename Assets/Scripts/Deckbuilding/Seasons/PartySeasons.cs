@@ -20,17 +20,14 @@ namespace Deckbuilding
                 
                 PartyQuests.NewSeason();
                 
-                PartyResources.Instance.Change(PartyResources.ResourceType.Gold, PartyResources.Instance.Get(PartyResources.ResourceType.Fuel));
-                PartyResources.Instance.Set(PartyResources.ResourceType.Fuel, 0);
+                //PartyResources.Instance.Change(PartyResources.ResourceType.Gold, PartyResources.Instance.Get(PartyResources.ResourceType.Fuel));
+                //PartyResources.Instance.Set(PartyResources.ResourceType.Fuel, 0);
                 
                 PartyMembers.Instance.Clear();
                 PartyMovement.NewSeason();
                 Enemy.ResetEnemies();
                 Bullet.DestroyAll();
-                Lighthouse.NewSeason();
                 Zone.NewSeason();
-                Gates.NewSeason();
-                Sawmill.NewSeason();
                 Building.NewSeason();
                 
                 ChangePartyScreen.Instance.Open();

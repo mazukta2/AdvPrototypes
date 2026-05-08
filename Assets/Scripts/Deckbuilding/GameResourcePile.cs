@@ -1,4 +1,5 @@
 ﻿using System;
+using Deckbuilding.PartyGameResources;
 using UnityEngine;
 
 namespace Deckbuilding
@@ -6,7 +7,7 @@ namespace Deckbuilding
     public class GameResourcePile : MonoBehaviour
     {
         public int Amount = 2;
-        public PartyResources.ResourceType ResourceType;
+        public PartyResourceData ResourceType;
         public float Distance = 3;
 
         public void Update()

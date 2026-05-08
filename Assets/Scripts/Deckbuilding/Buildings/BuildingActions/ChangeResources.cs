@@ -1,13 +1,15 @@
-﻿namespace Deckbuilding.Buildings.BuildingActions
+﻿using Deckbuilding.PartyGameResources;
+
+namespace Deckbuilding.Buildings.BuildingActions
 {
     public class ChangeResources : IBuildingAction
     {
-        public PartyResources.ResourceType ResourceType;
+        public PartyResourceData ResourceData;
         public int Value;
         
         public void Execute(Building building)
         {
-            PartyResources.Instance.Change(ResourceType, Value);
+            PartyResources.Instance.Change(ResourceData, Value);
         }
 
         public object[] GetParameters()

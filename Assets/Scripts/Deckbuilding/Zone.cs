@@ -18,7 +18,7 @@ namespace Deckbuilding
             if (!Explored && Vector3.Distance(PartyMovement.Instance.transform.position, transform.position) < Radius)
             {
                 Explored = true;
-                PartyResources.Instance.Change(PartyResources.ResourceType.Report, 1);
+                //PartyResources.Instance.Change(PartyResources.ResourceType.Report, 1);
             }
         }
 
@@ -58,7 +58,7 @@ namespace Deckbuilding
                 if (zone.Explored)
                 {
                     zone.Explored = false;
-                    PartyResources.Instance.Change(PartyResources.ResourceType.Gold, 1);
+                    //PartyResources.Instance.Change(PartyResources.ResourceType.Gold, 1);
                 }
                 for (int i = 0; i < zone.DangerLevel; i++)
                 {
@@ -83,7 +83,7 @@ namespace Deckbuilding
                     }
                 }
             }
-            PartyResources.Instance.Set(PartyResources.ResourceType.Report, 0);
+            //PartyResources.Instance.Set(PartyResources.ResourceType.Report, 0);
 
         }
     }

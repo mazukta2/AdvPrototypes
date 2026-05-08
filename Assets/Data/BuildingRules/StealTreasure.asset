@@ -61,6 +61,7 @@ MonoBehaviour:
       type: {class: ChangeResources, ns: Deckbuilding.Buildings.BuildingActions, asm: Game}
       data:
         ResourceType: 1
+        ResourceData: {fileID: 11400000, guid: 9afaed5cbf82666479f2a138085b81f1, type: 2}
         Value: 4
     - rid: 3198867831447617676
       type: {class: RemoveTags, ns: Deckbuilding.Buildings.BuildingActions, asm: Game}

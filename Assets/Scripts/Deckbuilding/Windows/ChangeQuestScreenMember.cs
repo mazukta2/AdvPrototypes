@@ -13,7 +13,6 @@ namespace Deckbuilding
         public TextMeshProUGUI QuestDescription;
         public Button SelectButton;
         public bool IsSelected;
-        public CostUI CostUI;
 
 
         public QuestData QuestData { get; set; }
@@ -34,7 +33,6 @@ namespace Deckbuilding
             QuestData = quest;
             QuestName.text = quest.Name;
             QuestDescription.text = quest.Description;
-            CostUI.Cost = quest.Reward;
         }
 
         private void OnSelect()

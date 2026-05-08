@@ -285,7 +285,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Game::Deckbuilding.PartyResources.PartyResourcesView
   Text: {fileID: 978686630739801964}
-  ResourceType: 0
+  ResourceType: {fileID: 0}
+  Tooltip: {fileID: 5338008777393928497}
+  Image: {fileID: 3563300719681342306}
 --- !u!114 &5338008777393928497
 MonoBehaviour:
   m_ObjectHideFlags: 0
