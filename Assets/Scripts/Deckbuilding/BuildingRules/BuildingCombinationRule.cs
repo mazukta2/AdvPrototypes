@@ -8,6 +8,8 @@ namespace Deckbuilding.BuildingRules
     [CreateAssetMenu(fileName = "BuildingCombinationRule", menuName = "Deckbuilding/BuildingCombinationRule")]
     public class BuildingCombinationRule : ScriptableObject
     {
+        [SerializeField] public bool Disable;
+        
         [SerializeField] public TagData[] With;
         [SerializeField] public TagData[] Without;
         
@@ -17,6 +19,9 @@ namespace Deckbuilding.BuildingRules
         
         public void HandleSeasonChange(Building building)
         {
+            if (Disable)
+                return;
+            
             foreach (var tagData in With)
             {
                 if (!building.Tags.Contains(tagData))
@@ -41,6 +46,10 @@ namespace Deckbuilding.BuildingRules
 
         public IEnumerable<IBuildingOption> GetOptionsForBuilding(Building building)
         {
+            if (Disable)
+                return Enumerable.Empty<IBuildingOption>();
+            
+            
             foreach (var tagData in With)
             {
                 if (!building.Tags.Contains(tagData))

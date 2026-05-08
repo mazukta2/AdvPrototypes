@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 072d4a2ad4cf4c87a5c1428feaa9f051, type: 3}
   m_Name: DevastatedRule
   m_EditorClassIdentifier: Game::Deckbuilding.BuildingRules.BuildingCombinationRule
+  Disable: 0
   With:
   - {fileID: 11400000, guid: fd2fa5d44313a8c40ae6738a52ec1afc, type: 2}
   Without:
   - {fileID: 11400000, guid: 1df04fb2826c1d74789d88bc6508321b, type: 2}
+  - {fileID: 11400000, guid: e817e49aa0dd8ff4abe91970411ddced, type: 2}
+  Options: []
   OnChangeSeason:
   - rid: 3198867672654676059
   references:
@@ -27,3 +30,5 @@ MonoBehaviour:
         Tags:
         - {fileID: 11400000, guid: 728351d2096f9de4086097fef66853d2, type: 2}
         - {fileID: 11400000, guid: f85fa8f56f8648b49a0c15900ffc0d78, type: 2}
+        Time: 0
+        ToZone: 0

@@ -1,0 +1,12 @@
+﻿- Replace resources with tag-resources. Party can get tags from actions. These tags can be countable.
+
+---
+
+Story of poverty:
+- player robes the bank. it spead poverty to all buildings in zone.
+- bank can not generate money becose of poverty.
+- player settle trade agreament with merfloc trade post.
+    - player can get trade agreament if player has good will with them.
+    - to get good will they can convince them or bribe them.
+- player use this trade agreament on city market. it removes poverty and make wealth.
+- wealth of the city market spread to all buildings. 

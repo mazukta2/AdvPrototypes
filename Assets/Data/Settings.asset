@@ -18,20 +18,12 @@ MonoBehaviour:
   Quests:
   - {fileID: 11400000, guid: ff07e60d13b15b84ab8c61d5644f4276, type: 2}
   - {fileID: 11400000, guid: 63f6d492a2db81e42a6fab5da638f316, type: 2}
-  InteractionRules:
-  - {fileID: 11400000, guid: 59ac358c8e7599c42bd896528972f7d5, type: 2}
-  - {fileID: 11400000, guid: 69c408d92d781d449a5c4a0f56c593bf, type: 2}
-  - {fileID: 11400000, guid: 9b1fc2a3cce05b44aa88c9d5dce67293, type: 2}
-  - {fileID: 11400000, guid: c6c8806f097b0c14a86fbbe59699b008, type: 2}
-  - {fileID: 11400000, guid: e3ffe1744828d8a4a95cfba7fc5292c2, type: 2}
-  - {fileID: 11400000, guid: fbd35858fb8d7ea49bd30ad3b12c159d, type: 2}
-  - {fileID: 11400000, guid: 0709fc00b4006c246877075ef1c35159, type: 2}
-  - {fileID: 11400000, guid: 4b4ec37cb01ad3e4aa3abf47dad564c2, type: 2}
   BuildingCombinationRules:
   - {fileID: 11400000, guid: 6aa8d365526112546b7489e681e33af1, type: 2}
   - {fileID: 11400000, guid: 690a1a5535c8741479ac9148ec0cdae6, type: 2}
   - {fileID: 11400000, guid: a61f2361e7def00418cc8babd6bc0273, type: 2}
   - {fileID: 11400000, guid: 2ccedfc2258838e4b80e41b675ae1b46, type: 2}
+  - {fileID: 11400000, guid: cccc98cf4df6dac469d2817dd2c89821, type: 2}
   Names: "\u0410\u044D\u043B\u0430\u0440\u0438\u043E\u043D, \u041C\u0438\u0440\u0432\u0435\u043B\u0438\u0441,
     \u0414\u0440\u0430\u043A\u043E\u0440\u0438\u043D, \u042D\u043B\u044C\u0441\u0430\u0440\u0438\u043E\u043D,
     \u0422\u0430\u043B\u043C\u0438\u0440\u0438\u0441, \u0412\u0438\u0440\u0435\u043B\u0430\u043D\u0442,

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 072d4a2ad4cf4c87a5c1428feaa9f051, type: 3}
   m_Name: StealTreasure
   m_EditorClassIdentifier: Game::Deckbuilding.BuildingRules.BuildingCombinationRule
+  Disable: 0
   With:
   - {fileID: 11400000, guid: f85fa8f56f8648b49a0c15900ffc0d78, type: 2}
   - {fileID: 11400000, guid: 728351d2096f9de4086097fef66853d2, type: 2}
@@ -23,6 +24,13 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+    - rid: 2102624849215357020
+      type: {class: GiveTags, ns: Deckbuilding.Buildings.BuildingActions, asm: Game}
+      data:
+        Tags:
+        - {fileID: 11400000, guid: e817e49aa0dd8ff4abe91970411ddced, type: 2}
+        Time: 0
+        ToZone: 1
     - rid: 3198867672654676080
       type: {class: CommonOption, ns: Deckbuilding.Buildings.Options, asm: Game}
       data:
@@ -30,13 +38,14 @@ MonoBehaviour:
         OptionDesc: "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u0435 {0} \u0437\u043E\u043B\u043E\u0442\u0430."
         CloseWindow: 1
         SkillCheck: {fileID: 11400000, guid: 385da7871fb30314897557105b523267, type: 2}
-        SkillValue: 10
+        SkillValue: 3
         Cost: 10
         Success:
         - rid: 3198867831447617674
         - rid: 3198867831447617675
         - rid: 3198867831447617676
         - rid: 3198868150067134581
+        - rid: 2102624849215357020
         Failure:
         - rid: 3198867831447617683
         - rid: 3198867831447617684
@@ -58,6 +67,7 @@ MonoBehaviour:
       data:
         Tags:
         - {fileID: 11400000, guid: f85fa8f56f8648b49a0c15900ffc0d78, type: 2}
+        FromZone: 0
     - rid: 3198867831447617683
       type: {class: ShowActionMessage, ns: Deckbuilding.Buildings.BuildingActions,
         asm: Game}
@@ -74,9 +84,11 @@ MonoBehaviour:
         Tags:
         - {fileID: 11400000, guid: 32736c72ebc72494ca82fc77d7d10afd, type: 2}
         Time: 1
+        ToZone: 0
     - rid: 3198868150067134582
       type: {class: GiveTags, ns: Deckbuilding.Buildings.BuildingActions, asm: Game}
       data:
         Tags:
         - {fileID: 11400000, guid: 32736c72ebc72494ca82fc77d7d10afd, type: 2}
         Time: 1
+        ToZone: 0

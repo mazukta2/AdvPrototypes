@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 072d4a2ad4cf4c87a5c1428feaa9f051, type: 3}
   m_Name: RaidRule
   m_EditorClassIdentifier: Game::Deckbuilding.BuildingRules.BuildingCombinationRule
+  Disable: 1
   With:
   - {fileID: 11400000, guid: 728351d2096f9de4086097fef66853d2, type: 2}
   - {fileID: 11400000, guid: f85fa8f56f8648b49a0c15900ffc0d78, type: 2}
@@ -58,12 +59,14 @@ MonoBehaviour:
       data:
         Tags:
         - {fileID: 11400000, guid: 728351d2096f9de4086097fef66853d2, type: 2}
+        FromZone: 0
     - rid: 3198867831447617672
       type: {class: GiveTags, ns: Deckbuilding.Buildings.BuildingActions, asm: Game}
       data:
         Tags:
         - {fileID: 11400000, guid: 1df04fb2826c1d74789d88bc6508321b, type: 2}
         Time: 2
+        ToZone: 0
     - rid: 3198867831447617673
       type: {class: SpawnEnemies, ns: Deckbuilding.Buildings.BuildingActions, asm: Game}
       data:
@@ -79,12 +82,14 @@ MonoBehaviour:
       data:
         Tags:
         - {fileID: 11400000, guid: 728351d2096f9de4086097fef66853d2, type: 2}
+        FromZone: 0
     - rid: 3198868150067134540
       type: {class: GiveTags, ns: Deckbuilding.Buildings.BuildingActions, asm: Game}
       data:
         Tags:
         - {fileID: 11400000, guid: 1df04fb2826c1d74789d88bc6508321b, type: 2}
         Time: 2
+        ToZone: 0
     - rid: 3198868150067134541
       type: {class: SpawnEnemies, ns: Deckbuilding.Buildings.BuildingActions, asm: Game}
       data:
@@ -95,9 +100,11 @@ MonoBehaviour:
         Tags:
         - {fileID: 11400000, guid: 32736c72ebc72494ca82fc77d7d10afd, type: 2}
         Time: 1
+        ToZone: 0
     - rid: 3198868150067134584
       type: {class: GiveTags, ns: Deckbuilding.Buildings.BuildingActions, asm: Game}
       data:
         Tags:
         - {fileID: 11400000, guid: 32736c72ebc72494ca82fc77d7d10afd, type: 2}
         Time: 1
+        ToZone: 0

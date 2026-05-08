@@ -67,6 +67,19 @@ namespace Deckbuilding.Buildings
             BuildingWindow.Instance.RebuildWindow();
         }
 
+        public Zone GetZone()
+        {
+            foreach (var zone in Zone.List)
+            {
+                if (zone.IsInside(gameObject))
+                {
+                    return zone;
+                }
+            }
+
+            return null;
+        }
+        
         public static void NewSeason()
         {
             foreach (var b in List)

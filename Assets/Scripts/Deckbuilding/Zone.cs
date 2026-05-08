@@ -40,6 +40,17 @@ namespace Deckbuilding
             return null;
         }
 
+
+        public bool IsInside(GameObject go)
+        {
+            if (Vector3.Distance(go.transform.position, transform.position) < Radius)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
         public static void NewSeason()
         {
             foreach (var zone in List)
