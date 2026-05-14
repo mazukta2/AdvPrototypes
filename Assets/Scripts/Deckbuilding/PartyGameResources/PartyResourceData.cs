@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Sirenix.OdinInspector;
+using UnityEngine;
 
 namespace Deckbuilding.PartyGameResources
 {
@@ -15,5 +16,16 @@ namespace Deckbuilding.PartyGameResources
             return new PartyResource(this);
         }
 
+        [Button]
+        public void Give()
+        {
+            PartyResources.Instance.Change(this, 1);
+        }
+        
+        [Button]
+        public void Give5()
+        {
+            PartyResources.Instance.Change(this, 5);
+        }
     }
 }

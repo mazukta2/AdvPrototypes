@@ -9,5 +9,6 @@
         public void Click(BuildingWindowContext context, PartyMember partyMember);
         bool HasSelector();
         bool CanSelect(BuildingWindowContext context, PartyMember partyMember);
+        bool CanSelect(BuildingWindowContext context);
     }
 }

@@ -9,7 +9,8 @@ namespace Deckbuilding.BuildingRules
     public class BuildingCombinationRule : ScriptableObject
     {
         [SerializeField] public bool Disable;
-        
+
+        [SerializeField] public BuildingData[] For;
         [SerializeField] public TagData[] With;
         [SerializeField] public TagData[] Without;
         
@@ -21,6 +22,14 @@ namespace Deckbuilding.BuildingRules
         {
             if (Disable)
                 return;
+
+            if (For.Length > 0)
+            {
+                if (For.All(d => d != building.Data))
+                {
+                    return;
+                }
+            }
             
             foreach (var tagData in With)
             {
@@ -49,6 +58,14 @@ namespace Deckbuilding.BuildingRules
             if (Disable)
                 return Enumerable.Empty<IBuildingOption>();
             
+            
+            if (For.Length > 0)
+            {
+                if (For.All(d => d != building.Data))
+                {
+                    return Enumerable.Empty<IBuildingOption>();
+                }
+            }
             
             foreach (var tagData in With)
             {

@@ -22,6 +22,11 @@ namespace Deckbuilding.Buildings.Options
             return true;
         }
 
+        public bool CanSelect(BuildingWindowContext context)
+        {
+            return true;
+        }
+
         public string GetDescription(BuildingWindowContext context, PartyMember partyMember)
         {
             return OptionDesc;

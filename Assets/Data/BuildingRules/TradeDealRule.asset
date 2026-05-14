@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 072d4a2ad4cf4c87a5c1428feaa9f051, type: 3}
+  m_Name: TradeDealRule
+  m_EditorClassIdentifier: Game::Deckbuilding.BuildingRules.BuildingCombinationRule
+  Disable: 0
+  For: []
+  With:
+  - {fileID: 11400000, guid: 833b8378de757a54296ea20cd7764e8c, type: 2}
+  Without: []
+  Options: []
+  OnChangeSeason:
+  - rid: 2102624849215357036
+  references:
+    version: 2
+    RefIds:
+    - rid: 2102624849215357036
+      type: {class: Chances, ns: Deckbuilding.Buildings.BuildingActions, asm: Game}
+      data:
+        Value:
+        - rid: 2102624849215357038
+        ChanceOfNothing: 1
+    - rid: 2102624849215357038
+      type: {class: Chances/ChanceElement, ns: Deckbuilding.Buildings.BuildingActions,
+        asm: Game}
+      data:
+        Action:
+          rid: 2102625003512529019
+        Chance: 1
+    - rid: 2102625003512529019
+      type: {class: RemoveTags, ns: Deckbuilding.Buildings.BuildingActions, asm: Game}
+      data:
+        Tags:
+        - {fileID: 11400000, guid: e817e49aa0dd8ff4abe91970411ddced, type: 2}
+        FromZone: 1

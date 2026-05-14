@@ -24,6 +24,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a61f2361e7def00418cc8babd6bc0273, type: 2}
   - {fileID: 11400000, guid: 2ccedfc2258838e4b80e41b675ae1b46, type: 2}
   - {fileID: 11400000, guid: cccc98cf4df6dac469d2817dd2c89821, type: 2}
+  - {fileID: 11400000, guid: 060c6c78c78d84344b0016dafc1a4594, type: 2}
+  - {fileID: 11400000, guid: 5951d2a185f52164bb99c29678299a40, type: 2}
+  - {fileID: 11400000, guid: ac2afe31081b2ca4db4b07720ae9e00d, type: 2}
   Names: "\u0410\u044D\u043B\u0430\u0440\u0438\u043E\u043D, \u041C\u0438\u0440\u0432\u0435\u043B\u0438\u0441,
     \u0414\u0440\u0430\u043A\u043E\u0440\u0438\u043D, \u042D\u043B\u044C\u0441\u0430\u0440\u0438\u043E\u043D,
     \u0422\u0430\u043B\u043C\u0438\u0440\u0438\u0441, \u0412\u0438\u0440\u0435\u043B\u0430\u043D\u0442,

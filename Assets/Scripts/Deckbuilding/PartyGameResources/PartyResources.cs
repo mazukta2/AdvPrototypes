@@ -19,6 +19,7 @@ namespace Deckbuilding
             }
             
             Resources[type].Add(amount);
+            PartyResourcesView.Instance.ResetAll();
 
         }
         
@@ -44,6 +45,8 @@ namespace Deckbuilding
             }
             
             Resources[type].Set(value);
+            
+            PartyResourcesView.Instance.ResetAll();
         }
         
         

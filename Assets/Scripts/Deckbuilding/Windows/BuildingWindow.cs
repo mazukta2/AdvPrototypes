@@ -105,6 +105,11 @@ namespace Deckbuilding.Windows
             var go = Instantiate(OptionPrefab, OptionContainer.transform); 
             var optionComponent = go.GetComponent<BuildingWindowOption>();
             optionComponent.Text.text = option.GetName(_context);
+            if (!option.HasSelector())
+            {
+                optionComponent.Button.interactable = option.CanSelect(_context);
+            }
+            
             optionComponent.Button.onClick.AddListener(() =>
             {
                 if (!option.HasSelector())

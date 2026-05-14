@@ -1,6 +1,9 @@
 ﻿using System.Linq;
+using Deckbuilding.Buildings.Requirements;
 using Deckbuilding.Heroes.Skills;
 using Deckbuilding.Windows;
+using Sirenix.Utilities;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Deckbuilding.Buildings.Options
@@ -13,6 +16,8 @@ namespace Deckbuilding.Buildings.Options
 
         public SkillData SkillCheck;
         public int SkillValue = 10;
+        
+        [SerializeReference] public IRequirement[] Requirements;
 
         public int Cost;
         
@@ -46,7 +51,14 @@ namespace Deckbuilding.Buildings.Options
                 skillCheck += SkillCheck.Name + ": " + SkillValue + "\r\n\r\n";
             }
             
-            return skillCheck + string.Format(OptionDesc, Success.SelectMany(a => a.GetParameters()).ToArray());
+            var desc = skillCheck + string.Format(OptionDesc, Success.SelectMany(a => a.GetParameters()).ToArray());
+
+            if (Requirements != null && Requirements.Length > 0)
+            {
+                desc += "\r\n\r\n";
+                desc += string.Join("\r\n", Requirements.Select(r => GetRequiromentText(r, context)));
+            }
+            return desc;
         }
 
         public void Click(BuildingWindowContext context, PartyMember partyMember)
@@ -95,8 +107,48 @@ namespace Deckbuilding.Buildings.Options
             
             if (partyMember.Charge < Cost)
                 return false;
+
+            if (Requirements != null)
+            {
+                foreach (var requirement in Requirements)
+                {
+                    if (!requirement.Check())
+                        return false;
+                }
+            }
             
             return true;
+        }
+
+        public bool CanSelect(BuildingWindowContext context)
+        {
+            if (Requirements != null)
+            {
+                foreach (var requirement in Requirements)
+                {
+                    if (!requirement.Check())
+                        return false;
+                }
+            }
+            
+            return true;
+        }
+
+        private string GetRequiromentText(IRequirement requirement, BuildingWindowContext context)
+        {
+            var color = Color.red;
+            if (requirement.Check())
+            {
+                color = Color.green;
+            }
+            
+            return string.Format("<color=#{0}>* {1}</color>", ColorToHex(color), requirement.GetDesc());
+        }
+        
+        private string ColorToHex(Color color)
+        {
+            Color32 color32 = color;
+            return $"{color32.r:X2}{color32.g:X2}{color32.b:X2}";
         }
     }
 }
